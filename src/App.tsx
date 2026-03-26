@@ -153,7 +153,7 @@ function App() {
               
               <div className="space-y-4 font-body text-textPrimary/80">
                 <p className="text-lg leading-relaxed">
-                  <strong className="text-primary">语块(Chunk)</strong>，就是最小单位的语境。语块又称词块，是经常一起使用的单词组合。本应用采用的是 4-8 个单词的实用语块。
+                  <strong className="text-primary">语块</strong>，就是最小单位的语境。语块是经常一起使用的单词组合,本应用采用的是 4-8 个单词的实用语块。
                 </p>
 
                 <p className="leading-relaxed">
@@ -212,7 +212,7 @@ function App() {
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-heading font-bold text-primary">
-                ChunkLearn
+                MeihooStudy
               </span>
             </div>
 
@@ -251,7 +251,7 @@ function App() {
       {/* Footer */}
       <footer className="mt-16 py-8 text-center">
         <p className="text-sm font-body text-textPrimary/50">
-          © 2026 ChunkLearn · 语块学习法让英语学习事半功倍
+          © 2026 meihoo语块学习 · MeihooStudy · 让英语学习事半功倍
         </p>
       </footer>
     </div>
