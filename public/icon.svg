@@ -1,0 +1,10 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="512" height="512" rx="120" fill="#3b82f6"/>
+  
+  <!-- 字母 M (MeihooStudy) -->
+  <text x="256" y="340" font-family="Arial, sans-serif" font-size="280" font-weight="bold" fill="white" text-anchor="middle">M</text>
+  
+  <!-- 装饰线条 -->
+  <path d="M 100 380 Q 256 350 412 380" stroke="white" stroke-width="8" fill="none" opacity="0.6"/>
+</svg>
