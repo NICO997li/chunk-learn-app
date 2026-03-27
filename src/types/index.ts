@@ -1,28 +1,18 @@
-// 语块数据类型
+// 语块数据类型（匹配 chunks.json 250个语块的格式）
 export interface Chunk {
-  id: string;
-  text: string; // 4-8个单词的语块
-  translation: string; // 中文翻译
-  targetWord: string; // 目标单词
-  example: string; // 完整例句
-  exampleTranslation: string; // 例句翻译
-  audio?: string; // 语音文件URL
-  category: ChunkCategory;
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  id: number;
+  chunk: string;             // 语块文本（英文）
+  translation: string;       // 中文翻译
+  example: string;           // 完整例句
+  exampleCN: string;         // 例句中文翻译
+  scenario: string;          // 场景分类
+  difficulty: string;        // 难度等级
+  tags: string[];            // 标签
 }
-
-// 语块分类
-export type ChunkCategory = 
-  | 'daily-life'      // 日常生活
-  | 'work'            // 工作场景
-  | 'travel'          // 旅行
-  | 'study'           // 学习
-  | 'social'          // 社交
-  | 'business';       // 商务
 
 // 学习记录
 export interface LearningRecord {
-  chunkId: string;
+  chunkId: number;
   status: 'new' | 'learning' | 'mastered';
   reviewCount: number;
   lastReviewDate: Date;

@@ -80,7 +80,7 @@ export function getDueReviews(records: LearningRecord[]): LearningRecord[] {
 /**
  * 初始化新语块的学习记录
  */
-export function initializeLearningRecord(chunkId: string): LearningRecord {
+export function initializeLearningRecord(chunkId: number): LearningRecord {
   const now = new Date();
   return {
     chunkId,

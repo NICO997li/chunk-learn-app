@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Home, BookOpen, BarChart3, Info } from 'lucide-react';
+import { Home, BookOpen, BarChart3, Info, Eye } from 'lucide-react';
 import { useLearning } from '@/hooks/useLearning';
 import { ChunkCard } from '@/components/ChunkCard';
 import { ReviewButtons } from '@/components/ReviewButtons';
 import { StatsCard } from '@/components/StatsCard';
+import { DailyGoalSetting } from '@/components/DailyGoalSetting';
+import { TodayReview } from '@/components/TodayReview';
 
-type View = 'home' | 'review' | 'stats' | 'about';
+type View = 'home' | 'review' | 'today' | 'stats' | 'about';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -15,6 +17,10 @@ function App() {
     submitReview,
     startNewSession,
     hasReviews,
+    getTodayLearned,
+    dailyGoal,
+    saveDailyGoal,
+    todayLearnedCount,
   } = useLearning();
 
   const renderContent = () => {
@@ -22,6 +28,11 @@ function App() {
       case 'home':
         return (
           <div className="space-y-8">
+            {/* 每日目标设置 */}
+            <div className="flex justify-center">
+              <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
+            </div>
+
             <div className="text-center">
               <h1 className="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">
                 meihoo语块学习
@@ -85,7 +96,12 @@ function App() {
               </button>
               {hasReviews && (
                 <p className="mt-3 text-sm font-body text-textPrimary/60">
-                  今天有 {stats.todayReviews} 个语块待复习
+                  今天有 {stats.todayReviews} 个语块待复习 · 目标 {dailyGoal} 个
+                </p>
+              )}
+              {todayLearnedCount > 0 && (
+                <p className="mt-2 text-sm font-body text-primary/80 font-bold">
+                  今日已学习 {todayLearnedCount} / {dailyGoal} 个 🎉
                 </p>
               )}
             </div>
@@ -101,14 +117,25 @@ function App() {
                 太棒了！
               </h2>
               <p className="text-lg font-body text-textPrimary/70">
-                今天的复习任务已全部完成
+                今天的学习目标已完成
               </p>
-              <button
-                onClick={() => setCurrentView('home')}
-                className="px-6 py-3 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
-              >
-                返回首页
-              </button>
+              <p className="text-base font-body text-textPrimary/60">
+                已学习 {todayLearnedCount} 个语块
+              </p>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <button
+                  onClick={() => setCurrentView('today')}
+                  className="px-6 py-3 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                >
+                  查看今日回看
+                </button>
+                <button
+                  onClick={() => setCurrentView('home')}
+                  className="px-6 py-3 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                >
+                  返回首页
+                </button>
+              </div>
             </div>
           );
         }
@@ -117,13 +144,13 @@ function App() {
           <div className="space-y-8">
             <div className="text-center">
               <p className="text-sm font-body text-textPrimary/60 mb-2">
-                复习进度: {stats.todayReviews} / {stats.totalChunks}
+                学习进度: {todayLearnedCount} / {dailyGoal}
               </p>
               <div className="h-2 bg-background rounded-full max-w-md mx-auto overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
                   style={{
-                    width: `${(stats.todayReviews / stats.totalChunks) * 100}%`,
+                    width: `${Math.min((todayLearnedCount / dailyGoal) * 100, 100)}%`,
                   }}
                 />
               </div>
@@ -139,6 +166,9 @@ function App() {
             </div>
           </div>
         );
+
+      case 'today':
+        return <TodayReview todayChunks={getTodayLearned()} />;
 
       case 'stats':
         return <StatsCard stats={stats} />;
@@ -157,14 +187,14 @@ function App() {
                 </p>
 
                 <p className="leading-relaxed">
-                  传统的背单词方法往往让我们陷入"一词多义"的困境，记住了单词却不会用。而语块学习法通过记忆单词在真实语境中的用法，让你：
+                  传统的背单词方法往往让我们陷入&ldquo;一词多义&rdquo;的困境，记住了单词却不会用。而语块学习法通过记忆单词在真实语境中的用法，让你：
                 </p>
 
                 <ul className="list-disc list-inside space-y-2 pl-4">
                   <li>同时掌握单词的发音、拼写和用法</li>
                   <li>提高听力理解速度和口语流利度</li>
                   <li>建立地道的英语表达习惯</li>
-                  <li>减少"中式英语"的错误</li>
+                  <li>减少&ldquo;中式英语&rdquo;的错误</li>
                 </ul>
 
                 <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-clay p-6 mt-6">
@@ -187,6 +217,30 @@ function App() {
                     <li>诚实评估自己的掌握程度</li>
                   </ul>
                 </div>
+
+                <div className="bg-secondary/10 rounded-clay p-6 mt-6">
+                  <h3 className="text-xl font-heading font-bold text-secondary mb-3">
+                    应用数据
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-2xl font-heading font-bold text-primary">250</p>
+                      <p className="text-sm text-textPrimary/60">精选语块</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-heading font-bold text-primary">6</p>
+                      <p className="text-sm text-textPrimary/60">大场景</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-heading font-bold text-primary">4</p>
+                      <p className="text-sm text-textPrimary/60">难度等级</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-heading font-bold text-primary">SM-2</p>
+                      <p className="text-sm text-textPrimary/60">复习算法</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -197,6 +251,7 @@ function App() {
   const navItems = [
     { id: 'home' as View, label: '首页', icon: Home },
     { id: 'review' as View, label: '学习', icon: BookOpen },
+    { id: 'today' as View, label: '今日', icon: Eye },
     { id: 'stats' as View, label: '统计', icon: BarChart3 },
     { id: 'about' as View, label: '关于', icon: Info },
   ];
@@ -216,7 +271,7 @@ function App() {
               </span>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1 md:gap-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = currentView === item.id;
@@ -225,7 +280,7 @@ function App() {
                     key={item.id}
                     onClick={() => setCurrentView(item.id)}
                     className={`
-                      px-4 py-2 rounded-clay font-body font-medium transition-all duration-200 cursor-pointer
+                      px-3 md:px-4 py-2 rounded-clay font-body font-medium transition-all duration-200 cursor-pointer
                       ${
                         isActive
                           ? 'bg-primary text-white shadow-clay'

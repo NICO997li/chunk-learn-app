@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Chunk, LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem } from '@/types';
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import { LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem } from '@/types';
 import { chunkData } from '@/data/chunks';
 import {
   calculateNextReview,
@@ -26,11 +26,16 @@ export function useLearning() {
   });
   const [reviewQueue, setReviewQueue] = useState<ReviewQueueItem[]>([]);
   const [currentReview, setCurrentReview] = useState<ReviewQueueItem | null>(null);
+  
+  // 每日学习目标
+  const [dailyGoal, setDailyGoal] = useState<number>(() => {
+    const saved = localStorage.getItem('dailyGoal');
+    return saved ? Number(saved) : 10; // 默认每天10个
+  });
 
   // 加载数据
   useEffect(() => {
     const savedRecords = loadLearningRecords();
-    const savedStats = loadLearningStats();
 
     if (savedRecords.length > 0) {
       setRecords(savedRecords);
@@ -42,11 +47,19 @@ export function useLearning() {
       setRecords(initialRecords);
       saveLearningRecords(initialRecords);
     }
-
-    if (savedStats) {
-      setStats(savedStats);
-    }
   }, []);
+
+  // 计算今日已学习数量
+  const todayLearnedCount = useMemo(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return records.filter((r) => {
+      if (r.reviewCount === 0) return false; // 未复习过的不计
+      const lastReview = new Date(r.lastReviewDate);
+      lastReview.setHours(0, 0, 0, 0);
+      return lastReview.getTime() === today.getTime();
+    }).length;
+  }, [records]);
 
   // 更新统计数据
   useEffect(() => {
@@ -54,14 +67,6 @@ export function useLearning() {
     const learningCount = records.filter(
       (r) => r.status === 'learning' || r.status === 'new'
     ).length;
-
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const todayReviewsCount = records.filter((r) => {
-      const lastReview = new Date(r.lastReviewDate);
-      lastReview.setHours(0, 0, 0, 0);
-      return lastReview.getTime() === today.getTime();
-    }).length;
 
     const totalReviewsCount = records.reduce(
       (sum, record) => sum + record.reviewCount,
@@ -74,28 +79,33 @@ export function useLearning() {
       totalChunks: chunkData.length,
       masteredChunks: masteredCount,
       learningChunks: learningCount,
-      todayReviews: todayReviewsCount,
+      todayReviews: todayLearnedCount,
       streak: streakCount,
       totalReviews: totalReviewsCount,
     };
 
     setStats(newStats);
     saveLearningStats(newStats);
-  }, [records]);
+  }, [records, todayLearnedCount]);
 
-  // 更新复习队列
+  // 更新复习队列（限制每日学习量）
   const updateReviewQueue = useCallback(() => {
     const dueRecords = getDueReviews(records);
-    const queue: ReviewQueueItem[] = dueRecords.map((record) => ({
+    
+    // 限制为每日目标数量
+    const limitedRecords = dueRecords.slice(0, dailyGoal);
+    
+    const queue: ReviewQueueItem[] = limitedRecords.map((record) => ({
       chunk: chunkData.find((c) => c.id === record.chunkId)!,
       record,
-    }));
+    })).filter(item => item.chunk != null); // 过滤掉找不到语块的记录
+    
     setReviewQueue(queue);
 
     if (queue.length > 0 && !currentReview) {
       setCurrentReview(queue[0]);
     }
-  }, [records, currentReview]);
+  }, [records, currentReview, dailyGoal]);
 
   useEffect(() => {
     updateReviewQueue();
@@ -135,10 +145,39 @@ export function useLearning() {
         .map((record) => ({
           chunk: chunkData.find((c) => c.id === record.chunkId)!,
           record,
-        }));
+        }))
+        .filter(item => item.chunk != null);
     },
     [records]
   );
+
+  // 获取今日学习的语块
+  const getTodayLearned = useCallback(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    return records
+      .filter((r) => {
+        if (r.reviewCount === 0) return false;
+        const lastReview = new Date(r.lastReviewDate);
+        lastReview.setHours(0, 0, 0, 0);
+        return lastReview.getTime() === today.getTime();
+      })
+      .map((record) => ({
+        chunk: chunkData.find((c) => c.id === record.chunkId)!,
+        record,
+      }))
+      .filter(item => item.chunk != null)
+      .sort((a, b) => {
+        return new Date(b.record.lastReviewDate).getTime() - new Date(a.record.lastReviewDate).getTime();
+      });
+  }, [records]);
+
+  // 保存每日目标
+  const saveDailyGoal = useCallback((goal: number) => {
+    setDailyGoal(goal);
+    localStorage.setItem('dailyGoal', String(goal));
+  }, []);
 
   return {
     stats,
@@ -147,6 +186,10 @@ export function useLearning() {
     submitReview,
     startNewSession,
     getChunksByStatus,
+    getTodayLearned,
+    dailyGoal,
+    saveDailyGoal,
+    todayLearnedCount,
     hasReviews: reviewQueue.length > 0,
   };
 }
