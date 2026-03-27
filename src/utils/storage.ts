@@ -143,3 +143,40 @@ export function clearAllData(): void {
     console.error('Failed to clear data:', error);
   }
 }
+
+/**
+ * 删除指定用户（从本地用户列表和学习数据中移除）
+ */
+export function deleteUser(userId: string): void {
+  try {
+    // 从用户列表中删除
+    const users = getAllUsers().filter(u => u.id !== userId);
+    localStorage.setItem(ALL_USERS_KEY, JSON.stringify(users));
+    
+    // 删除该用户的学习数据
+    localStorage.removeItem(`chunk-learn-${userId}-records`);
+    localStorage.removeItem(`chunk-learn-${userId}-stats`);
+    localStorage.removeItem(`dailyGoal-${userId}`);
+    
+    // 如果删除的是当前用户，退出登录
+    const current = getCurrentUser();
+    if (current && current.id === userId) {
+      logoutUser();
+    }
+  } catch (error) {
+    console.error('Failed to delete user:', error);
+  }
+}
+
+/**
+ * 用云端数据恢复本地存储（跨设备登录）
+ */
+export function restoreFromCloud(userId: string, records: any[], dailyGoal: number): void {
+  try {
+    const key = `chunk-learn-${userId}`;
+    localStorage.setItem(`${key}-records`, JSON.stringify(records));
+    localStorage.setItem(`dailyGoal-${userId}`, String(dailyGoal));
+  } catch (error) {
+    console.error('Failed to restore from cloud:', error);
+  }
+}

@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, onValue, off } from 'firebase/database';
-import { UserLearningData } from '@/types';
+import { getDatabase, ref, set, get, remove, onValue, off } from 'firebase/database';
+import { UserLearningData, LearningRecord } from '@/types';
 
 // Firebase 配置
 const firebaseConfig = {
@@ -19,10 +19,6 @@ let db: any = null;
 function getFirebaseDB() {
   if (!db) {
     try {
-      if (!firebaseConfig.apiKey) {
-        console.warn('Firebase 未配置，云同步功能不可用');
-        return null;
-      }
       app = initializeApp(firebaseConfig);
       db = getDatabase(app);
     } catch (e) {
@@ -36,16 +32,15 @@ function getFirebaseDB() {
 /**
  * 同步用户学习数据到云端
  */
-export function syncUserData(data: UserLearningData): void {
+export async function syncUserData(data: UserLearningData): Promise<void> {
   const database = getFirebaseDB();
   if (!database) return;
   
   try {
     const userRef = ref(database, `users/${data.userId}`);
-    set(userRef, {
+    await set(userRef, {
       ...data,
-      // 序列化日期
-      records: data.records.map(r => ({
+      records: data.records.map((r: LearningRecord) => ({
         ...r,
         lastReviewDate: new Date(r.lastReviewDate).toISOString(),
         nextReviewDate: new Date(r.nextReviewDate).toISOString(),
@@ -58,7 +53,83 @@ export function syncUserData(data: UserLearningData): void {
 }
 
 /**
- * 监听所有用户的学习数据变化
+ * 从云端拉取指定用户的学习数据
+ * 用于跨设备登录时恢复数据
+ */
+export async function fetchUserData(userId: string): Promise<UserLearningData | null> {
+  const database = getFirebaseDB();
+  if (!database) return null;
+
+  try {
+    const userRef = ref(database, `users/${userId}`);
+    const snapshot = await get(userRef);
+    if (!snapshot.exists()) return null;
+
+    const data = snapshot.val();
+    return {
+      ...data,
+      records: (data.records || []).map((r: any) => ({
+        ...r,
+        lastReviewDate: new Date(r.lastReviewDate),
+        nextReviewDate: new Date(r.nextReviewDate),
+      })),
+    };
+  } catch (e) {
+    console.error('拉取数据失败:', e);
+    return null;
+  }
+}
+
+/**
+ * 通过用户名查找云端用户（用于跨设备登录）
+ */
+export async function findUserByName(name: string): Promise<UserLearningData | null> {
+  const database = getFirebaseDB();
+  if (!database) return null;
+
+  try {
+    const usersRef = ref(database, 'users');
+    const snapshot = await get(usersRef);
+    if (!snapshot.exists()) return null;
+
+    const allData = snapshot.val();
+    for (const userId of Object.keys(allData)) {
+      const userData = allData[userId];
+      if (userData.userName === name) {
+        return {
+          ...userData,
+          records: (userData.records || []).map((r: any) => ({
+            ...r,
+            lastReviewDate: new Date(r.lastReviewDate),
+            nextReviewDate: new Date(r.nextReviewDate),
+          })),
+        };
+      }
+    }
+    return null;
+  } catch (e) {
+    console.error('查找用户失败:', e);
+    return null;
+  }
+}
+
+/**
+ * 删除云端用户数据
+ */
+export async function deleteUserFromCloud(userId: string): Promise<void> {
+  const database = getFirebaseDB();
+  if (!database) return;
+
+  try {
+    const userRef = ref(database, `users/${userId}`);
+    await remove(userRef);
+  } catch (e) {
+    console.error('删除云端数据失败:', e);
+  }
+}
+
+/**
+ * 监听所有用户的学习数据变化（实时）
  */
 export function listenAllUsers(callback: (users: UserLearningData[]) => void): () => void {
   const database = getFirebaseDB();
@@ -69,7 +140,7 @@ export function listenAllUsers(callback: (users: UserLearningData[]) => void): (
   
   const usersRef = ref(database, 'users');
   
-  const unsubscribe = onValue(usersRef, (snapshot) => {
+  const unsubscribe = onValue(usersRef, (snapshot: any) => {
     const data = snapshot.val();
     if (!data) {
       callback([]);
@@ -86,18 +157,10 @@ export function listenAllUsers(callback: (users: UserLearningData[]) => void): (
     }));
     
     callback(users);
-  }, (error) => {
+  }, (error: any) => {
     console.error('监听数据失败:', error);
     callback([]);
   });
   
-  // 返回取消监听函数
   return () => off(usersRef);
-}
-
-/**
- * 检查 Firebase 是否已配置
- */
-export function isFirebaseConfigured(): boolean {
-  return !!firebaseConfig.apiKey;
 }
