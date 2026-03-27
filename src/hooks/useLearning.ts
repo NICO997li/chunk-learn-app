@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem } from '@/types';
+import { LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem, UserProfile } from '@/types';
 import { chunkData } from '@/data/chunks';
 import {
   calculateNextReview,
@@ -12,7 +12,9 @@ import {
   saveLearningRecords,
   loadLearningStats,
   saveLearningStats,
+  getCurrentUser,
 } from '@/utils/storage';
+import { syncUserData } from '@/utils/firebase';
 
 export function useLearning() {
   const [records, setRecords] = useState<LearningRecord[]>([]);
@@ -27,10 +29,12 @@ export function useLearning() {
   const [reviewQueue, setReviewQueue] = useState<ReviewQueueItem[]>([]);
   const [currentReview, setCurrentReview] = useState<ReviewQueueItem | null>(null);
   
-  // 每日学习目标
+  // 每日学习目标（按用户隔离）
   const [dailyGoal, setDailyGoal] = useState<number>(() => {
-    const saved = localStorage.getItem('dailyGoal');
-    return saved ? Number(saved) : 10; // 默认每天10个
+    const user = getCurrentUser();
+    const key = user ? `dailyGoal-${user.id}` : 'dailyGoal';
+    const saved = localStorage.getItem(key);
+    return saved ? Number(saved) : 10;
   });
 
   // 加载数据
@@ -54,14 +58,14 @@ export function useLearning() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return records.filter((r) => {
-      if (r.reviewCount === 0) return false; // 未复习过的不计
+      if (r.reviewCount === 0) return false;
       const lastReview = new Date(r.lastReviewDate);
       lastReview.setHours(0, 0, 0, 0);
       return lastReview.getTime() === today.getTime();
     }).length;
   }, [records]);
 
-  // 更新统计数据
+  // 更新统计数据 + 云同步
   useEffect(() => {
     const masteredCount = records.filter((r) => r.status === 'mastered').length;
     const learningCount = records.filter(
@@ -86,7 +90,21 @@ export function useLearning() {
 
     setStats(newStats);
     saveLearningStats(newStats);
-  }, [records, todayLearnedCount]);
+
+    // 云同步：每次数据变化时同步到 Firebase
+    const user = getCurrentUser();
+    if (user && records.length > 0) {
+      syncUserData({
+        userId: user.id,
+        userName: user.name,
+        userAvatar: user.avatar,
+        records,
+        stats: newStats,
+        dailyGoal,
+        lastSyncAt: new Date().toISOString(),
+      });
+    }
+  }, [records, todayLearnedCount, dailyGoal]);
 
   // 更新复习队列（限制每日学习量）
   const updateReviewQueue = useCallback(() => {
@@ -98,7 +116,7 @@ export function useLearning() {
     const queue: ReviewQueueItem[] = limitedRecords.map((record) => ({
       chunk: chunkData.find((c) => c.id === record.chunkId)!,
       record,
-    })).filter(item => item.chunk != null); // 过滤掉找不到语块的记录
+    })).filter(item => item.chunk != null);
     
     setReviewQueue(queue);
 
@@ -176,7 +194,9 @@ export function useLearning() {
   // 保存每日目标
   const saveDailyGoal = useCallback((goal: number) => {
     setDailyGoal(goal);
-    localStorage.setItem('dailyGoal', String(goal));
+    const user = getCurrentUser();
+    const key = user ? `dailyGoal-${user.id}` : 'dailyGoal';
+    localStorage.setItem(key, String(goal));
   }, []);
 
   return {

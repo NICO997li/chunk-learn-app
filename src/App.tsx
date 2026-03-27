@@ -1,15 +1,58 @@
-import { useState } from 'react';
-import { Home, BookOpen, BarChart3, Info, Eye } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Home, BookOpen, BarChart3, Eye, TrendingUp, LogOut } from 'lucide-react';
 import { useLearning } from '@/hooks/useLearning';
 import { ChunkCard } from '@/components/ChunkCard';
 import { ReviewButtons } from '@/components/ReviewButtons';
 import { StatsCard } from '@/components/StatsCard';
 import { DailyGoalSetting } from '@/components/DailyGoalSetting';
 import { TodayReview } from '@/components/TodayReview';
+import { UserSelect } from '@/components/UserSelect';
+import { Dashboard } from '@/components/Dashboard';
+import { UserProfile } from '@/types';
+import { getCurrentUser, logoutUser } from '@/utils/storage';
 
-type View = 'home' | 'review' | 'today' | 'stats' | 'about';
+type View = 'home' | 'review' | 'today' | 'stats' | 'dashboard';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 检查是否已登录
+  useEffect(() => {
+    const user = getCurrentUser();
+    setCurrentUser(user);
+    setIsLoading(false);
+  }, []);
+
+  const handleUserSelected = (user: UserProfile) => {
+    setCurrentUser(user);
+  };
+
+  const handleLogout = () => {
+    logoutUser();
+    setCurrentUser(null);
+  };
+
+  // 加载中
+  if (isLoading) {
+    return (
+      <div className="h-screen bg-background flex items-center justify-center">
+        <div className="text-4xl animate-pulse">📚</div>
+      </div>
+    );
+  }
+
+  // 未登录 → 显示用户选择页
+  if (!currentUser) {
+    return <UserSelect onUserSelected={handleUserSelected} />;
+  }
+
+  // 已登录 → 显示主应用
+  return <MainApp currentUser={currentUser} onLogout={handleLogout} />;
+}
+
+// 主应用组件
+function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout: () => void }) {
   const [currentView, setCurrentView] = useState<View>('home');
   const {
     stats,
@@ -28,9 +71,24 @@ function App() {
       case 'home':
         return (
           <div className="w-full max-w-4xl mx-auto space-y-4 py-4">
-            {/* 每日目标设置 - 紧凑版 */}
-            <div className="flex justify-center">
-              <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
+            {/* 用户信息栏 */}
+            <div className="flex items-center justify-between px-4">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl">{currentUser.avatar}</span>
+                <span className="font-heading font-bold text-textPrimary">
+                  {currentUser.name}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
+                <button
+                  onClick={onLogout}
+                  className="p-2 bg-white rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  title="切换用户"
+                >
+                  <LogOut className="w-4 h-4 text-textPrimary/60" />
+                </button>
+              </div>
             </div>
 
             <div className="text-center px-4">
@@ -174,78 +232,8 @@ function App() {
       case 'stats':
         return <StatsCard stats={stats} />;
 
-      case 'about':
-        return (
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white rounded-clay-lg p-8 shadow-clay-lg">
-              <h2 className="text-3xl font-heading font-bold text-primary mb-6">
-                关于语块学习法
-              </h2>
-              
-              <div className="space-y-4 font-body text-textPrimary/80">
-                <p className="text-lg leading-relaxed">
-                  <strong className="text-primary">语块</strong>，就是最小单位的语境。语块是经常一起使用的单词组合,本应用采用的是 4-8 个单词的实用语块。
-                </p>
-
-                <p className="leading-relaxed">
-                  传统的背单词方法往往让我们陷入&ldquo;一词多义&rdquo;的困境，记住了单词却不会用。而语块学习法通过记忆单词在真实语境中的用法，让你：
-                </p>
-
-                <ul className="list-disc list-inside space-y-2 pl-4">
-                  <li>同时掌握单词的发音、拼写和用法</li>
-                  <li>提高听力理解速度和口语流利度</li>
-                  <li>建立地道的英语表达习惯</li>
-                  <li>减少&ldquo;中式英语&rdquo;的错误</li>
-                </ul>
-
-                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-clay p-6 mt-6">
-                  <h3 className="text-xl font-heading font-bold text-primary mb-3">
-                    智能复习系统
-                  </h3>
-                  <p className="leading-relaxed">
-                    本应用采用 <strong>SM-2 间隔重复算法</strong>，根据你的掌握程度智能安排复习时间。记得越牢的语块，复习间隔越长；遗忘的语块会更频繁地出现，确保长期记忆。
-                  </p>
-                </div>
-
-                <div className="bg-cta/10 rounded-clay p-6 mt-6">
-                  <h3 className="text-xl font-heading font-bold text-cta mb-3">
-                    学习建议
-                  </h3>
-                  <ul className="list-disc list-inside space-y-2 pl-4">
-                    <li>每天坚持复习 10-15 分钟</li>
-                    <li>遇到语块要在脑中造句</li>
-                    <li>尽量大声朗读，训练口语</li>
-                    <li>诚实评估自己的掌握程度</li>
-                  </ul>
-                </div>
-
-                <div className="bg-secondary/10 rounded-clay p-6 mt-6">
-                  <h3 className="text-xl font-heading font-bold text-secondary mb-3">
-                    应用数据
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-2xl font-heading font-bold text-primary">250</p>
-                      <p className="text-sm text-textPrimary/60">精选语块</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-heading font-bold text-primary">6</p>
-                      <p className="text-sm text-textPrimary/60">大场景</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-heading font-bold text-primary">4</p>
-                      <p className="text-sm text-textPrimary/60">难度等级</p>
-                    </div>
-                    <div>
-                      <p className="text-2xl font-heading font-bold text-primary">SM-2</p>
-                      <p className="text-sm text-textPrimary/60">复习算法</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+      case 'dashboard':
+        return <Dashboard />;
     }
   };
 
@@ -253,8 +241,8 @@ function App() {
     { id: 'home' as View, label: '首页', icon: Home },
     { id: 'review' as View, label: '学习', icon: BookOpen },
     { id: 'today' as View, label: '今日', icon: Eye },
+    { id: 'dashboard' as View, label: '看板', icon: TrendingUp },
     { id: 'stats' as View, label: '统计', icon: BarChart3 },
-    { id: 'about' as View, label: '关于', icon: Info },
   ];
 
   return (
@@ -276,7 +264,7 @@ function App() {
       )}
 
       {/* Main Content - 固定高度，内部可滚动 */}
-      <main className="flex-1 overflow-y-auto">
+      <main className="flex-1 overflow-y-auto pb-20">
         <div className="h-full flex items-center justify-center px-4">
           {renderContent()}
         </div>
@@ -310,13 +298,6 @@ function App() {
           })}
         </div>
       </nav>
-
-      {/* Footer */}
-      <footer className="mt-16 py-8 text-center">
-        <p className="text-sm font-body text-textPrimary/50">
-          © 2026 meihoo语块学习 · MeihooStudy · 让英语学习事半功倍
-        </p>
-      </footer>
     </div>
   );
 }

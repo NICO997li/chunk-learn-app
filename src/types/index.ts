@@ -39,3 +39,22 @@ export interface ReviewQueueItem {
 
 // 用户反馈(复习时)
 export type ReviewFeedback = 'again' | 'hard' | 'good' | 'easy';
+
+// 用户档案
+export interface UserProfile {
+  id: string;           // 用户唯一ID（自动生成）
+  name: string;         // 用户昵称
+  avatar: string;       // 头像（emoji）
+  createdAt: string;    // 创建时间
+}
+
+// 云端同步的学习数据
+export interface UserLearningData {
+  userId: string;
+  userName: string;
+  userAvatar: string;
+  records: LearningRecord[];
+  stats: LearningStats;
+  dailyGoal: number;
+  lastSyncAt: string;   // 最后同步时间
+}
