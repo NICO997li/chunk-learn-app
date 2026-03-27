@@ -27,58 +27,59 @@ function App() {
     switch (currentView) {
       case 'home':
         return (
-          <div className="space-y-8">
-            {/* 每日目标设置 */}
+          <div className="w-full max-w-4xl mx-auto space-y-4 py-4">
+            {/* 每日目标设置 - 紧凑版 */}
             <div className="flex justify-center">
               <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
             </div>
 
             <div className="text-center px-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mb-3 md:mb-4">
+              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-primary mb-2">
                 meihoo语块学习
               </h1>
-              <p className="text-lg sm:text-xl font-body text-textPrimary/70 mb-2">
+              <p className="text-base sm:text-lg font-body text-textPrimary/70 mb-1">
                 语块学习法 · 高效记忆英语
               </p>
-              <p className="text-sm sm:text-base font-body text-textPrimary/60">
+              <p className="text-xs sm:text-sm font-body text-textPrimary/60">
                 不再孤立背单词，掌握固定搭配，事半功倍
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white rounded-clay-lg p-6 shadow-clay text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-clay mx-auto mb-4 flex items-center justify-center">
-                  <BookOpen className="w-8 h-8 text-primary" />
+            {/* 3个特性卡片 - 横向滚动 */}
+            <div className="flex gap-3 overflow-x-auto px-4 pb-2 hide-scrollbar">
+              <div className="bg-white rounded-clay p-4 shadow-clay text-center min-w-[140px] flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/10 rounded-clay mx-auto mb-2 flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-heading font-bold text-textPrimary mb-2">
+                <h3 className="text-sm font-heading font-bold text-textPrimary mb-1">
                   语块记忆
                 </h3>
-                <p className="text-sm font-body text-textPrimary/60">
-                  4-8个单词的固定搭配，在语境中学习单词用法
+                <p className="text-xs font-body text-textPrimary/60">
+                  固定搭配学习
                 </p>
               </div>
 
-              <div className="bg-white rounded-clay-lg p-6 shadow-clay text-center">
-                <div className="w-16 h-16 bg-secondary/10 rounded-clay mx-auto mb-4 flex items-center justify-center">
-                  <BarChart3 className="w-8 h-8 text-secondary" />
+              <div className="bg-white rounded-clay p-4 shadow-clay text-center min-w-[140px] flex-shrink-0">
+                <div className="w-12 h-12 bg-secondary/10 rounded-clay mx-auto mb-2 flex items-center justify-center">
+                  <BarChart3 className="w-6 h-6 text-secondary" />
                 </div>
-                <h3 className="text-lg font-heading font-bold text-textPrimary mb-2">
+                <h3 className="text-sm font-heading font-bold text-textPrimary mb-1">
                   智能复习
                 </h3>
-                <p className="text-sm font-body text-textPrimary/60">
-                  基于SM-2算法，科学安排复习时间，长期记忆
+                <p className="text-xs font-body text-textPrimary/60">
+                  SM-2科学算法
                 </p>
               </div>
 
-              <div className="bg-white rounded-clay-lg p-6 shadow-clay text-center">
-                <div className="w-16 h-16 bg-cta/10 rounded-clay mx-auto mb-4 flex items-center justify-center">
-                  <Home className="w-8 h-8 text-cta" />
+              <div className="bg-white rounded-clay p-4 shadow-clay text-center min-w-[140px] flex-shrink-0">
+                <div className="w-12 h-12 bg-cta/10 rounded-clay mx-auto mb-2 flex items-center justify-center">
+                  <Home className="w-6 h-6 text-cta" />
                 </div>
-                <h3 className="text-lg font-heading font-bold text-textPrimary mb-2">
+                <h3 className="text-sm font-heading font-bold text-textPrimary mb-1">
                   真实场景
                 </h3>
-                <p className="text-sm font-body text-textPrimary/60">
-                  涵盖日常、工作、社交等场景，即学即用
+                <p className="text-xs font-body text-textPrimary/60">
+                  日常工作社交
                 </p>
               </div>
             </div>
@@ -90,17 +91,17 @@ function App() {
                   setCurrentView('review');
                 }}
                 disabled={!hasReviews}
-                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-lg sm:text-xl rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-lg rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {hasReviews ? '开始学习' : '暂无待复习词块'}
               </button>
               {hasReviews && (
-                <p className="mt-3 text-sm sm:text-base font-body text-textPrimary/60">
+                <p className="mt-2 text-sm font-body text-textPrimary/60">
                   今天有 {stats.todayReviews} 个语块待复习 · 目标 {dailyGoal} 个
                 </p>
               )}
               {todayLearnedCount > 0 && (
-                <p className="mt-2 text-sm sm:text-base font-body text-primary/80 font-bold">
+                <p className="mt-1 text-sm font-body text-primary/80 font-bold">
                   今日已学习 {todayLearnedCount} / {dailyGoal} 个 🎉
                 </p>
               )}
@@ -111,27 +112,27 @@ function App() {
       case 'review':
         if (!currentReview) {
           return (
-            <div className="text-center space-y-6">
-              <div className="text-6xl">🎉</div>
-              <h2 className="text-3xl font-heading font-bold text-primary">
+            <div className="text-center space-y-4 px-4">
+              <div className="text-5xl">🎉</div>
+              <h2 className="text-2xl font-heading font-bold text-primary">
                 太棒了！
               </h2>
-              <p className="text-lg font-body text-textPrimary/70">
+              <p className="text-base font-body text-textPrimary/70">
                 今天的学习目标已完成
               </p>
-              <p className="text-base font-body text-textPrimary/60">
+              <p className="text-sm font-body text-textPrimary/60">
                 已学习 {todayLearnedCount} 个语块
               </p>
-              <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
+              <div className="flex gap-3 justify-center flex-wrap">
                 <button
                   onClick={() => setCurrentView('today')}
-                  className="flex-1 min-w-[140px] sm:min-w-[160px] px-6 py-3 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="flex-1 min-w-[130px] max-w-[160px] px-5 py-2.5 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
                 >
                   查看今日回看
                 </button>
                 <button
                   onClick={() => setCurrentView('home')}
-                  className="flex-1 min-w-[140px] sm:min-w-[160px] px-6 py-3 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="flex-1 min-w-[130px] max-w-[160px] px-5 py-2.5 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
                 >
                   返回首页
                 </button>
@@ -141,12 +142,12 @@ function App() {
         }
 
         return (
-          <div className="space-y-8">
-            <div className="text-center">
-              <p className="text-sm font-body text-textPrimary/60 mb-2">
+          <div className="w-full max-w-2xl mx-auto space-y-4">
+            <div className="text-center px-4">
+              <p className="text-xs font-body text-textPrimary/60 mb-1">
                 学习进度: {todayLearnedCount} / {dailyGoal}
               </p>
-              <div className="h-2 bg-background rounded-full max-w-md mx-auto overflow-hidden">
+              <div className="h-1.5 bg-background rounded-full max-w-md mx-auto overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
                   style={{
@@ -257,51 +258,58 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-white shadow-clay sticky top-0 z-50">
-        <nav className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-clay flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-white" />
+    <div className="h-screen bg-background overflow-hidden flex flex-col">
+      {/* Header - 只保留 logo，仅在首页显示 */}
+      {currentView === 'home' && (
+        <header className="bg-white shadow-clay flex-shrink-0">
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-clay flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-heading font-bold text-primary">
+              <span className="text-lg font-heading font-bold text-primary">
                 MeihooStudy
               </span>
             </div>
-
-            <div className="flex gap-1 md:gap-2">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = currentView === item.id;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => setCurrentView(item.id)}
-                    className={`
-                      flex flex-col items-center gap-1 px-2 sm:px-3 md:px-4 py-2 rounded-clay font-body font-medium transition-all duration-200 cursor-pointer min-w-[60px] sm:min-w-[70px]
-                      ${
-                        isActive
-                          ? 'bg-primary text-white shadow-clay'
-                          : 'bg-background text-textPrimary/70 hover:bg-background/80'
-                      }
-                    `}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="text-xs sm:text-sm">{item.label}</span>
-                  </button>
-                );
-              })}
-            </div>
           </div>
-        </nav>
-      </header>
+        </header>
+      )}
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8 md:py-12">
-        {renderContent()}
+      {/* Main Content - 固定高度，内部可滚动 */}
+      <main className="flex-1 overflow-y-auto">
+        <div className="h-full flex items-center justify-center px-4">
+          {renderContent()}
+        </div>
       </main>
+
+      {/* 底部导航栏 - 固定在底部 */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-clay-lg z-50 safe-area-inset-bottom">
+        <div className="flex items-center justify-around max-w-7xl mx-auto px-2 py-3">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = currentView === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => setCurrentView(item.id)}
+                className={`
+                  flex flex-col items-center gap-1 px-3 py-2 rounded-lg font-body transition-all duration-200 cursor-pointer min-w-[64px]
+                  ${
+                    isActive
+                      ? 'text-primary'
+                      : 'text-textPrimary/60 hover:text-textPrimary'
+                  }
+                `}
+              >
+                <Icon className={`w-6 h-6 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
+                <span className={`text-xs ${isActive ? 'font-bold' : 'font-medium'}`}>
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </nav>
 
       {/* Footer */}
       <footer className="mt-16 py-8 text-center">

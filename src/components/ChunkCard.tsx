@@ -29,7 +29,7 @@ export function ChunkCard({ chunk, onFlip }: ChunkCardProps) {
       >
         {/* 正面 - 显示语块 */}
         <div
-          className="w-full min-h-[350px] sm:min-h-[400px] bg-white rounded-clay-lg p-6 sm:p-8 shadow-clay-lg backface-hidden"
+          className="w-full min-h-[280px] sm:min-h-[320px] bg-white rounded-clay-lg p-4 sm:p-6 shadow-clay-lg backface-hidden"
           style={{
             backfaceVisibility: 'hidden',
           }}
@@ -74,7 +74,7 @@ export function ChunkCard({ chunk, onFlip }: ChunkCardProps) {
 
         {/* 背面 - 显示翻译和详细信息 */}
         <div
-          className="absolute top-0 left-0 w-full min-h-[350px] sm:min-h-[400px] bg-gradient-to-br from-primary to-secondary rounded-clay-lg p-6 sm:p-8 shadow-clay-lg backface-hidden cursor-pointer"
+          className="absolute top-0 left-0 w-full min-h-[280px] sm:min-h-[320px] bg-gradient-to-br from-primary to-secondary rounded-clay-lg p-4 sm:p-6 shadow-clay-lg backface-hidden cursor-pointer"
           style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',

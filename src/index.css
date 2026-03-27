@@ -29,6 +29,16 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+
+  /* 隐藏滚动条但保留滚动功能 */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
+  }
 }
 
 /* 减少动画效果 - 无障碍支持 */
