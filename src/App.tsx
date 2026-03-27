@@ -33,14 +33,14 @@ function App() {
               <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
             </div>
 
-            <div className="text-center">
-              <h1 className="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">
+            <div className="text-center px-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-primary mb-3 md:mb-4">
                 meihoo语块学习
               </h1>
-              <p className="text-xl font-body text-textPrimary/70 mb-2">
+              <p className="text-lg sm:text-xl font-body text-textPrimary/70 mb-2">
                 语块学习法 · 高效记忆英语
               </p>
-              <p className="text-base font-body text-textPrimary/60">
+              <p className="text-sm sm:text-base font-body text-textPrimary/60">
                 不再孤立背单词，掌握固定搭配，事半功倍
               </p>
             </div>
@@ -83,24 +83,24 @@ function App() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center px-4">
               <button
                 onClick={() => {
                   startNewSession();
                   setCurrentView('review');
                 }}
                 disabled={!hasReviews}
-                className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-lg rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-lg sm:text-xl rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {hasReviews ? '开始学习' : '暂无待复习词块'}
               </button>
               {hasReviews && (
-                <p className="mt-3 text-sm font-body text-textPrimary/60">
+                <p className="mt-3 text-sm sm:text-base font-body text-textPrimary/60">
                   今天有 {stats.todayReviews} 个语块待复习 · 目标 {dailyGoal} 个
                 </p>
               )}
               {todayLearnedCount > 0 && (
-                <p className="mt-2 text-sm font-body text-primary/80 font-bold">
+                <p className="mt-2 text-sm sm:text-base font-body text-primary/80 font-bold">
                   今日已学习 {todayLearnedCount} / {dailyGoal} 个 🎉
                 </p>
               )}
@@ -122,16 +122,16 @@ function App() {
               <p className="text-base font-body text-textPrimary/60">
                 已学习 {todayLearnedCount} 个语块
               </p>
-              <div className="flex gap-4 justify-center flex-wrap">
+              <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
                 <button
                   onClick={() => setCurrentView('today')}
-                  className="px-6 py-3 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="flex-1 min-w-[140px] sm:min-w-[160px] px-6 py-3 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
                 >
                   查看今日回看
                 </button>
                 <button
                   onClick={() => setCurrentView('home')}
-                  className="px-6 py-3 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="flex-1 min-w-[140px] sm:min-w-[160px] px-6 py-3 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
                 >
                   返回首页
                 </button>
@@ -280,7 +280,7 @@ function App() {
                     key={item.id}
                     onClick={() => setCurrentView(item.id)}
                     className={`
-                      px-3 md:px-4 py-2 rounded-clay font-body font-medium transition-all duration-200 cursor-pointer
+                      flex flex-col items-center gap-1 px-2 sm:px-3 md:px-4 py-2 rounded-clay font-body font-medium transition-all duration-200 cursor-pointer min-w-[60px] sm:min-w-[70px]
                       ${
                         isActive
                           ? 'bg-primary text-white shadow-clay'
@@ -288,8 +288,8 @@ function App() {
                       }
                     `}
                   >
-                    <span className="hidden md:inline">{item.label}</span>
-                    <Icon className="w-5 h-5 md:hidden" />
+                    <Icon className="w-5 h-5" />
+                    <span className="text-xs sm:text-sm">{item.label}</span>
                   </button>
                 );
               })}

@@ -39,7 +39,7 @@ const feedbackOptions = [
 
 export function ReviewButtons({ onFeedback, disabled }: ReviewButtonsProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 px-4">
       {feedbackOptions.map((option) => {
         const Icon = option.icon;
         return (
@@ -50,17 +50,17 @@ export function ReviewButtons({ onFeedback, disabled }: ReviewButtonsProps) {
             className={`
               ${option.color}
               text-white font-body font-bold
-              px-6 py-4 rounded-clay shadow-clay
+              px-4 sm:px-6 py-3 sm:py-4 rounded-clay shadow-clay
               transition-all duration-200
               hover:shadow-clay-pressed active:shadow-clay-pressed
               disabled:opacity-50 disabled:cursor-not-allowed
               cursor-pointer
-              flex flex-col items-center gap-2
+              flex flex-col items-center gap-1.5 sm:gap-2
             `}
           >
-            <Icon className="w-6 h-6" />
-            <span className="text-base">{option.label}</span>
-            <span className="text-xs opacity-80">{option.time}</span>
+            <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span className="text-sm sm:text-base">{option.label}</span>
+            <span className="text-[10px] sm:text-xs opacity-80">{option.time}</span>
           </button>
         );
       })}
