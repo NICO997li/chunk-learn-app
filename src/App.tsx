@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Home, BookOpen, BarChart3, Eye, TrendingUp, LogOut } from 'lucide-react';
+import { Home, BookOpen, BarChart3, Eye, TrendingUp, LogOut, Trash2, AlertTriangle } from 'lucide-react';
 import { useLearning } from '@/hooks/useLearning';
 import { ChunkCard } from '@/components/ChunkCard';
 import { ReviewButtons } from '@/components/ReviewButtons';
@@ -9,7 +9,8 @@ import { TodayReview } from '@/components/TodayReview';
 import { UserSelect } from '@/components/UserSelect';
 import { Dashboard } from '@/components/Dashboard';
 import { UserProfile } from '@/types';
-import { getCurrentUser, logoutUser } from '@/utils/storage';
+import { getCurrentUser, logoutUser, deleteUser } from '@/utils/storage';
+import { deleteUserFromCloud } from '@/utils/firebase';
 
 type View = 'home' | 'review' | 'today' | 'stats' | 'dashboard';
 
@@ -54,6 +55,7 @@ function App() {
 // 主应用组件
 function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout: () => void }) {
   const [currentView, setCurrentView] = useState<View>('home');
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const {
     stats,
     currentReview,
@@ -65,6 +67,16 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
     saveDailyGoal,
     todayLearnedCount,
   } = useLearning();
+
+  const handleDeleteAccount = async () => {
+    deleteUser(currentUser.id);
+    try {
+      await deleteUserFromCloud(currentUser.id);
+    } catch (e) {
+      console.error('删除云端数据失败:', e);
+    }
+    onLogout();
+  };
 
   const renderContent = () => {
     switch (currentView) {
@@ -82,6 +94,13 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
               <div className="flex items-center gap-2">
                 <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
                 <button
+                  onClick={() => setShowDeleteConfirm(true)}
+                  className="p-2 bg-white rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  title="删除账号"
+                >
+                  <Trash2 className="w-4 h-4 text-red-400" />
+                </button>
+                <button
                   onClick={onLogout}
                   className="p-2 bg-white rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
                   title="切换用户"
@@ -90,6 +109,42 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
                 </button>
               </div>
             </div>
+
+            {/* 删除账号确认弹窗 */}
+            {showDeleteConfirm && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                <div className="bg-white rounded-clay-lg shadow-clay-lg max-w-sm w-full p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <AlertTriangle className="w-5 h-5 text-red-500" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-textPrimary">删除账号</h3>
+                      <p className="text-sm font-body text-textPrimary/60">
+                        确定删除 <strong>{currentUser.name}</strong> 的所有数据？
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-xs font-body text-red-500 mb-4">
+                    此操作不可恢复，本地和云端数据都将被删除！
+                  </p>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => setShowDeleteConfirm(false)}
+                      className="flex-1 py-2.5 bg-background text-textPrimary font-body font-bold rounded-clay hover:bg-background/80 transition-all cursor-pointer"
+                    >
+                      取消
+                    </button>
+                    <button
+                      onClick={handleDeleteAccount}
+                      className="flex-1 py-2.5 bg-red-500 text-white font-body font-bold rounded-clay shadow-clay hover:bg-red-600 transition-all cursor-pointer"
+                    >
+                      确认删除
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="text-center px-4">
               <h1 className="text-3xl sm:text-4xl font-heading font-bold text-primary mb-2">
