@@ -42,7 +42,19 @@ export function useLearning() {
     const savedRecords = loadLearningRecords();
 
     if (savedRecords.length > 0) {
-      setRecords(savedRecords);
+      // 检查是否有新增的语块（数据源更新后）
+      const existingIds = new Set(savedRecords.map(r => r.chunkId));
+      const newChunks = chunkData.filter(c => !existingIds.has(c.id));
+      
+      if (newChunks.length > 0) {
+        // 为新语块创建初始记录
+        const newRecords = newChunks.map(chunk => initializeLearningRecord(chunk.id));
+        const mergedRecords = [...savedRecords, ...newRecords];
+        setRecords(mergedRecords);
+        saveLearningRecords(mergedRecords);
+      } else {
+        setRecords(savedRecords);
+      }
     } else {
       // 初始化所有语块的记录
       const initialRecords = chunkData.map((chunk) =>

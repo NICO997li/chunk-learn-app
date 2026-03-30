@@ -2498,5 +2498,405 @@
     "scenario": "旅游出行",
     "difficulty": "高级",
     "tags": ["紧急", "警察"]
+  },
+  {
+    "id": 251,
+    "chunk": "Can you keep an eye on your sister?",
+    "translation": "你能帮忙看着妹妹吗?",
+    "example": "I need to cook dinner. Can you keep an eye on your sister for a moment?",
+    "exampleCN": "我要做晚饭,你能帮忙看一下妹妹吗?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["照顾", "兄弟姐妹"]
+  },
+  {
+    "id": 252,
+    "chunk": "Don't be too hard on yourself",
+    "translation": "别对自己太苛刻了",
+    "example": "You tried your best. Don't be too hard on yourself.",
+    "exampleCN": "你已经尽力了,别对自己太苛刻了。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["鼓励", "情绪"]
+  },
+  {
+    "id": 253,
+    "chunk": "Let's figure it out together",
+    "translation": "我们一起想办法",
+    "example": "This puzzle is tricky. Let's figure it out together!",
+    "exampleCN": "这个拼图有点难,我们一起想办法吧!",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["合作", "解决问题"]
+  },
+  {
+    "id": 254,
+    "chunk": "How was your day at school?",
+    "translation": "今天在学校怎么样?",
+    "example": "Welcome home, sweetie! How was your day at school?",
+    "exampleCN": "欢迎回家,宝贝!今天在学校怎么样?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["学校", "交流"]
+  },
+  {
+    "id": 255,
+    "chunk": "I'm so proud of you",
+    "translation": "我真为你骄傲",
+    "example": "You finished the whole book! I'm so proud of you!",
+    "exampleCN": "你把整本书都读完了!我真为你骄傲!",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["鼓励", "表扬"]
+  },
+  {
+    "id": 256,
+    "chunk": "You need to take turns",
+    "translation": "你们要轮流来",
+    "example": "There's only one swing. You need to take turns, okay?",
+    "exampleCN": "只有一个秋千,你们要轮流来,好吗?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["规则", "分享"]
+  },
+  {
+    "id": 257,
+    "chunk": "What do you feel like eating?",
+    "translation": "你想吃什么?",
+    "example": "We're going out for dinner. What do you feel like eating?",
+    "exampleCN": "我们出去吃饭,你想吃什么?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["吃饭", "选择"]
+  },
+  {
+    "id": 258,
+    "chunk": "That's not a nice thing to say",
+    "translation": "这样说不太好",
+    "example": "Calling people names is wrong. That's not a nice thing to say.",
+    "exampleCN": "给别人起外号是不对的,这样说不太好。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["礼貌", "教育"]
+  },
+  {
+    "id": 259,
+    "chunk": "Can you help me set the table?",
+    "translation": "你能帮我摆桌子吗?",
+    "example": "Dinner is almost ready. Can you help me set the table?",
+    "exampleCN": "晚饭快好了,你能帮我摆桌子吗?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["家务", "吃饭"]
+  },
+  {
+    "id": 260,
+    "chunk": "Use your inside voice",
+    "translation": "小声说话(室内不要大声)",
+    "example": "We're in a library. Please use your inside voice.",
+    "exampleCN": "我们在图书馆里,请小声说话。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["礼貌", "规则"]
+  },
+  {
+    "id": 261,
+    "chunk": "I'll be right back, I promise",
+    "translation": "我很快就回来,我保证",
+    "example": "I need to go to the store. I'll be right back, I promise.",
+    "exampleCN": "我要去趟商店,我很快就回来,我保证。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["安慰", "承诺"]
+  },
+  {
+    "id": 262,
+    "chunk": "Tell me what happened",
+    "translation": "告诉我发生了什么",
+    "example": "Why are you crying? Tell me what happened.",
+    "exampleCN": "你怎么哭了?告诉我发生了什么。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["交流", "情绪"]
+  },
+  {
+    "id": 263,
+    "chunk": "You're getting so big!",
+    "translation": "你长大了好多啊!",
+    "example": "Look at you! You're getting so big! I can't believe it.",
+    "exampleCN": "看看你!你长大了好多啊!真不敢相信。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["成长", "感叹"]
+  },
+  {
+    "id": 264,
+    "chunk": "Do you want me to read you a story?",
+    "translation": "要我给你讲个故事吗?",
+    "example": "It's bedtime. Do you want me to read you a story?",
+    "exampleCN": "该睡觉了,要我给你讲个故事吗?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["睡觉", "阅读"]
+  },
+  {
+    "id": 265,
+    "chunk": "We don't hit people",
+    "translation": "我们不可以打人",
+    "example": "Hitting is wrong. We don't hit people, we use our words.",
+    "exampleCN": "打人是不对的,我们不可以打人,要用语言表达。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["规则", "教育"]
+  },
+  {
+    "id": 266,
+    "chunk": "Let's clean up before we go",
+    "translation": "出门前我们先收拾一下",
+    "example": "The toys are everywhere. Let's clean up before we go to the park.",
+    "exampleCN": "玩具到处都是,去公园之前我们先收拾一下吧。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["家务", "习惯"]
+  },
+  {
+    "id": 267,
+    "chunk": "You did a great job!",
+    "translation": "你做得真棒!",
+    "example": "You tied your shoelaces all by yourself! You did a great job!",
+    "exampleCN": "你自己系好了鞋带!你做得真棒!",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["表扬", "独立"]
+  },
+  {
+    "id": 268,
+    "chunk": "Would you like to invite your friend over?",
+    "translation": "你想邀请朋友来家里玩吗?",
+    "example": "You seem bored. Would you like to invite your friend over this weekend?",
+    "exampleCN": "你看起来很无聊,这个周末想邀请朋友来家里玩吗?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["社交", "朋友"]
+  },
+  {
+    "id": 269,
+    "chunk": "I know it's hard, but you can do it",
+    "translation": "我知道很难,但你可以的",
+    "example": "Learning to ride a bike takes practice. I know it's hard, but you can do it!",
+    "exampleCN": "学骑自行车需要练习,我知道很难,但你可以的!",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["鼓励", "学习"]
+  },
+  {
+    "id": 270,
+    "chunk": "It's not the end of the world",
+    "translation": "这不是什么大不了的事",
+    "example": "You spilled some milk. It's okay, it's not the end of the world.",
+    "exampleCN": "你洒了点牛奶,没关系,这不是什么大不了的事。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["安慰", "情绪"]
+  },
+  {
+    "id": 271,
+    "chunk": "We need to talk about what happened",
+    "translation": "我们需要谈谈发生的事",
+    "example": "Your teacher called me today. We need to talk about what happened at school.",
+    "exampleCN": "你老师今天给我打电话了,我们需要谈谈在学校发生的事。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["交流", "学校"]
+  },
+  {
+    "id": 272,
+    "chunk": "How about we make a deal?",
+    "translation": "我们做个约定怎么样?",
+    "example": "How about we make a deal? Finish your homework first, then you can play games.",
+    "exampleCN": "我们做个约定怎么样?先写完作业,然后你就可以玩游戏了。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["谈判", "规则"]
+  },
+  {
+    "id": 273,
+    "chunk": "Don't forget to say please and thank you",
+    "translation": "别忘了说请和谢谢",
+    "example": "When someone helps you, don't forget to say please and thank you.",
+    "exampleCN": "当别人帮助你的时候,别忘了说请和谢谢。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["礼貌", "教育"]
+  },
+  {
+    "id": 274,
+    "chunk": "Everyone makes mistakes",
+    "translation": "每个人都会犯错",
+    "example": "Don't worry about it. Everyone makes mistakes. What matters is we learn from them.",
+    "exampleCN": "别担心,每个人都会犯错。重要的是我们从中学习。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["安慰", "教育"]
+  },
+  {
+    "id": 275,
+    "chunk": "Let me show you how to do it",
+    "translation": "我来教你怎么做",
+    "example": "Folding clothes is easy. Let me show you how to do it.",
+    "exampleCN": "叠衣服很简单,我来教你怎么做。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["教学", "家务"]
+  },
+  {
+    "id": 276,
+    "chunk": "That's very thoughtful of you",
+    "translation": "你真是太贴心了",
+    "example": "You made a card for grandma's birthday? That's very thoughtful of you!",
+    "exampleCN": "你给奶奶做了生日卡片?你真是太贴心了!",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["表扬", "情感"]
+  },
+  {
+    "id": 277,
+    "chunk": "You have to be patient",
+    "translation": "你要有耐心",
+    "example": "The cookies need 20 more minutes. You have to be patient.",
+    "exampleCN": "饼干还需要20分钟,你要有耐心。",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["品德", "等待"]
+  },
+  {
+    "id": 278,
+    "chunk": "What would you do if you were in her shoes?",
+    "translation": "如果你是她你会怎么做?",
+    "example": "Your friend is upset. What would you do if you were in her shoes?",
+    "exampleCN": "你的朋友很难过,如果你是她你会怎么做?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["共情", "教育"]
+  },
+  {
+    "id": 279,
+    "chunk": "Can you put your shoes on by yourself?",
+    "translation": "你能自己穿鞋吗?",
+    "example": "We're running late. Can you put your shoes on by yourself today?",
+    "exampleCN": "我们要迟到了,今天你能自己穿鞋吗?",
+    "scenario": "家庭亲子",
+    "difficulty": "中级",
+    "tags": ["独立", "出门"]
+  },
+  {
+    "id": 280,
+    "chunk": "We'll cross that bridge when we come to it",
+    "translation": "到时候再说吧/船到桥头自然直",
+    "example": "Don't worry about next year's school yet. We'll cross that bridge when we come to it.",
+    "exampleCN": "别担心明年上学的事,到时候再说吧。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["安慰", "俚语"]
+  },
+  {
+    "id": 281,
+    "chunk": "I need you to think before you act",
+    "translation": "我需要你三思而后行",
+    "example": "You broke the vase because you were running inside. I need you to think before you act.",
+    "exampleCN": "你在屋里跑把花瓶打碎了,我需要你三思而后行。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["教育", "品德"]
+  },
+  {
+    "id": 282,
+    "chunk": "Actions speak louder than words",
+    "translation": "行动胜于言语",
+    "example": "You said you'd clean your room. Remember, actions speak louder than words.",
+    "exampleCN": "你说了要打扫房间,记住,行动胜于言语。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["品德", "谚语"]
+  },
+  {
+    "id": 283,
+    "chunk": "Let's not make a big deal out of it",
+    "translation": "我们别把这事搞大了",
+    "example": "It's just a small scratch. Let's not make a big deal out of it.",
+    "exampleCN": "只是一个小划痕,我们别把这事搞大了。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["安慰", "态度"]
+  },
+  {
+    "id": 284,
+    "chunk": "You should stand up for yourself",
+    "translation": "你应该为自己挺身而出",
+    "example": "If someone is bullying you, you should stand up for yourself and tell a teacher.",
+    "exampleCN": "如果有人欺负你,你应该为自己挺身而出,然后告诉老师。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["勇气", "教育"]
+  },
+  {
+    "id": 285,
+    "chunk": "It's the thought that counts",
+    "translation": "心意最重要",
+    "example": "The drawing isn't perfect, but it's the thought that counts. I love it!",
+    "exampleCN": "这幅画虽然不完美,但心意最重要,我很喜欢!",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["鼓励", "谚语"]
+  },
+  {
+    "id": 286,
+    "chunk": "You can't have your cake and eat it too",
+    "translation": "你不能什么好处都占/鱼与熊掌不可兼得",
+    "example": "You want to stay up late AND not be tired tomorrow? You can't have your cake and eat it too.",
+    "exampleCN": "你想熬夜又想明天不累?鱼与熊掌不可兼得。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["教育", "谚语"]
+  },
+  {
+    "id": 287,
+    "chunk": "I appreciate you being honest with me",
+    "translation": "我很感谢你对我说实话",
+    "example": "Even though you broke the cup, I appreciate you being honest with me about it.",
+    "exampleCN": "虽然你打碎了杯子,但我很感谢你对我说实话。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["品德", "诚实"]
+  },
+  {
+    "id": 288,
+    "chunk": "Let's agree to disagree",
+    "translation": "我们求同存异吧",
+    "example": "You like chocolate ice cream, I like vanilla. Let's agree to disagree!",
+    "exampleCN": "你喜欢巧克力冰淇淋,我喜欢香草的。我们求同存异吧!",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["尊重", "观点"]
+  },
+  {
+    "id": 289,
+    "chunk": "There's no such thing as a silly question",
+    "translation": "没有愚蠢的问题",
+    "example": "Go ahead and ask. There's no such thing as a silly question.",
+    "exampleCN": "尽管问吧,没有愚蠢的问题。",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["鼓励", "学习"]
+  },
+  {
+    "id": 290,
+    "chunk": "Practice makes perfect",
+    "translation": "熟能生巧",
+    "example": "Your piano playing is getting better every day. Practice makes perfect!",
+    "exampleCN": "你的钢琴弹得一天比一天好,熟能生巧!",
+    "scenario": "家庭亲子",
+    "difficulty": "高级",
+    "tags": ["鼓励", "谚语"]
   }
 ]
