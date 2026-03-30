@@ -67,6 +67,9 @@ export function TodayReview({ todayChunks }: TodayReviewProps) {
                 <p className="font-body text-sm text-textPrimary/60 italic">
                   &ldquo;{chunk.example}&rdquo;
                 </p>
+                <p className="font-body text-xs text-textPrimary/40 mt-1">
+                  {chunk.exampleCN}
+                </p>
               </div>
               
               <div className="flex flex-col items-end gap-2">
