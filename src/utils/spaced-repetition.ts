@@ -64,17 +64,25 @@ export function calculateNextReview(
 }
 
 /**
- * 获取今天到期的复习项目
+ * 获取今天到期的复习项目（随机打乱顺序）
  */
 export function getDueReviews(records: LearningRecord[]): LearningRecord[] {
   const now = new Date();
   now.setHours(0, 0, 0, 0);
 
-  return records.filter((record) => {
+  const due = records.filter((record) => {
     const nextReview = new Date(record.nextReviewDate);
     nextReview.setHours(0, 0, 0, 0);
     return nextReview <= now;
   });
+
+  // Fisher-Yates 洗牌算法，随机打乱顺序
+  for (let i = due.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [due[i], due[j]] = [due[j], due[i]];
+  }
+
+  return due;
 }
 
 /**
