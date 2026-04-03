@@ -210,12 +210,17 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
               </button>
               {hasReviews && (
                 <p className="mt-2 text-sm font-body text-textPrimary/60">
-                  今天有 {stats.todayReviews} 个语块待复习 · 目标 {dailyGoal} 个
+                  今日目标 {dailyGoal} 个 · 总进度 {stats.masteredChunks}/{stats.totalChunks}
                 </p>
               )}
               {todayLearnedCount > 0 && (
                 <p className="mt-1 text-sm font-body text-primary/80 font-bold">
                   今日已学习 {todayLearnedCount} / {dailyGoal} 个 🎉
+                </p>
+              )}
+              {!hasReviews && stats.masteredChunks < stats.totalChunks && (
+                <p className="mt-2 text-xs font-body text-textPrimary/50">
+                  今日学习已完成，到期复习的语块会自动出现
                 </p>
               )}
             </div>
