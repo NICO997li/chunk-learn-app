@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem, UserProfile } from '@/types';
 import { chunkData } from '@/data/chunks';
 import {
@@ -119,7 +119,9 @@ export function useLearning() {
   }, [records, todayLearnedCount, dailyGoal]);
 
   // 更新复习队列（限制每日学习量）
-  const updateReviewQueue = useCallback(() => {
+  const queueInitialized = useRef(false);
+  
+  const buildQueue = useCallback(() => {
     const dueRecords = getDueReviews(records);
     
     // 限制为每日目标数量
@@ -131,15 +133,16 @@ export function useLearning() {
     })).filter(item => item.chunk != null);
     
     setReviewQueue(queue);
+    setCurrentReview(queue.length > 0 ? queue[0] : null);
+  }, [records, dailyGoal]);
 
-    if (queue.length > 0 && !currentReview) {
-      setCurrentReview(queue[0]);
-    }
-  }, [records, currentReview, dailyGoal]);
-
+  // 首次加载数据后初始化队列（只执行一次）
   useEffect(() => {
-    updateReviewQueue();
-  }, [updateReviewQueue]);
+    if (records.length > 0 && !queueInitialized.current) {
+      queueInitialized.current = true;
+      buildQueue();
+    }
+  }, [records, buildQueue]);
 
   // 提交复习反馈
   const submitReview = useCallback(
@@ -162,10 +165,10 @@ export function useLearning() {
     [currentReview, records, reviewQueue]
   );
 
-  // 开始新一轮学习
+  // 开始新一轮学习（重新洗牌）
   const startNewSession = useCallback(() => {
-    updateReviewQueue();
-  }, [updateReviewQueue]);
+    buildQueue();
+  }, [buildQueue]);
 
   // 获取指定状态的语块
   const getChunksByStatus = useCallback(
