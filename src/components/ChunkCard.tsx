@@ -96,9 +96,14 @@ export function ChunkCard({ chunk, onFlip }: ChunkCardProps) {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-clay p-4 sm:p-6">
-              <p className="text-base sm:text-lg mb-2 sm:mb-3 font-body">
-                &ldquo;{chunk.example}&rdquo;
-              </p>
+              <div className="flex items-start justify-between gap-2 mb-2 sm:mb-3">
+                <p className="text-base sm:text-lg font-body flex-1">
+                  &ldquo;{chunk.example}&rdquo;
+                </p>
+                <div onClick={(e) => e.stopPropagation()} className="flex-shrink-0">
+                  <ReadAloud text={chunk.example} />
+                </div>
+              </div>
               <p className="text-sm sm:text-base opacity-80 font-body">
                 {chunk.exampleCN}
               </p>
