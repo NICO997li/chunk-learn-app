@@ -350,7 +350,11 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
 
       {/* Main Content - 固定高度，内部可滚动 */}
       <main className="flex-1 overflow-y-auto pb-20">
-        <div className="h-full flex items-center justify-center px-4">
+        <div className={`min-h-full px-4 ${
+          currentView === 'today' || currentView === 'stats' || currentView === 'dashboard'
+            ? 'py-4'
+            : 'flex items-center justify-center'
+        }`}>
           {renderContent()}
         </div>
       </main>
