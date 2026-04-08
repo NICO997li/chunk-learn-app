@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem, UserProfile } from '@/types';
+import { LearningRecord, LearningStats, ReviewFeedback, ReviewQueueItem } from '@/types';
 import { chunkData } from '@/data/chunks';
 import {
   calculateNextReview,
@@ -10,11 +10,20 @@ import {
 import {
   loadLearningRecords,
   saveLearningRecords,
-  loadLearningStats,
   saveLearningStats,
   getCurrentUser,
 } from '@/utils/storage';
 import { syncUserData } from '@/utils/firebase';
+
+// 洗牌函数
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export function useLearning() {
   const [records, setRecords] = useState<LearningRecord[]>([]);
@@ -27,6 +36,9 @@ export function useLearning() {
     streak: 0,
     totalReviews: 0,
   });
+
+  // 当前学习模式：'new' 新学 / 'review' 复习
+  const [mode, setMode] = useState<'new' | 'review'>('new');
   const [reviewQueue, setReviewQueue] = useState<ReviewQueueItem[]>([]);
   const [currentReview, setCurrentReview] = useState<ReviewQueueItem | null>(null);
   
@@ -43,12 +55,10 @@ export function useLearning() {
     const savedRecords = loadLearningRecords();
 
     if (savedRecords.length > 0) {
-      // 检查是否有新增的语块（数据源更新后）
       const existingIds = new Set(savedRecords.map(r => r.chunkId));
       const newChunks = chunkData.filter(c => !existingIds.has(c.id));
       
       if (newChunks.length > 0) {
-        // 为新语块创建初始记录
         const newRecords = newChunks.map(chunk => initializeLearningRecord(chunk.id));
         const mergedRecords = [...savedRecords, ...newRecords];
         setRecords(mergedRecords);
@@ -57,7 +67,6 @@ export function useLearning() {
         setRecords(savedRecords);
       }
     } else {
-      // 初始化所有语块的记录
       const initialRecords = chunkData.map((chunk) =>
         initializeLearningRecord(chunk.id)
       );
@@ -75,6 +84,30 @@ export function useLearning() {
       const lastReview = new Date(r.lastReviewDate);
       lastReview.setHours(0, 0, 0, 0);
       return lastReview.getTime() === today.getTime();
+    }).length;
+  }, [records]);
+
+  // 计算待复习数量（已学过且到期的）
+  const dueReviewCount = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    return records.filter((r) => {
+      if (r.reviewCount === 0) return false; // 没学过的不算复习
+      const nextReview = new Date(r.nextReviewDate);
+      nextReview.setHours(0, 0, 0, 0);
+      return nextReview <= now;
+    }).length;
+  }, [records]);
+
+  // 计算新学数量（还没学过且到期的）
+  const newLearnCount = useMemo(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    return records.filter((r) => {
+      if (r.reviewCount > 0) return false; // 学过的不算新学
+      const nextReview = new Date(r.nextReviewDate);
+      nextReview.setHours(0, 0, 0, 0);
+      return nextReview <= now;
     }).length;
   }, [records]);
 
@@ -104,7 +137,6 @@ export function useLearning() {
     setStats(newStats);
     saveLearningStats(newStats);
 
-    // 云同步：每次数据变化时同步到 Firebase
     const user = getCurrentUser();
     if (user && records.length > 0) {
       syncUserData({
@@ -119,31 +151,64 @@ export function useLearning() {
     }
   }, [records, todayLearnedCount, dailyGoal]);
 
-  // 更新复习队列（限制每日学习量）
-  const queueInitialized = useRef(false);
-  
-  const buildQueue = useCallback(() => {
-    const dueRecords = getDueReviews(records);
-    
-    // 限制为每日目标数量
-    const limitedRecords = dueRecords.slice(0, dailyGoal);
-    
-    const queue: ReviewQueueItem[] = limitedRecords.map((record) => ({
+  // 构建新学队列
+  const buildNewQueue = useCallback(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    // 只取没学过的语块
+    const newRecords = records.filter((r) => {
+      if (r.reviewCount > 0) return false;
+      const nextReview = new Date(r.nextReviewDate);
+      nextReview.setHours(0, 0, 0, 0);
+      return nextReview <= now;
+    });
+
+    const shuffled = shuffle(newRecords).slice(0, dailyGoal);
+
+    const queue: ReviewQueueItem[] = shuffled.map((record) => ({
       chunk: chunkData.find((c) => c.id === record.chunkId)!,
       record,
     })).filter(item => item.chunk != null);
-    
+
+    setMode('new');
     setReviewQueue(queue);
     setCurrentReview(queue.length > 0 ? queue[0] : null);
   }, [records, dailyGoal]);
 
-  // 首次加载数据后初始化队列（只执行一次）
+  // 构建复习队列
+  const buildReviewQueue = useCallback(() => {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    // 只取学过且到期的语块
+    const dueRecords = records.filter((r) => {
+      if (r.reviewCount === 0) return false;
+      const nextReview = new Date(r.nextReviewDate);
+      nextReview.setHours(0, 0, 0, 0);
+      return nextReview <= now;
+    });
+
+    const shuffled = shuffle(dueRecords).slice(0, dailyGoal);
+
+    const queue: ReviewQueueItem[] = shuffled.map((record) => ({
+      chunk: chunkData.find((c) => c.id === record.chunkId)!,
+      record,
+    })).filter(item => item.chunk != null);
+
+    setMode('review');
+    setReviewQueue(queue);
+    setCurrentReview(queue.length > 0 ? queue[0] : null);
+  }, [records, dailyGoal]);
+
+  // 首次加载时自动构建新学队列
+  const queueInitialized = useRef(false);
   useEffect(() => {
     if (records.length > 0 && !queueInitialized.current) {
       queueInitialized.current = true;
-      buildQueue();
+      buildNewQueue();
     }
-  }, [records, buildQueue]);
+  }, [records, buildNewQueue]);
 
   // 提交复习反馈
   const submitReview = useCallback(
@@ -158,7 +223,6 @@ export function useLearning() {
       setRecords(newRecords);
       saveLearningRecords(newRecords);
 
-      // 移到下一个
       const newQueue = reviewQueue.slice(1);
       setReviewQueue(newQueue);
       setCurrentReview(newQueue.length > 0 ? newQueue[0] : null);
@@ -166,24 +230,15 @@ export function useLearning() {
     [currentReview, records, reviewQueue]
   );
 
-  // 开始新一轮学习（重新洗牌）
+  // 开始新学
   const startNewSession = useCallback(() => {
-    buildQueue();
-  }, [buildQueue]);
+    buildNewQueue();
+  }, [buildNewQueue]);
 
-  // 获取指定状态的语块
-  const getChunksByStatus = useCallback(
-    (status: LearningRecord['status']) => {
-      return records
-        .filter((r) => r.status === status)
-        .map((record) => ({
-          chunk: chunkData.find((c) => c.id === record.chunkId)!,
-          record,
-        }))
-        .filter(item => item.chunk != null);
-    },
-    [records]
-  );
+  // 开始复习
+  const startReviewSession = useCallback(() => {
+    buildReviewQueue();
+  }, [buildReviewQueue]);
 
   // 获取今日学习的语块
   const getTodayLearned = useCallback(() => {
@@ -217,15 +272,19 @@ export function useLearning() {
 
   return {
     stats,
+    mode,
     reviewQueue,
     currentReview,
     submitReview,
     startNewSession,
-    getChunksByStatus,
+    startReviewSession,
     getTodayLearned,
     dailyGoal,
     saveDailyGoal,
     todayLearnedCount,
-    hasReviews: reviewQueue.length > 0,
+    dueReviewCount,
+    newLearnCount,
+    hasNewLearns: newLearnCount > 0,
+    hasReviews: dueReviewCount > 0,
   };
 }

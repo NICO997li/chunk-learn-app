@@ -58,14 +58,19 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const {
     stats,
+    mode,
     currentReview,
     submitReview,
     startNewSession,
+    startReviewSession,
+    hasNewLearns,
     hasReviews,
     getTodayLearned,
     dailyGoal,
     saveDailyGoal,
     todayLearnedCount,
+    dueReviewCount,
+    newLearnCount,
   } = useLearning();
 
   const handleDeleteAccount = async () => {
@@ -197,30 +202,45 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
               </div>
             </div>
 
-            <div className="text-center px-4">
-              <button
-                onClick={() => {
-                  startNewSession();
-                  setCurrentView('review');
-                }}
-                disabled={!hasReviews}
-                className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-lg rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {hasReviews ? '开始学习' : '暂无待复习词块'}
-              </button>
-              {hasReviews && (
-                <p className="mt-2 text-sm font-body text-textPrimary/60">
-                  今日目标 {dailyGoal} 个 · 已学 {stats.learnedChunks}/{stats.totalChunks}
-                </p>
-              )}
+            <div className="text-center px-4 space-y-3">
+              {/* 两个按钮：新学 + 复习 */}
+              <div className="flex gap-3 justify-center">
+                <button
+                  onClick={() => {
+                    startNewSession();
+                    setCurrentView('review');
+                  }}
+                  disabled={!hasNewLearns}
+                  className="flex-1 max-w-[180px] px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-base rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  <span className="block">新学</span>
+                  <span className="block text-xs font-body opacity-80 mt-0.5">
+                    {hasNewLearns ? `${newLearnCount} 个可学` : '暂无新语块'}
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => {
+                    startReviewSession();
+                    setCurrentView('review');
+                  }}
+                  disabled={!hasReviews}
+                  className="flex-1 max-w-[180px] px-4 py-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-heading font-bold text-base rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  <span className="block">复习</span>
+                  <span className="block text-xs font-body opacity-80 mt-0.5">
+                    {hasReviews ? `${dueReviewCount} 个到期` : '暂无待复习'}
+                  </span>
+                </button>
+              </div>
+
+              {/* 进度信息 */}
+              <p className="text-sm font-body text-textPrimary/60">
+                已学 {stats.learnedChunks}/{stats.totalChunks} · 目标 {dailyGoal}/天
+              </p>
               {todayLearnedCount > 0 && (
-                <p className="mt-1 text-sm font-body text-primary/80 font-bold">
-                  今日已学习 {todayLearnedCount} / {dailyGoal} 个 🎉
-                </p>
-              )}
-              {!hasReviews && stats.masteredChunks < stats.totalChunks && (
-                <p className="mt-2 text-xs font-body text-textPrimary/50">
-                  今日学习已完成，到期复习的语块会自动出现
+                <p className="text-sm font-body text-primary/80 font-bold">
+                  今日已学习 {todayLearnedCount} 个 🎉
                 </p>
               )}
             </div>
@@ -231,15 +251,15 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
         if (!currentReview) {
           return (
             <div className="text-center space-y-4 px-4">
-              <div className="text-5xl">🎉</div>
+              <div className="text-5xl">{mode === 'review' ? '💪' : '🎉'}</div>
               <h2 className="text-2xl font-heading font-bold text-primary">
-                太棒了！
+                {mode === 'review' ? '复习完成！' : '新学完成！'}
               </h2>
               <p className="text-base font-body text-textPrimary/70">
-                今天的学习目标已完成
+                {mode === 'review' ? '本轮复习已完成' : '本轮新学已完成'}
               </p>
               <p className="text-sm font-body text-textPrimary/60">
-                已学习 {todayLearnedCount} 个语块
+                今日累计学习 {todayLearnedCount} 个语块
               </p>
               <div className="flex gap-3 justify-center flex-wrap">
                 <button
@@ -263,8 +283,13 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
           <div className="w-full max-w-2xl mx-auto space-y-4">
             <div className="text-center px-4">
               <p className="text-xs font-body text-textPrimary/60 mb-1">
-                学习进度: {todayLearnedCount} / {dailyGoal}
+                {mode === 'review' ? '📖 复习模式' : '✨ 新学模式'} · 今日已学 {todayLearnedCount}
               </p>
+              {mode === 'review' && currentReview.record.reviewCount > 0 && (
+                <p className="text-[10px] font-body text-orange-500 mb-1">
+                  上次学习 {Math.floor((Date.now() - new Date(currentReview.record.lastReviewDate).getTime()) / (1000 * 60 * 60 * 24))} 天前 · 已复习 {currentReview.record.reviewCount} 次
+                </p>
+              )}
               <div className="h-1.5 bg-background rounded-full max-w-md mx-auto overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
