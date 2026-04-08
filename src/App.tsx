@@ -210,7 +210,7 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
               </button>
               {hasReviews && (
                 <p className="mt-2 text-sm font-body text-textPrimary/60">
-                  今日目标 {dailyGoal} 个 · 总进度 {stats.masteredChunks}/{stats.totalChunks}
+                  今日目标 {dailyGoal} 个 · 已学 {stats.learnedChunks}/{stats.totalChunks}
                 </p>
               )}
               {todayLearnedCount > 0 && (

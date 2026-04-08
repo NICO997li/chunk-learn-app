@@ -20,6 +20,7 @@ export function useLearning() {
   const [records, setRecords] = useState<LearningRecord[]>([]);
   const [stats, setStats] = useState<LearningStats>({
     totalChunks: chunkData.length,
+    learnedChunks: 0,
     masteredChunks: 0,
     learningChunks: 0,
     todayReviews: 0,
@@ -80,9 +81,8 @@ export function useLearning() {
   // 更新统计数据 + 云同步
   useEffect(() => {
     const masteredCount = records.filter((r) => r.status === 'mastered').length;
-    const learningCount = records.filter(
-      (r) => r.status === 'learning' || r.status === 'new'
-    ).length;
+    const learnedCount = records.filter((r) => r.reviewCount > 0).length;
+    const notLearnedCount = records.filter((r) => r.reviewCount === 0).length;
 
     const totalReviewsCount = records.reduce(
       (sum, record) => sum + record.reviewCount,
@@ -93,8 +93,9 @@ export function useLearning() {
 
     const newStats: LearningStats = {
       totalChunks: chunkData.length,
+      learnedChunks: learnedCount,
       masteredChunks: masteredCount,
-      learningChunks: learningCount,
+      learningChunks: notLearnedCount,
       todayReviews: todayLearnedCount,
       streak: streakCount,
       totalReviews: totalReviewsCount,

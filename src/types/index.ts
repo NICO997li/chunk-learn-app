@@ -24,8 +24,9 @@ export interface LearningRecord {
 // 用户学习统计
 export interface LearningStats {
   totalChunks: number;
-  masteredChunks: number;
-  learningChunks: number;
+  learnedChunks: number;   // 已学过（至少复习过1次）
+  masteredChunks: number;  // 已掌握（SM-2算法判定）
+  learningChunks: number;  // 待学习（还没学过的）
   todayReviews: number;
   streak: number; // 连续学习天数
   totalReviews: number;

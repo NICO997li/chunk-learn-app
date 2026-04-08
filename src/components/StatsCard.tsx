@@ -6,15 +6,15 @@ interface StatsCardProps {
 }
 
 export function StatsCard({ stats }: StatsCardProps) {
-  const progress = stats.totalChunks > 0 
-    ? (stats.masteredChunks / stats.totalChunks) * 100 
+  // 总体进度 = 已学过/总数
+  const learnedProgress = stats.totalChunks > 0 
+    ? (stats.learnedChunks / stats.totalChunks) * 100 
     : 0;
 
-  // 已学过的（至少复习过1次的）= 已掌握 + 学习中（非new状态）
-  const learnedCount = stats.masteredChunks + (stats.totalChunks - stats.learningChunks - stats.masteredChunks > 0 ? stats.totalChunks - stats.learningChunks : 0);
-  
-  // 未学过的 = learning状态中status为new的
-  const newCount = stats.learningChunks;
+  // 掌握进度 = 已掌握/总数
+  const masteredProgress = stats.totalChunks > 0
+    ? (stats.masteredChunks / stats.totalChunks) * 100
+    : 0;
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-2 overflow-y-auto">
@@ -28,41 +28,54 @@ export function StatsCard({ stats }: StatsCardProps) {
           <div className="grid grid-cols-3 gap-2 text-center">
             <div>
               <p className="text-2xl font-heading font-bold text-primary">{stats.totalChunks}</p>
-              <p className="text-xs font-body text-textPrimary/60">总语块数</p>
+              <p className="text-xs font-body text-textPrimary/60">总语块</p>
+            </div>
+            <div>
+              <p className="text-2xl font-heading font-bold text-secondary">{stats.learnedChunks}</p>
+              <p className="text-xs font-body text-textPrimary/60">已学过</p>
             </div>
             <div>
               <p className="text-2xl font-heading font-bold text-cta">{stats.masteredChunks}</p>
               <p className="text-xs font-body text-textPrimary/60">已掌握</p>
             </div>
-            <div>
-              <p className="text-2xl font-heading font-bold text-secondary">{stats.learningChunks}</p>
-              <p className="text-xs font-body text-textPrimary/60">待学习</p>
-            </div>
           </div>
         </div>
 
-        {/* 总体进度条 */}
-        <div className="mb-4">
-          <div className="flex justify-between items-center mb-1.5">
-            <span className="text-sm font-body font-bold text-textPrimary">总体掌握进度</span>
-            <span className="text-lg font-heading font-bold text-primary">
-              {progress.toFixed(1)}%
+        {/* 学习进度条 */}
+        <div className="mb-3">
+          <div className="flex justify-between items-center mb-1">
+            <span className="text-sm font-body font-bold text-textPrimary">学习进度</span>
+            <span className="text-sm font-heading font-bold text-secondary">
+              {stats.learnedChunks} / {stats.totalChunks}（{learnedProgress.toFixed(1)}%）
             </span>
           </div>
-          <div className="h-4 bg-background rounded-full overflow-hidden shadow-inner">
+          <div className="h-3 bg-background rounded-full overflow-hidden shadow-inner">
             <div
-              className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500 relative"
-              style={{ width: `${Math.max(progress, 1)}%` }}
-            >
-              {progress > 8 && (
-                <span className="absolute right-2 top-0 h-full flex items-center text-[10px] text-white font-bold">
-                  {progress.toFixed(0)}%
-                </span>
-              )}
-            </div>
+              className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500"
+              style={{ width: `${Math.max(learnedProgress, 0.5)}%` }}
+            />
           </div>
-          <p className="text-xs font-body text-textPrimary/50 mt-1 text-center">
-            已掌握 {stats.masteredChunks} / {stats.totalChunks} 个语块
+          <p className="text-[10px] font-body text-textPrimary/40 mt-0.5">
+            已学过 = 至少做过1次的语块
+          </p>
+        </div>
+
+        {/* 掌握进度条 */}
+        <div className="mb-4">
+          <div className="flex justify-between items-center mb-1">
+            <span className="text-sm font-body font-bold text-textPrimary">掌握进度</span>
+            <span className="text-sm font-heading font-bold text-cta">
+              {stats.masteredChunks} / {stats.totalChunks}（{masteredProgress.toFixed(1)}%）
+            </span>
+          </div>
+          <div className="h-3 bg-background rounded-full overflow-hidden shadow-inner">
+            <div
+              className="h-full bg-gradient-to-r from-cta to-green-400 rounded-full transition-all duration-500"
+              style={{ width: `${Math.max(masteredProgress, 0.5)}%` }}
+            />
+          </div>
+          <p className="text-[10px] font-body text-textPrimary/40 mt-0.5">
+            已掌握 = 复习间隔达到21天以上
           </p>
         </div>
 
@@ -110,9 +123,9 @@ export function StatsCard({ stats }: StatsCardProps) {
             </div>
             <div>
               <div className="text-lg font-heading font-bold text-textPrimary">
-                {stats.totalChunks - stats.masteredChunks}
+                {stats.totalChunks - stats.learnedChunks}
               </div>
-              <div className="text-xs font-body text-textPrimary/60">待攻克</div>
+              <div className="text-xs font-body text-textPrimary/60">未学过</div>
             </div>
           </div>
         </div>
