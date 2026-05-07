@@ -1,0 +1,185 @@
+// 重构 chunks 数据 - 剔除俚语/网络用语，聚焦3大场景日常固定搭配
+// 场景：亲子育儿 / 日常生活 / 出国旅游
+// 难度：入门 / 中级 / 高级（偏中高级）
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_FILE = path.resolve(__dirname, '../src/data/chunks.json');
+
+// ==================== 亲子育儿 ====================
+const parenting = [
+  // 入门 - 日常起居
+  { chunk: "Time to wake up!", translation: "该起床了!", example: "Time to wake up! The sun is already up.", exampleCN: "该起床了! 太阳都晒屁股了。", difficulty: "入门", tags: ["起床", "日常"] },
+  { chunk: "Let's brush your teeth", translation: "我们来刷牙吧", example: "Let's brush your teeth before bed.", exampleCN: "睡前我们来刷牙吧。", difficulty: "入门", tags: ["卫生", "日常"] },
+  { chunk: "Wash your hands", translation: "洗手", example: "Wash your hands before dinner.", exampleCN: "吃晚饭前洗手。", difficulty: "入门", tags: ["卫生", "日常"] },
+  { chunk: "Put on your shoes", translation: "穿上鞋", example: "Put on your shoes, we're leaving now.", exampleCN: "穿上鞋,我们要出门了。", difficulty: "入门", tags: ["穿衣", "出门"] },
+  { chunk: "Pick up your toys", translation: "收拾玩具", example: "Please pick up your toys before dinner.", exampleCN: "请在晚饭前收拾好玩具。", difficulty: "入门", tags: ["整理", "日常"] },
+  { chunk: "Sweet dreams", translation: "做个好梦", example: "Good night, sweet dreams!", exampleCN: "晚安,做个好梦!", difficulty: "入门", tags: ["睡前", "祝福"] },
+  { chunk: "Time for bed", translation: "该睡觉了", example: "It's 9 o'clock, time for bed.", exampleCN: "9点了,该睡觉了。", difficulty: "入门", tags: ["睡觉", "日常"] },
+  { chunk: "Be careful!", translation: "小心!", example: "Be careful, the floor is wet.", exampleCN: "小心,地板是湿的。", difficulty: "入门", tags: ["提醒", "安全"] },
+  { chunk: "Good job!", translation: "做得好!", example: "Good job! You tied your shoes by yourself.", exampleCN: "做得好! 你自己系好了鞋带。", difficulty: "入门", tags: ["鼓励", "表扬"] },
+  { chunk: "Say please and thank you", translation: "说'请'和'谢谢'", example: "Remember to say please and thank you.", exampleCN: "记得要说请和谢谢。", difficulty: "入门", tags: ["礼貌", "教养"] },
+
+  // 中级 - 沟通引导
+  { chunk: "How was your day?", translation: "你今天过得怎么样?", example: "How was your day at school today?", exampleCN: "今天在学校过得怎么样?", difficulty: "中级", tags: ["关心", "日常"] },
+  { chunk: "Tell me what happened", translation: "告诉我发生了什么", example: "Take a deep breath and tell me what happened.", exampleCN: "深呼吸一下,告诉我发生了什么。", difficulty: "中级", tags: ["沟通", "情绪"] },
+  { chunk: "Use your words", translation: "用语言表达出来", example: "Don't cry, use your words to tell me.", exampleCN: "别哭,用语言告诉我。", difficulty: "中级", tags: ["表达", "情绪"] },
+  { chunk: "Use your inside voice", translation: "小声说话(室内)", example: "We're inside now, use your inside voice.", exampleCN: "我们现在在室内,请小声说话。", difficulty: "中级", tags: ["礼仪", "室内"] },
+  { chunk: "Take turns", translation: "轮流来", example: "You need to take turns with your friend.", exampleCN: "你要和朋友轮流来。", difficulty: "中级", tags: ["分享", "社交"] },
+  { chunk: "Keep an eye on", translation: "照看/留意", example: "Can you keep an eye on your sister?", exampleCN: "你能帮忙看着妹妹吗?", difficulty: "中级", tags: ["照看", "家务"] },
+  { chunk: "Don't be too hard on yourself", translation: "别对自己太苛刻", example: "You tried your best, don't be too hard on yourself.", exampleCN: "你尽力了,别对自己太苛刻。", difficulty: "中级", tags: ["安慰", "自我接纳"] },
+  { chunk: "Let's figure it out together", translation: "我们一起想办法", example: "Don't worry, let's figure it out together.", exampleCN: "别担心,我们一起想办法。", difficulty: "中级", tags: ["合作", "问题解决"] },
+  { chunk: "I'm proud of you", translation: "我为你感到骄傲", example: "I'm so proud of you for being brave.", exampleCN: "你这么勇敢,我真为你骄傲。", difficulty: "中级", tags: ["鼓励", "爱"] },
+  { chunk: "That's very thoughtful of you", translation: "你真贴心", example: "Thank you, that's very thoughtful of you.", exampleCN: "谢谢,你真贴心。", difficulty: "中级", tags: ["表扬", "贴心"] },
+  { chunk: "It's not the end of the world", translation: "这不是什么大不了的事", example: "You lost the game, but it's not the end of the world.", exampleCN: "你输了比赛,但这不是什么大不了的事。", difficulty: "中级", tags: ["安慰", "看开"] },
+  { chunk: "Everyone makes mistakes", translation: "每个人都会犯错", example: "Don't be upset, everyone makes mistakes.", exampleCN: "别难过,每个人都会犯错。", difficulty: "中级", tags: ["安慰", "成长"] },
+  { chunk: "How about we make a deal?", translation: "我们做个约定怎么样?", example: "How about we make a deal? One more show, then bed.", exampleCN: "我们做个约定怎么样? 再看一集就睡觉。", difficulty: "中级", tags: ["协商", "约定"] },
+  { chunk: "You have to be patient", translation: "你要有耐心", example: "Good things take time, you have to be patient.", exampleCN: "好事需要时间,你要有耐心。", difficulty: "中级", tags: ["品格", "教导"] },
+  { chunk: "What do you feel like doing?", translation: "你想做什么?", example: "We have an hour, what do you feel like doing?", exampleCN: "我们有一小时,你想做什么?", difficulty: "中级", tags: ["选择", "互动"] },
+
+  // 高级 - 价值观传递
+  { chunk: "Actions speak louder than words", translation: "行动胜于言语", example: "You said you'd help, but actions speak louder than words.", exampleCN: "你说会帮忙,但行动胜于言语。", difficulty: "高级", tags: ["品格", "谚语"] },
+  { chunk: "Practice makes perfect", translation: "熟能生巧", example: "Keep practicing the piano, practice makes perfect.", exampleCN: "坚持练琴,熟能生巧。", difficulty: "高级", tags: ["鼓励", "谚语"] },
+  { chunk: "It's the thought that counts", translation: "心意最重要", example: "The gift is small, but it's the thought that counts.", exampleCN: "礼物虽小,但心意最重要。", difficulty: "高级", tags: ["情感", "价值观"] },
+  { chunk: "Think before you act", translation: "三思而后行", example: "I need you to think before you act next time.", exampleCN: "下次你要三思而后行。", difficulty: "高级", tags: ["教导", "品格"] },
+  { chunk: "Stand up for yourself", translation: "为自己挺身而出", example: "If someone bullies you, stand up for yourself.", exampleCN: "如果有人欺负你,要为自己挺身而出。", difficulty: "高级", tags: ["勇气", "品格"] },
+  { chunk: "Put yourself in her shoes", translation: "站在她的角度想想", example: "Before you judge her, put yourself in her shoes.", exampleCN: "评判她之前,先站在她的角度想想。", difficulty: "高级", tags: ["同理心", "品格"] },
+  { chunk: "Let's agree to disagree", translation: "求同存异", example: "We see things differently, let's agree to disagree.", exampleCN: "我们看法不同,就求同存异吧。", difficulty: "高级", tags: ["沟通", "包容"] },
+  { chunk: "Make a big deal out of it", translation: "小题大做", example: "It was just an accident, let's not make a big deal out of it.", exampleCN: "只是个意外,别小题大做。", difficulty: "高级", tags: ["看开", "情绪"] },
+  { chunk: "Cross that bridge when we come to it", translation: "船到桥头自然直", example: "Don't worry about next year, we'll cross that bridge when we come to it.", exampleCN: "别担心明年的事,船到桥头自然直。", difficulty: "高级", tags: ["心态", "谚语"] },
+  { chunk: "Give it a shot", translation: "试试看", example: "You might like it, give it a shot.", exampleCN: "你可能会喜欢,试试看吧。", difficulty: "高级", tags: ["鼓励", "尝试"] },
+];
+
+// ==================== 日常生活 ====================
+const dailyLife = [
+  // 入门 - 基础表达
+  { chunk: "How's it going?", translation: "最近怎么样?", example: "Hey John, how's it going?", exampleCN: "嘿约翰,最近怎么样?", difficulty: "入门", tags: ["问候", "寒暄"] },
+  { chunk: "Long time no see", translation: "好久不见", example: "Hey, long time no see! How have you been?", exampleCN: "嘿,好久不见! 最近过得怎么样?", difficulty: "入门", tags: ["问候", "重逢"] },
+  { chunk: "Take care", translation: "保重", example: "See you next week, take care!", exampleCN: "下周见,保重!", difficulty: "入门", tags: ["告别", "关心"] },
+  { chunk: "No worries", translation: "没关系/别担心", example: "You're a bit late? No worries.", exampleCN: "你有点迟到? 没关系。", difficulty: "入门", tags: ["宽慰", "口语"] },
+  { chunk: "That makes sense", translation: "有道理", example: "That makes sense, I agree with you.", exampleCN: "有道理,我同意你的说法。", difficulty: "入门", tags: ["认同", "回应"] },
+  { chunk: "Sounds good", translation: "听起来不错", example: "Dinner at 7? Sounds good.", exampleCN: "7点晚餐? 听起来不错。", difficulty: "入门", tags: ["认同", "约定"] },
+  { chunk: "Let me know", translation: "告诉我一声", example: "Let me know if you need anything.", exampleCN: "需要什么告诉我一声。", difficulty: "入门", tags: ["请求", "关心"] },
+
+  // 中级 - 日常场景（购物/餐厅/办事）
+  { chunk: "I'm just browsing", translation: "我只是随便看看", example: "Thanks, I'm just browsing for now.", exampleCN: "谢谢,我只是随便看看。", difficulty: "中级", tags: ["购物", "拒绝"] },
+  { chunk: "Can I try this on?", translation: "我可以试穿吗?", example: "Excuse me, can I try this on?", exampleCN: "打扰了,这个我可以试穿吗?", difficulty: "中级", tags: ["购物", "询问"] },
+  { chunk: "Do you have this in a different size?", translation: "这款有别的尺寸吗?", example: "I like this shirt, do you have this in a different size?", exampleCN: "我喜欢这件衬衫,有别的尺寸吗?", difficulty: "中级", tags: ["购物", "询问"] },
+  { chunk: "I'd like to make a reservation", translation: "我想预订", example: "Hi, I'd like to make a reservation for two at 7 pm.", exampleCN: "你好,我想预订晚上7点两位。", difficulty: "中级", tags: ["餐厅", "预订"] },
+  { chunk: "Could I have the bill, please?", translation: "可以结账吗?", example: "Excuse me, could I have the bill, please?", exampleCN: "打扰了,可以结账吗?", difficulty: "中级", tags: ["餐厅", "买单"] },
+  { chunk: "Keep the change", translation: "不用找了", example: "Here's 20 dollars, keep the change.", exampleCN: "这是20美元,不用找了。", difficulty: "中级", tags: ["付钱", "小费"] },
+  { chunk: "I'll take it", translation: "我要了", example: "It fits perfectly, I'll take it.", exampleCN: "很合身,我要了。", difficulty: "中级", tags: ["购物", "决定"] },
+  { chunk: "Is this on sale?", translation: "这个在打折吗?", example: "Excuse me, is this on sale?", exampleCN: "打扰一下,这个在打折吗?", difficulty: "中级", tags: ["购物", "询问"] },
+  { chunk: "Do you accept credit cards?", translation: "你们收信用卡吗?", example: "Do you accept credit cards or only cash?", exampleCN: "你们收信用卡还是只收现金?", difficulty: "中级", tags: ["付款", "询问"] },
+  { chunk: "I'm running late", translation: "我要迟到了", example: "Sorry, I'm running late, I'll be there in 10.", exampleCN: "抱歉,我要迟到了,10分钟后到。", difficulty: "中级", tags: ["时间", "歉意"] },
+  { chunk: "I'm on my way", translation: "我在路上了", example: "Don't worry, I'm on my way.", exampleCN: "别担心,我在路上了。", difficulty: "中级", tags: ["出行", "告知"] },
+  { chunk: "Let me check my schedule", translation: "我看看我的日程", example: "Dinner on Friday? Let me check my schedule.", exampleCN: "周五晚餐? 我看看我的日程。", difficulty: "中级", tags: ["安排", "工作"] },
+  { chunk: "Can we reschedule?", translation: "我们能改期吗?", example: "Something came up, can we reschedule?", exampleCN: "临时有事,我们能改期吗?", difficulty: "中级", tags: ["安排", "改期"] },
+  { chunk: "It slipped my mind", translation: "我忘了", example: "Sorry, it completely slipped my mind.", exampleCN: "抱歉,我完全忘了。", difficulty: "中级", tags: ["道歉", "遗忘"] },
+  { chunk: "I'll get back to you", translation: "我稍后回复你", example: "Let me think about it, I'll get back to you tomorrow.", exampleCN: "让我想想,明天回复你。", difficulty: "中级", tags: ["沟通", "回复"] },
+  { chunk: "Give me a heads-up", translation: "提前告诉我一声", example: "If plans change, give me a heads-up.", exampleCN: "如果计划有变,提前告诉我一声。", difficulty: "中级", tags: ["沟通", "提醒"] },
+  { chunk: "Count me in", translation: "算我一个", example: "Movie tonight? Count me in!", exampleCN: "今晚看电影? 算我一个!", difficulty: "中级", tags: ["参与", "口语"] },
+  { chunk: "Count me out", translation: "别算我", example: "Hiking at 6 am? Count me out.", exampleCN: "早上6点徒步? 别算我。", difficulty: "中级", tags: ["拒绝", "口语"] },
+  { chunk: "Up to you", translation: "你决定吧", example: "Pizza or sushi? Up to you.", exampleCN: "披萨还是寿司? 你决定。", difficulty: "中级", tags: ["决定", "口语"] },
+  { chunk: "It's on me", translation: "我请客", example: "Put your wallet away, it's on me tonight.", exampleCN: "把钱包收起来,今晚我请客。", difficulty: "中级", tags: ["请客", "付款"] },
+  { chunk: "Let's split the bill", translation: "我们AA吧", example: "It's too much for one, let's split the bill.", exampleCN: "一个人出太多,我们AA吧。", difficulty: "中级", tags: ["付款", "分摊"] },
+  { chunk: "I'm starving", translation: "我饿死了", example: "Let's grab lunch, I'm starving.", exampleCN: "我们去吃午饭吧,我饿死了。", difficulty: "中级", tags: ["饮食", "情绪"] },
+  { chunk: "I could go for a coffee", translation: "我想喝杯咖啡", example: "Long day, I could really go for a coffee.", exampleCN: "累了一天,真想喝杯咖啡。", difficulty: "中级", tags: ["饮食", "需求"] },
+  { chunk: "Under the weather", translation: "身体不舒服", example: "I'm feeling a bit under the weather today.", exampleCN: "我今天有点不舒服。", difficulty: "中级", tags: ["健康", "身体"] },
+  { chunk: "Catch a cold", translation: "感冒了", example: "Wear a jacket or you'll catch a cold.", exampleCN: "穿件外套,不然要感冒了。", difficulty: "中级", tags: ["健康", "提醒"] },
+
+  // 高级 - 地道口语
+  { chunk: "Off the top of my head", translation: "我一下想到的", example: "Off the top of my head, I'd say around 50.", exampleCN: "我一下想到的,大概50个吧。", difficulty: "高级", tags: ["估计", "口语"] },
+  { chunk: "Speaking of which", translation: "说到这个", example: "Speaking of which, did you see her new car?", exampleCN: "说到这个,你看到她的新车了吗?", difficulty: "高级", tags: ["转话题", "口语"] },
+  { chunk: "To be honest with you", translation: "说实话", example: "To be honest with you, I didn't enjoy the movie.", exampleCN: "说实话,那部电影我不喜欢。", difficulty: "高级", tags: ["坦诚", "表态"] },
+  { chunk: "Come to think of it", translation: "仔细想想", example: "Come to think of it, I've been there before.", exampleCN: "仔细想想,我去过那里。", difficulty: "高级", tags: ["回忆", "口语"] },
+  { chunk: "On the fly", translation: "临时决定", example: "We planned the whole trip on the fly.", exampleCN: "整趟旅行都是临时决定的。", difficulty: "高级", tags: ["计划", "地道"] },
+  { chunk: "Call it a day", translation: "今天就到这", example: "I'm exhausted, let's call it a day.", exampleCN: "我累了,今天就到这吧。", difficulty: "高级", tags: ["工作", "结束"] },
+  { chunk: "Get the hang of it", translation: "掌握窍门", example: "Don't worry, you'll get the hang of it soon.", exampleCN: "别担心,你很快就会掌握窍门。", difficulty: "高级", tags: ["学习", "鼓励"] },
+  { chunk: "Play it by ear", translation: "看情况再说", example: "We haven't decided yet, we'll play it by ear.", exampleCN: "还没决定,到时再说。", difficulty: "高级", tags: ["计划", "灵活"] },
+  { chunk: "On the same page", translation: "想法一致", example: "Let's make sure we're on the same page.", exampleCN: "我们来确认一下意见一致。", difficulty: "高级", tags: ["沟通", "共识"] },
+  { chunk: "A piece of cake", translation: "小事一桩", example: "Fix the printer? A piece of cake.", exampleCN: "修打印机? 小事一桩。", difficulty: "高级", tags: ["简单", "口语"] },
+  { chunk: "Break the ice", translation: "打破僵局", example: "He told a joke to break the ice.", exampleCN: "他讲了个笑话打破僵局。", difficulty: "高级", tags: ["社交", "交流"] },
+  { chunk: "Hit the road", translation: "出发/上路", example: "It's getting late, let's hit the road.", exampleCN: "天色晚了,我们出发吧。", difficulty: "高级", tags: ["出行", "口语"] },
+  { chunk: "Beat around the bush", translation: "拐弯抹角", example: "Stop beating around the bush, just tell me.", exampleCN: "别拐弯抹角,直接告诉我。", difficulty: "高级", tags: ["沟通", "直接"] },
+  { chunk: "Get something off my chest", translation: "把话说出来", example: "I need to get this off my chest, it's been bothering me.", exampleCN: "我得把话说出来,一直憋着难受。", difficulty: "高级", tags: ["情绪", "表达"] },
+  { chunk: "Cut to the chase", translation: "直奔主题", example: "We don't have much time, let's cut to the chase.", exampleCN: "我们时间不多,直奔主题吧。", difficulty: "高级", tags: ["沟通", "效率"] },
+];
+
+// ==================== 出国旅游 ====================
+const travel = [
+  // 入门 - 基础问询
+  { chunk: "Where can I get tickets?", translation: "在哪里买票?", example: "Excuse me, where can I get tickets for the subway?", exampleCN: "打扰了,地铁票在哪里买?", difficulty: "入门", tags: ["交通", "购票"] },
+  { chunk: "Is this the right platform?", translation: "这是对的站台吗?", example: "Is this the right platform for the train to Paris?", exampleCN: "这是去巴黎的火车站台吗?", difficulty: "入门", tags: ["交通", "确认"] },
+  { chunk: "How much is it?", translation: "多少钱?", example: "That looks nice, how much is it?", exampleCN: "那个不错,多少钱?", difficulty: "入门", tags: ["价格", "购物"] },
+  { chunk: "Do you have a city map?", translation: "有城市地图吗?", example: "Hi, do you have a free city map?", exampleCN: "你好,有免费的城市地图吗?", difficulty: "入门", tags: ["问路", "旅游"] },
+  { chunk: "Could you repeat that?", translation: "能再说一遍吗?", example: "Sorry, could you repeat that more slowly?", exampleCN: "抱歉,能说慢一点再说一遍吗?", difficulty: "入门", tags: ["沟通", "请求"] },
+  { chunk: "Where is the restroom?", translation: "洗手间在哪?", example: "Excuse me, where is the restroom?", exampleCN: "打扰了,洗手间在哪?", difficulty: "入门", tags: ["问路", "基本"] },
+
+  // 中级 - 酒店餐厅
+  { chunk: "I'd like to check in", translation: "我想办理入住", example: "Hi, I'd like to check in, I have a reservation under Li.", exampleCN: "你好,我想办理入住,以Li的名字预订的。", difficulty: "中级", tags: ["酒店", "入住"] },
+  { chunk: "What time is checkout?", translation: "退房时间是几点?", example: "By the way, what time is checkout?", exampleCN: "顺便问下,退房时间是几点?", difficulty: "中级", tags: ["酒店", "时间"] },
+  { chunk: "Is breakfast included?", translation: "包含早餐吗?", example: "Is breakfast included in the room rate?", exampleCN: "房费里包含早餐吗?", difficulty: "中级", tags: ["酒店", "询问"] },
+  { chunk: "What's the WiFi password?", translation: "WiFi密码是什么?", example: "Hi, what's the WiFi password?", exampleCN: "你好,WiFi密码是什么?", difficulty: "中级", tags: ["酒店", "网络"] },
+  { chunk: "Could you recommend a good restaurant?", translation: "能推荐家好餐厅吗?", example: "We're new here, could you recommend a good restaurant nearby?", exampleCN: "我们刚到,能推荐附近一家好餐厅吗?", difficulty: "中级", tags: ["餐厅", "推荐"] },
+  { chunk: "Table for two, please", translation: "两位,谢谢", example: "Hi, table for two, please.", exampleCN: "你好,两位,谢谢。", difficulty: "中级", tags: ["餐厅", "入座"] },
+  { chunk: "What would you recommend?", translation: "您推荐什么?", example: "We're new to this cuisine, what would you recommend?", exampleCN: "我们第一次吃这种菜,您推荐什么?", difficulty: "中级", tags: ["餐厅", "点菜"] },
+  { chunk: "I have a food allergy to", translation: "我对...食物过敏", example: "Please note, I have a food allergy to peanuts.", exampleCN: "请注意,我对花生过敏。", difficulty: "中级", tags: ["餐厅", "过敏"] },
+  { chunk: "Is service charge included?", translation: "包含服务费吗?", example: "Could you check if service charge is included?", exampleCN: "能帮我看看包含服务费吗?", difficulty: "中级", tags: ["餐厅", "账单"] },
+  { chunk: "Is it within walking distance?", translation: "步行能到吗?", example: "Is the museum within walking distance from here?", exampleCN: "博物馆从这里步行能到吗?", difficulty: "中级", tags: ["问路", "距离"] },
+  { chunk: "Could you take a photo of us?", translation: "能帮我们拍张照吗?", example: "Excuse me, could you take a photo of us, please?", exampleCN: "打扰了,能帮我们拍张照吗?", difficulty: "中级", tags: ["旅游", "拍照"] },
+  { chunk: "Can I get a refund?", translation: "能退款吗?", example: "This doesn't work, can I get a refund?", exampleCN: "这个不能用,能退款吗?", difficulty: "中级", tags: ["购物", "退款"] },
+  { chunk: "Where can I exchange currency?", translation: "哪里能换钱?", example: "Excuse me, where can I exchange currency around here?", exampleCN: "打扰了,附近哪里能换钱?", difficulty: "中级", tags: ["货币", "问路"] },
+  { chunk: "What's the exchange rate?", translation: "汇率是多少?", example: "Hi, what's the exchange rate for US dollars today?", exampleCN: "你好,今天美元的汇率是多少?", difficulty: "中级", tags: ["货币", "询问"] },
+  { chunk: "Could you call a taxi for me?", translation: "能帮我叫辆出租车吗?", example: "Excuse me, could you call a taxi for me to the airport?", exampleCN: "打扰了,能帮我叫辆去机场的出租车吗?", difficulty: "中级", tags: ["交通", "请求"] },
+  { chunk: "Take me to", translation: "请送我去...", example: "Take me to the Central Station, please.", exampleCN: "请送我去中央车站,谢谢。", difficulty: "中级", tags: ["出租车", "目的地"] },
+  { chunk: "Keep the meter running", translation: "继续计价", example: "I'll be back in 5 minutes, keep the meter running.", exampleCN: "我5分钟回来,继续计价就行。", difficulty: "中级", tags: ["出租车", "等待"] },
+
+  // 高级 - 应急/进阶
+  { chunk: "I lost my passport", translation: "我丢了护照", example: "I need urgent help, I lost my passport.", exampleCN: "我急需帮助,我丢了护照。", difficulty: "高级", tags: ["应急", "证件"] },
+  { chunk: "I need to file a police report", translation: "我需要报警做笔录", example: "My bag was stolen, I need to file a police report.", exampleCN: "我的包被偷了,我需要报警做笔录。", difficulty: "高级", tags: ["应急", "警察"] },
+  { chunk: "My flight was cancelled", translation: "我的航班取消了", example: "My flight was cancelled, what are my options?", exampleCN: "我的航班取消了,我有什么选择?", difficulty: "高级", tags: ["航班", "应急"] },
+  { chunk: "I'd like to extend my stay", translation: "我想延长住宿", example: "I'm enjoying it here, I'd like to extend my stay by two nights.", exampleCN: "我很喜欢这里,想延长两晚住宿。", difficulty: "高级", tags: ["酒店", "延期"] },
+  { chunk: "Are there any hidden fees?", translation: "有隐藏费用吗?", example: "Before I sign, are there any hidden fees I should know about?", exampleCN: "签字前,有什么隐藏费用要告诉我吗?", difficulty: "高级", tags: ["付款", "确认"] },
+  { chunk: "Is it safe to walk around at night?", translation: "晚上走路安全吗?", example: "Excuse me, is it safe to walk around at night in this area?", exampleCN: "打扰了,这个区域晚上走路安全吗?", difficulty: "高级", tags: ["安全", "询问"] },
+  { chunk: "I'm here on vacation", translation: "我来度假的", example: "I'm here on vacation for two weeks.", exampleCN: "我来度两周假。", difficulty: "高级", tags: ["入境", "身份"] },
+  { chunk: "I have nothing to declare", translation: "我没有需要申报的", example: "Just personal items, I have nothing to declare.", exampleCN: "只有个人物品,没有需要申报的。", difficulty: "高级", tags: ["海关", "入境"] },
+  { chunk: "Could you point me in the right direction?", translation: "能指个方向吗?", example: "I'm a bit lost, could you point me in the right direction to the museum?", exampleCN: "我有点迷路,能指下去博物馆的方向吗?", difficulty: "高级", tags: ["问路", "礼貌"] },
+  { chunk: "Do you speak English?", translation: "你会说英语吗?", example: "Excuse me, do you speak English, by any chance?", exampleCN: "打扰了,您会说英语吗?", difficulty: "高级", tags: ["沟通", "语言"] },
+];
+
+// ==================== 组装数据 ====================
+const scenarios = [
+  { name: '亲子育儿', items: parenting },
+  { name: '日常生活', items: dailyLife },
+  { name: '出国旅游', items: travel },
+];
+
+let id = 1;
+const chunks = [];
+scenarios.forEach(({ name, items }) => {
+  items.forEach(item => {
+    chunks.push({
+      id: id++,
+      scenario: name,
+      ...item,
+    });
+  });
+});
+
+// 统计
+const stats = {};
+chunks.forEach(c => {
+  if (!stats[c.scenario]) stats[c.scenario] = { 入门: 0, 中级: 0, 高级: 0 };
+  stats[c.scenario][c.difficulty]++;
+});
+
+console.log('总数:', chunks.length);
+console.log('分布:', JSON.stringify(stats, null, 2));
+
+// 写入
+fs.writeFileSync(DATA_FILE, JSON.stringify(chunks, null, 2), 'utf-8');
+console.log('✅ 已写入', DATA_FILE);

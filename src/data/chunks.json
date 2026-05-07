@@ -1,76 +1,115 @@
 [
   {
     "id": 1,
+    "scenario": "亲子育儿",
     "chunk": "Time to wake up!",
     "translation": "该起床了!",
-    "example": "Good morning, sweetie! Time to wake up!",
-    "exampleCN": "早上好,宝贝!该起床了!",
-    "scenario": "家庭亲子",
+    "example": "Time to wake up! The sun is already up.",
+    "exampleCN": "该起床了! 太阳都晒屁股了。",
     "difficulty": "入门",
     "tags": [
-      "早晨",
-      "起床"
+      "起床",
+      "日常"
     ]
   },
   {
     "id": 2,
+    "scenario": "亲子育儿",
     "chunk": "Let's brush your teeth",
     "translation": "我们来刷牙吧",
-    "example": "Come on, let's brush your teeth together.",
-    "exampleCN": "来吧,我们一起刷牙。",
-    "scenario": "家庭亲子",
+    "example": "Let's brush your teeth before bed.",
+    "exampleCN": "睡前我们来刷牙吧。",
     "difficulty": "入门",
     "tags": [
-      "早晨",
-      "卫生"
+      "卫生",
+      "日常"
     ]
   },
   {
     "id": 3,
+    "scenario": "亲子育儿",
     "chunk": "Wash your hands",
     "translation": "洗手",
-    "example": "Don't forget to wash your hands before eating.",
-    "exampleCN": "吃饭前别忘了洗手。",
-    "scenario": "家庭亲子",
+    "example": "Wash your hands before dinner.",
+    "exampleCN": "吃晚饭前洗手。",
     "difficulty": "入门",
     "tags": [
       "卫生",
-      "吃饭"
+      "日常"
     ]
   },
   {
     "id": 4,
-    "chunk": "What would you like for breakfast?",
-    "translation": "你早餐想吃什么?",
-    "example": "What would you like for breakfast today?",
-    "exampleCN": "你今天早餐想吃什么?",
-    "scenario": "家庭亲子",
+    "scenario": "亲子育儿",
+    "chunk": "Put on your shoes",
+    "translation": "穿上鞋",
+    "example": "Put on your shoes, we're leaving now.",
+    "exampleCN": "穿上鞋,我们要出门了。",
     "difficulty": "入门",
     "tags": [
-      "吃饭",
-      "早晨"
+      "穿衣",
+      "出门"
     ]
   },
   {
     "id": 5,
-    "chunk": "Good job!",
-    "translation": "做得好!",
-    "example": "Good job! You finished all your vegetables!",
-    "exampleCN": "做得好!你把蔬菜都吃完了!",
-    "scenario": "家庭亲子",
+    "scenario": "亲子育儿",
+    "chunk": "Pick up your toys",
+    "translation": "收拾玩具",
+    "example": "Please pick up your toys before dinner.",
+    "exampleCN": "请在晚饭前收拾好玩具。",
     "difficulty": "入门",
     "tags": [
-      "鼓励",
-      "表扬"
+      "整理",
+      "日常"
     ]
   },
   {
     "id": 6,
-    "chunk": "I'm so proud of you",
-    "translation": "我为你感到骄傲",
-    "example": "I'm so proud of you for trying your best!",
-    "exampleCN": "我为你尽力而为感到骄傲!",
-    "scenario": "家庭亲子",
+    "scenario": "亲子育儿",
+    "chunk": "Sweet dreams",
+    "translation": "做个好梦",
+    "example": "Good night, sweet dreams!",
+    "exampleCN": "晚安,做个好梦!",
+    "difficulty": "入门",
+    "tags": [
+      "睡前",
+      "祝福"
+    ]
+  },
+  {
+    "id": 7,
+    "scenario": "亲子育儿",
+    "chunk": "Time for bed",
+    "translation": "该睡觉了",
+    "example": "It's 9 o'clock, time for bed.",
+    "exampleCN": "9点了,该睡觉了。",
+    "difficulty": "入门",
+    "tags": [
+      "睡觉",
+      "日常"
+    ]
+  },
+  {
+    "id": 8,
+    "scenario": "亲子育儿",
+    "chunk": "Be careful!",
+    "translation": "小心!",
+    "example": "Be careful, the floor is wet.",
+    "exampleCN": "小心,地板是湿的。",
+    "difficulty": "入门",
+    "tags": [
+      "提醒",
+      "安全"
+    ]
+  },
+  {
+    "id": 9,
+    "scenario": "亲子育儿",
+    "chunk": "Good job!",
+    "translation": "做得好!",
+    "example": "Good job! You tied your shoes by yourself.",
+    "exampleCN": "做得好! 你自己系好了鞋带。",
     "difficulty": "入门",
     "tags": [
       "鼓励",
@@ -78,4410 +117,1381 @@
     ]
   },
   {
-    "id": 7,
-    "chunk": "Be careful!",
-    "translation": "小心!",
-    "example": "Be careful when you're running!",
-    "exampleCN": "跑的时候要小心!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "安全",
-      "提醒"
-    ]
-  },
-  {
-    "id": 8,
-    "chunk": "Let's read a story",
-    "translation": "我们来读故事吧",
-    "example": "It's story time! Let's read a story together.",
-    "exampleCN": "故事时间到了!我们一起读故事吧。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "读书",
-      "睡前"
-    ]
-  },
-  {
-    "id": 9,
-    "chunk": "Time for bed",
-    "translation": "该睡觉了",
-    "example": "It's getting late. Time for bed, sweetie.",
-    "exampleCN": "时间不早了,该睡觉了,宝贝。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "睡觉",
-      "晚上"
-    ]
-  },
-  {
     "id": 10,
-    "chunk": "Sweet dreams",
-    "translation": "做个好梦",
-    "example": "Good night! Sweet dreams, my little one.",
-    "exampleCN": "晚安!做个好梦,我的小宝贝。",
-    "scenario": "家庭亲子",
+    "scenario": "亲子育儿",
+    "chunk": "Say please and thank you",
+    "translation": "说'请'和'谢谢'",
+    "example": "Remember to say please and thank you.",
+    "exampleCN": "记得要说请和谢谢。",
     "difficulty": "入门",
     "tags": [
-      "睡觉",
-      "晚上"
+      "礼貌",
+      "教养"
     ]
   },
   {
     "id": 11,
-    "chunk": "Put on your clothes",
-    "translation": "穿上衣服",
-    "example": "Let's put on your clothes and get ready.",
-    "exampleCN": "我们来穿上衣服准备好吧。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "How was your day?",
+    "translation": "你今天过得怎么样?",
+    "example": "How was your day at school today?",
+    "exampleCN": "今天在学校过得怎么样?",
+    "difficulty": "中级",
     "tags": [
-      "早晨",
-      "穿衣"
+      "关心",
+      "日常"
     ]
   },
   {
     "id": 12,
-    "chunk": "Pick up your toys",
-    "translation": "收拾玩具",
-    "example": "Time to pick up your toys before dinner.",
-    "exampleCN": "晚饭前该收拾玩具了。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Tell me what happened",
+    "translation": "告诉我发生了什么",
+    "example": "Take a deep breath and tell me what happened.",
+    "exampleCN": "深呼吸一下,告诉我发生了什么。",
+    "difficulty": "中级",
     "tags": [
-      "玩耍",
-      "整理"
-    ]
-  },
-  {
-    "id": 13,
-    "chunk": "Share with your friend",
-    "translation": "和朋友分享",
-    "example": "Remember to share with your friend.",
-    "exampleCN": "记得和朋友分享哦。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "社交",
-      "玩耍"
-    ]
-  },
-  {
-    "id": 14,
-    "chunk": "Say please and thank you",
-    "translation": "说'请'和'谢谢'",
-    "example": "Don't forget to say please and thank you.",
-    "exampleCN": "别忘了说'请'和'谢谢'。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "礼貌",
-      "社交"
-    ]
-  },
-  {
-    "id": 15,
-    "chunk": "How was your day?",
-    "translation": "你今天过得怎么样?",
-    "example": "How was your day at kindergarten?",
-    "exampleCN": "你今天在幼儿园过得怎么样?",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "交流",
-      "晚上"
-    ]
-  },
-  {
-    "id": 16,
-    "chunk": "I love you so much",
-    "translation": "我非常爱你",
-    "example": "I love you so much, my dear.",
-    "exampleCN": "我非常爱你,亲爱的。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "表达爱",
-      "情感"
-    ]
-  },
-  {
-    "id": 17,
-    "chunk": "Give me a hug",
-    "translation": "给我一个拥抱",
-    "example": "Come here and give me a hug!",
-    "exampleCN": "过来给我一个拥抱!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "表达爱",
-      "情感"
-    ]
-  },
-  {
-    "id": 18,
-    "chunk": "It's okay to make mistakes",
-    "translation": "犯错没关系",
-    "example": "It's okay to make mistakes. We learn from them.",
-    "exampleCN": "犯错没关系,我们从中学习。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "鼓励",
+      "沟通",
       "情绪"
     ]
   },
   {
+    "id": 13,
+    "scenario": "亲子育儿",
+    "chunk": "Use your words",
+    "translation": "用语言表达出来",
+    "example": "Don't cry, use your words to tell me.",
+    "exampleCN": "别哭,用语言告诉我。",
+    "difficulty": "中级",
+    "tags": [
+      "表达",
+      "情绪"
+    ]
+  },
+  {
+    "id": 14,
+    "scenario": "亲子育儿",
+    "chunk": "Use your inside voice",
+    "translation": "小声说话(室内)",
+    "example": "We're inside now, use your inside voice.",
+    "exampleCN": "我们现在在室内,请小声说话。",
+    "difficulty": "中级",
+    "tags": [
+      "礼仪",
+      "室内"
+    ]
+  },
+  {
+    "id": 15,
+    "scenario": "亲子育儿",
+    "chunk": "Take turns",
+    "translation": "轮流来",
+    "example": "You need to take turns with your friend.",
+    "exampleCN": "你要和朋友轮流来。",
+    "difficulty": "中级",
+    "tags": [
+      "分享",
+      "社交"
+    ]
+  },
+  {
+    "id": 16,
+    "scenario": "亲子育儿",
+    "chunk": "Keep an eye on",
+    "translation": "照看/留意",
+    "example": "Can you keep an eye on your sister?",
+    "exampleCN": "你能帮忙看着妹妹吗?",
+    "difficulty": "中级",
+    "tags": [
+      "照看",
+      "家务"
+    ]
+  },
+  {
+    "id": 17,
+    "scenario": "亲子育儿",
+    "chunk": "Don't be too hard on yourself",
+    "translation": "别对自己太苛刻",
+    "example": "You tried your best, don't be too hard on yourself.",
+    "exampleCN": "你尽力了,别对自己太苛刻。",
+    "difficulty": "中级",
+    "tags": [
+      "安慰",
+      "自我接纳"
+    ]
+  },
+  {
+    "id": 18,
+    "scenario": "亲子育儿",
+    "chunk": "Let's figure it out together",
+    "translation": "我们一起想办法",
+    "example": "Don't worry, let's figure it out together.",
+    "exampleCN": "别担心,我们一起想办法。",
+    "difficulty": "中级",
+    "tags": [
+      "合作",
+      "问题解决"
+    ]
+  },
+  {
     "id": 19,
-    "chunk": "Take your time",
-    "translation": "慢慢来",
-    "example": "Take your time. There's no rush.",
-    "exampleCN": "慢慢来,不着急。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "I'm proud of you",
+    "translation": "我为你感到骄傲",
+    "example": "I'm so proud of you for being brave.",
+    "exampleCN": "你这么勇敢,我真为你骄傲。",
+    "difficulty": "中级",
     "tags": [
       "鼓励",
-      "耐心"
+      "爱"
     ]
   },
   {
     "id": 20,
-    "chunk": "You can do it!",
-    "translation": "你能做到!",
-    "example": "I believe in you! You can do it!",
-    "exampleCN": "我相信你!你能做到!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "That's very thoughtful of you",
+    "translation": "你真贴心",
+    "example": "Thank you, that's very thoughtful of you.",
+    "exampleCN": "谢谢,你真贴心。",
+    "difficulty": "中级",
     "tags": [
-      "鼓励",
-      "支持"
+      "表扬",
+      "贴心"
     ]
   },
   {
     "id": 21,
-    "chunk": "Let's play together",
-    "translation": "我们一起玩吧",
-    "example": "Let's play together! What game do you want to play?",
-    "exampleCN": "我们一起玩吧!你想玩什么游戏?",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "It's not the end of the world",
+    "translation": "这不是什么大不了的事",
+    "example": "You lost the game, but it's not the end of the world.",
+    "exampleCN": "你输了比赛,但这不是什么大不了的事。",
+    "difficulty": "中级",
     "tags": [
-      "玩耍",
-      "互动"
+      "安慰",
+      "看开"
     ]
   },
   {
     "id": 22,
-    "chunk": "That's a great idea!",
-    "translation": "这是个好主意!",
-    "example": "That's a great idea! Let's try it!",
-    "exampleCN": "这是个好主意!我们试试吧!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Everyone makes mistakes",
+    "translation": "每个人都会犯错",
+    "example": "Don't be upset, everyone makes mistakes.",
+    "exampleCN": "别难过,每个人都会犯错。",
+    "difficulty": "中级",
     "tags": [
-      "鼓励",
-      "互动"
+      "安慰",
+      "成长"
     ]
   },
   {
     "id": 23,
-    "chunk": "Calm down",
-    "translation": "冷静下来",
-    "example": "Take a deep breath and calm down.",
-    "exampleCN": "深呼吸,冷静下来。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "How about we make a deal?",
+    "translation": "我们做个约定怎么样?",
+    "example": "How about we make a deal? One more show, then bed.",
+    "exampleCN": "我们做个约定怎么样? 再看一集就睡觉。",
+    "difficulty": "中级",
     "tags": [
-      "情绪",
-      "安抚"
+      "协商",
+      "约定"
     ]
   },
   {
     "id": 24,
-    "chunk": "Use your words",
-    "translation": "用语言表达",
-    "example": "Use your words to tell me how you feel.",
-    "exampleCN": "用语言告诉我你的感受。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "You have to be patient",
+    "translation": "你要有耐心",
+    "example": "Good things take time, you have to be patient.",
+    "exampleCN": "好事需要时间,你要有耐心。",
+    "difficulty": "中级",
     "tags": [
-      "情绪",
-      "交流"
+      "品格",
+      "教导"
     ]
   },
   {
     "id": 25,
-    "chunk": "It's bath time",
-    "translation": "洗澡时间到了",
-    "example": "It's bath time! Let's go to the bathroom.",
-    "exampleCN": "洗澡时间到了!我们去浴室吧。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "What do you feel like doing?",
+    "translation": "你想做什么?",
+    "example": "We have an hour, what do you feel like doing?",
+    "exampleCN": "我们有一小时,你想做什么?",
+    "difficulty": "中级",
     "tags": [
-      "洗澡",
-      "晚上"
+      "选择",
+      "互动"
     ]
   },
   {
     "id": 26,
-    "chunk": "Hold my hand",
-    "translation": "拉着我的手",
-    "example": "Hold my hand when we cross the street.",
-    "exampleCN": "过马路时拉着我的手。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Actions speak louder than words",
+    "translation": "行动胜于言语",
+    "example": "You said you'd help, but actions speak louder than words.",
+    "exampleCN": "你说会帮忙,但行动胜于言语。",
+    "difficulty": "高级",
     "tags": [
-      "安全",
-      "外出"
+      "品格",
+      "谚语"
     ]
   },
   {
     "id": 27,
-    "chunk": "Wait for me",
-    "translation": "等等我",
-    "example": "Don't run too fast! Wait for me!",
-    "exampleCN": "别跑太快!等等我!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Practice makes perfect",
+    "translation": "熟能生巧",
+    "example": "Keep practicing the piano, practice makes perfect.",
+    "exampleCN": "坚持练琴,熟能生巧。",
+    "difficulty": "高级",
     "tags": [
-      "外出",
-      "安全"
+      "鼓励",
+      "谚语"
     ]
   },
   {
     "id": 28,
-    "chunk": "Let me help you",
-    "translation": "让我来帮你",
-    "example": "That looks heavy. Let me help you.",
-    "exampleCN": "那个看起来很重,让我来帮你。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "It's the thought that counts",
+    "translation": "心意最重要",
+    "example": "The gift is small, but it's the thought that counts.",
+    "exampleCN": "礼物虽小,但心意最重要。",
+    "difficulty": "高级",
     "tags": [
-      "帮助",
-      "支持"
+      "情感",
+      "价值观"
     ]
   },
   {
     "id": 29,
-    "chunk": "Try again",
-    "translation": "再试一次",
-    "example": "It's okay! Try again, you'll get it!",
-    "exampleCN": "没关系!再试一次,你会成功的!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Think before you act",
+    "translation": "三思而后行",
+    "example": "I need you to think before you act next time.",
+    "exampleCN": "下次你要三思而后行。",
+    "difficulty": "高级",
     "tags": [
-      "鼓励",
-      "学习"
+      "教导",
+      "品格"
     ]
   },
   {
     "id": 30,
-    "chunk": "Look at me",
-    "translation": "看着我",
-    "example": "Look at me when I'm talking to you.",
-    "exampleCN": "我和你说话时看着我。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Stand up for yourself",
+    "translation": "为自己挺身而出",
+    "example": "If someone bullies you, stand up for yourself.",
+    "exampleCN": "如果有人欺负你,要为自己挺身而出。",
+    "difficulty": "高级",
     "tags": [
-      "注意力",
-      "交流"
+      "勇气",
+      "品格"
     ]
   },
   {
     "id": 31,
-    "chunk": "Eat your vegetables",
-    "translation": "吃蔬菜",
-    "example": "Please eat your vegetables. They're good for you.",
-    "exampleCN": "请吃你的蔬菜,它们对你有好处。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Put yourself in her shoes",
+    "translation": "站在她的角度想想",
+    "example": "Before you judge her, put yourself in her shoes.",
+    "exampleCN": "评判她之前,先站在她的角度想想。",
+    "difficulty": "高级",
     "tags": [
-      "吃饭",
-      "健康"
+      "同理心",
+      "品格"
     ]
   },
   {
     "id": 32,
-    "chunk": "Don't touch that",
-    "translation": "别碰那个",
-    "example": "Don't touch that! It's hot!",
-    "exampleCN": "别碰那个!很烫!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Let's agree to disagree",
+    "translation": "求同存异",
+    "example": "We see things differently, let's agree to disagree.",
+    "exampleCN": "我们看法不同,就求同存异吧。",
+    "difficulty": "高级",
     "tags": [
-      "安全",
-      "警告"
+      "沟通",
+      "包容"
     ]
   },
   {
     "id": 33,
-    "chunk": "What color is this?",
-    "translation": "这是什么颜色?",
-    "example": "What color is this apple? Is it red?",
-    "exampleCN": "这个苹果是什么颜色?是红色吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Make a big deal out of it",
+    "translation": "小题大做",
+    "example": "It was just an accident, let's not make a big deal out of it.",
+    "exampleCN": "只是个意外,别小题大做。",
+    "difficulty": "高级",
     "tags": [
-      "学习",
-      "互动"
+      "看开",
+      "情绪"
     ]
   },
   {
     "id": 34,
-    "chunk": "Count with me",
-    "translation": "和我一起数",
-    "example": "Let's count with me. One, two, three...",
-    "exampleCN": "和我一起数,一、二、三...",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Cross that bridge when we come to it",
+    "translation": "船到桥头自然直",
+    "example": "Don't worry about next year, we'll cross that bridge when we come to it.",
+    "exampleCN": "别担心明年的事,船到桥头自然直。",
+    "difficulty": "高级",
     "tags": [
-      "学习",
-      "互动"
+      "心态",
+      "谚语"
     ]
   },
   {
     "id": 35,
-    "chunk": "It's time to go",
-    "translation": "该走了",
-    "example": "Come on, it's time to go to kindergarten.",
-    "exampleCN": "来吧,该去幼儿园了。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
+    "scenario": "亲子育儿",
+    "chunk": "Give it a shot",
+    "translation": "试试看",
+    "example": "You might like it, give it a shot.",
+    "exampleCN": "你可能会喜欢,试试看吧。",
+    "difficulty": "高级",
     "tags": [
-      "外出",
-      "早晨"
+      "鼓励",
+      "尝试"
     ]
   },
   {
     "id": 36,
-    "chunk": "We're home!",
-    "translation": "我们到家了!",
-    "example": "We're home! Let's take off our shoes.",
-    "exampleCN": "我们到家了!我们来脱鞋吧。",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "How's it going?",
+    "translation": "最近怎么样?",
+    "example": "Hey John, how's it going?",
+    "exampleCN": "嘿约翰,最近怎么样?",
     "difficulty": "入门",
     "tags": [
-      "回家",
-      "晚上"
+      "问候",
+      "寒暄"
     ]
   },
   {
     "id": 37,
-    "chunk": "Are you hungry?",
-    "translation": "你饿了吗?",
-    "example": "Are you hungry? Let's have a snack.",
-    "exampleCN": "你饿了吗?我们吃点零食吧。",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "Long time no see",
+    "translation": "好久不见",
+    "example": "Hey, long time no see! How have you been?",
+    "exampleCN": "嘿,好久不见! 最近过得怎么样?",
     "difficulty": "入门",
     "tags": [
-      "吃饭",
-      "关心"
+      "问候",
+      "重逢"
     ]
   },
   {
     "id": 38,
-    "chunk": "Drink some water",
-    "translation": "喝点水",
-    "example": "You must be thirsty. Drink some water.",
-    "exampleCN": "你一定渴了,喝点水吧。",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "Take care",
+    "translation": "保重",
+    "example": "See you next week, take care!",
+    "exampleCN": "下周见,保重!",
     "difficulty": "入门",
     "tags": [
-      "健康",
+      "告别",
       "关心"
     ]
   },
   {
     "id": 39,
-    "chunk": "Let's go outside",
-    "translation": "我们出去吧",
-    "example": "It's a beautiful day! Let's go outside and play.",
-    "exampleCN": "天气真好!我们出去玩吧。",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "No worries",
+    "translation": "没关系/别担心",
+    "example": "You're a bit late? No worries.",
+    "exampleCN": "你有点迟到? 没关系。",
     "difficulty": "入门",
     "tags": [
-      "外出",
-      "玩耍"
+      "宽慰",
+      "口语"
     ]
   },
   {
     "id": 40,
-    "chunk": "Come back here",
-    "translation": "回到这里来",
-    "example": "Don't go too far! Come back here!",
-    "exampleCN": "别走太远!回到这里来!",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "That makes sense",
+    "translation": "有道理",
+    "example": "That makes sense, I agree with you.",
+    "exampleCN": "有道理,我同意你的说法。",
     "difficulty": "入门",
     "tags": [
-      "安全",
-      "外出"
+      "认同",
+      "回应"
     ]
   },
   {
     "id": 41,
-    "chunk": "That's enough",
-    "translation": "够了",
-    "example": "That's enough screen time for today.",
-    "exampleCN": "今天看屏幕的时间够了。",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "Sounds good",
+    "translation": "听起来不错",
+    "example": "Dinner at 7? Sounds good.",
+    "exampleCN": "7点晚餐? 听起来不错。",
     "difficulty": "入门",
     "tags": [
-      "规矩",
-      "限制"
+      "认同",
+      "约定"
     ]
   },
   {
     "id": 42,
-    "chunk": "Say sorry",
-    "translation": "说对不起",
-    "example": "You hurt your friend. Say sorry.",
-    "exampleCN": "你伤害了朋友,说对不起。",
-    "scenario": "家庭亲子",
+    "scenario": "日常生活",
+    "chunk": "Let me know",
+    "translation": "告诉我一声",
+    "example": "Let me know if you need anything.",
+    "exampleCN": "需要什么告诉我一声。",
     "difficulty": "入门",
     "tags": [
-      "礼貌",
-      "社交"
-    ]
-  },
-  {
-    "id": 43,
-    "chunk": "I'm here for you",
-    "translation": "我在这里陪你",
-    "example": "Don't worry. I'm here for you.",
-    "exampleCN": "别担心,我在这里陪你。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "安抚",
-      "支持"
-    ]
-  },
-  {
-    "id": 44,
-    "chunk": "Tell me what happened",
-    "translation": "告诉我发生了什么",
-    "example": "Tell me what happened. I'm listening.",
-    "exampleCN": "告诉我发生了什么,我在听。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "交流",
-      "安抚"
-    ]
-  },
-  {
-    "id": 45,
-    "chunk": "You're getting so big!",
-    "translation": "你长这么大了!",
-    "example": "Wow! You're getting so big! Look how tall you are!",
-    "exampleCN": "哇!你长这么大了!看你有多高!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "夸奖",
-      "成长"
-    ]
-  },
-  {
-    "id": 46,
-    "chunk": "Let's sing a song",
-    "translation": "我们来唱歌吧",
-    "example": "Let's sing a song together! Your favorite one!",
-    "exampleCN": "我们一起唱歌吧!你最喜欢的那首!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "玩耍",
-      "互动"
-    ]
-  },
-  {
-    "id": 47,
-    "chunk": "Dance with me",
-    "translation": "和我一起跳舞",
-    "example": "This is fun! Dance with me!",
-    "exampleCN": "真好玩!和我一起跳舞!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "玩耍",
-      "互动"
-    ]
-  },
-  {
-    "id": 48,
-    "chunk": "Look what I found!",
-    "translation": "看我发现了什么!",
-    "example": "Look what I found! A beautiful flower!",
-    "exampleCN": "看我发现了什么!一朵漂亮的花!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "互动",
-      "分享"
-    ]
-  },
-  {
-    "id": 49,
-    "chunk": "That's interesting!",
-    "translation": "真有趣!",
-    "example": "That's interesting! Tell me more!",
-    "exampleCN": "真有趣!告诉我更多!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "鼓励",
-      "互动"
-    ]
-  },
-  {
-    "id": 50,
-    "chunk": "What do you think?",
-    "translation": "你觉得呢?",
-    "example": "What do you think? Do you like it?",
-    "exampleCN": "你觉得呢?你喜欢吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "交流",
-      "互动"
-    ]
-  },
-  {
-    "id": 51,
-    "chunk": "Let's clean up",
-    "translation": "我们来收拾吧",
-    "example": "Time to clean up! Let's put everything away.",
-    "exampleCN": "该收拾了!我们把东西都放好吧。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "整理",
-      "规矩"
-    ]
-  },
-  {
-    "id": 52,
-    "chunk": "One more time",
-    "translation": "再来一次",
-    "example": "Okay, one more time, then we need to go.",
-    "exampleCN": "好的,再来一次,然后我们得走了。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "妥协",
-      "限制"
-    ]
-  },
-  {
-    "id": 53,
-    "chunk": "That's very kind of you",
-    "translation": "你真善良",
-    "example": "That's very kind of you to share your toys.",
-    "exampleCN": "你分享玩具真善良。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "夸奖",
-      "品德"
-    ]
-  },
-  {
-    "id": 54,
-    "chunk": "You're so brave!",
-    "translation": "你真勇敢!",
-    "example": "You're so brave! You tried something new!",
-    "exampleCN": "你真勇敢!你尝试了新东西!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "夸奖",
-      "鼓励"
-    ]
-  },
-  {
-    "id": 55,
-    "chunk": "I'm listening",
-    "translation": "我在听",
-    "example": "Go ahead, I'm listening to you.",
-    "exampleCN": "说吧,我在听你说。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "交流",
-      "尊重"
-    ]
-  },
-  {
-    "id": 56,
-    "chunk": "Let's make something",
-    "translation": "我们来做点什么吧",
-    "example": "Let's make something fun together!",
-    "exampleCN": "我们一起做点有趣的东西吧!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "玩耍",
-      "创作"
-    ]
-  },
-  {
-    "id": 57,
-    "chunk": "Do you need help?",
-    "translation": "你需要帮忙吗?",
-    "example": "Do you need help with that?",
-    "exampleCN": "你需要帮忙吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "帮助",
+      "请求",
       "关心"
     ]
   },
   {
-    "id": 58,
-    "chunk": "Almost there!",
-    "translation": "快到了!",
-    "example": "Almost there! You're doing great!",
-    "exampleCN": "快到了!你做得很好!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "鼓励",
-      "支持"
-    ]
-  },
-  {
-    "id": 59,
-    "chunk": "That tickles!",
-    "translation": "好痒!",
-    "example": "Haha! That tickles! Stop it!",
-    "exampleCN": "哈哈!好痒!别闹了!",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "玩耍",
-      "互动"
-    ]
-  },
-  {
-    "id": 60,
-    "chunk": "You make me so happy",
-    "translation": "你让我好开心",
-    "example": "You make me so happy every day.",
-    "exampleCN": "你每天都让我好开心。",
-    "scenario": "家庭亲子",
-    "difficulty": "入门",
-    "tags": [
-      "表达爱",
-      "情感"
-    ]
-  },
-  {
-    "id": 61,
-    "chunk": "How are you doing?",
-    "translation": "你怎么样?",
-    "example": "Hey! How are you doing today?",
-    "exampleCN": "嘿!你今天怎么样?",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "问候",
-      "日常"
-    ]
-  },
-  {
-    "id": 62,
-    "chunk": "What's up?",
-    "translation": "怎么了?/最近如何?",
-    "example": "What's up? Long time no see!",
-    "exampleCN": "最近如何?好久不见!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "问候",
-      "日常"
-    ]
-  },
-  {
-    "id": 63,
-    "chunk": "I'm good, thanks",
-    "translation": "我很好,谢谢",
-    "example": "I'm good, thanks for asking!",
-    "exampleCN": "我很好,谢谢关心!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "回应",
-      "日常"
-    ]
-  },
-  {
-    "id": 64,
-    "chunk": "Catch you later",
-    "translation": "回头见",
-    "example": "I have to go now. Catch you later!",
-    "exampleCN": "我得走了,回头见!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "告别",
-      "日常"
-    ]
-  },
-  {
-    "id": 65,
-    "chunk": "No worries",
-    "translation": "别担心/没关系",
-    "example": "You forgot? No worries, it happens!",
-    "exampleCN": "你忘了?没关系,这种事常有!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "安慰",
-      "日常"
-    ]
-  },
-  {
-    "id": 66,
-    "chunk": "That makes sense",
-    "translation": "有道理",
-    "example": "Oh, that makes sense now!",
-    "exampleCN": "哦,现在有道理了!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "理解",
-      "日常"
-    ]
-  },
-  {
-    "id": 67,
-    "chunk": "I see what you mean",
-    "translation": "我明白你的意思",
-    "example": "I see what you mean. That's a good point.",
-    "exampleCN": "我明白你的意思,说得好。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "理解",
-      "日常"
-    ]
-  },
-  {
-    "id": 68,
-    "chunk": "Let me know",
-    "translation": "告诉我",
-    "example": "Let me know if you need any help.",
-    "exampleCN": "如果需要帮忙告诉我。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "沟通",
-      "日常"
-    ]
-  },
-  {
-    "id": 69,
-    "chunk": "Sounds good",
-    "translation": "听起来不错",
-    "example": "Dinner at 7? Sounds good to me!",
-    "exampleCN": "7点吃晚饭?听起来不错!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "同意",
-      "日常"
-    ]
-  },
-  {
-    "id": 70,
-    "chunk": "I'm not sure",
-    "translation": "我不确定",
-    "example": "I'm not sure about that. Let me check.",
-    "exampleCN": "我不太确定,让我查一下。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "犹豫",
-      "日常"
-    ]
-  },
-  {
-    "id": 71,
-    "chunk": "By the way",
-    "translation": "顺便说一下",
-    "example": "By the way, did you watch that movie?",
-    "exampleCN": "顺便说一下,你看那部电影了吗?",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "转折",
-      "日常"
-    ]
-  },
-  {
-    "id": 72,
-    "chunk": "It depends",
-    "translation": "看情况",
-    "example": "Can you come? It depends on my schedule.",
-    "exampleCN": "你能来吗?看我的日程安排。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "回应",
-      "日常"
-    ]
-  },
-  {
-    "id": 73,
-    "chunk": "That's awesome!",
-    "translation": "太棒了!",
-    "example": "You got the job? That's awesome!",
-    "exampleCN": "你得到工作了?太棒了!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "赞美",
-      "日常"
-    ]
-  },
-  {
-    "id": 74,
-    "chunk": "I can't believe it",
-    "translation": "真不敢相信",
-    "example": "I can't believe it's already December!",
-    "exampleCN": "真不敢相信已经12月了!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "惊讶",
-      "日常"
-    ]
-  },
-  {
-    "id": 75,
-    "chunk": "That reminds me",
-    "translation": "这让我想起",
-    "example": "That reminds me, I need to call my mom.",
-    "exampleCN": "这让我想起,我得给妈妈打电话。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "联想",
-      "日常"
-    ]
-  },
-  {
-    "id": 76,
-    "chunk": "I totally agree",
-    "translation": "我完全同意",
-    "example": "I totally agree with your opinion.",
-    "exampleCN": "我完全同意你的观点。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "同意",
-      "日常"
-    ]
-  },
-  {
-    "id": 77,
-    "chunk": "Take it easy",
-    "translation": "放轻松/别紧张",
-    "example": "Take it easy! Everything will be fine.",
-    "exampleCN": "放轻松!一切都会好的。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "安慰",
-      "日常"
-    ]
-  },
-  {
-    "id": 78,
-    "chunk": "I'm on my way",
-    "translation": "我在路上了",
-    "example": "Don't worry, I'm on my way!",
-    "exampleCN": "别担心,我在路上了!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "通知",
-      "日常"
-    ]
-  },
-  {
-    "id": 79,
-    "chunk": "Keep in touch",
-    "translation": "保持联系",
-    "example": "It was nice seeing you! Keep in touch!",
-    "exampleCN": "很高兴见到你!保持联系!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "告别",
-      "日常"
-    ]
-  },
-  {
-    "id": 80,
-    "chunk": "I'm running late",
-    "translation": "我要迟到了",
-    "example": "Sorry, I'm running late. See you in 10 minutes.",
-    "exampleCN": "抱歉,我要迟到了,10分钟后见。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "道歉",
-      "日常"
-    ]
-  },
-  {
-    "id": 81,
-    "chunk": "That's a good question",
-    "translation": "这是个好问题",
-    "example": "That's a good question. Let me think about it.",
-    "exampleCN": "这是个好问题,让我想想。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "回应",
-      "日常"
-    ]
-  },
-  {
-    "id": 82,
-    "chunk": "I'm not a fan of",
-    "translation": "我不太喜欢",
-    "example": "I'm not a fan of spicy food.",
-    "exampleCN": "我不太喜欢辣的食物。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "偏好",
-      "日常"
-    ]
-  },
-  {
-    "id": 83,
-    "chunk": "What do you think about",
-    "translation": "你觉得...怎么样",
-    "example": "What do you think about this plan?",
-    "exampleCN": "你觉得这个计划怎么样?",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "询问",
-      "日常"
-    ]
-  },
-  {
-    "id": 84,
-    "chunk": "Feel free to",
-    "translation": "随意/请便",
-    "example": "Feel free to ask me anything.",
-    "exampleCN": "有任何问题随时问我。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "邀请",
-      "日常"
-    ]
-  },
-  {
-    "id": 85,
-    "chunk": "I'd love to",
-    "translation": "我很乐意",
-    "example": "Would you like to join us? I'd love to!",
-    "exampleCN": "想和我们一起吗?我很乐意!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "接受",
-      "日常"
-    ]
-  },
-  {
-    "id": 86,
-    "chunk": "I'm afraid",
-    "translation": "恐怕/我担心",
-    "example": "I'm afraid I can't make it tonight.",
-    "exampleCN": "恐怕我今晚去不了。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "拒绝",
-      "日常"
-    ]
-  },
-  {
-    "id": 87,
-    "chunk": "It's been a while",
-    "translation": "好久不见",
-    "example": "Hey! It's been a while! How have you been?",
-    "exampleCN": "嘿!好久不见!你最近怎么样?",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "问候",
-      "日常"
-    ]
-  },
-  {
-    "id": 88,
-    "chunk": "Never mind",
-    "translation": "算了/没关系",
-    "example": "Can you help me? Oh wait, never mind, I got it.",
-    "exampleCN": "能帮我吗?哦等等,算了,我搞定了。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "取消",
-      "日常"
-    ]
-  },
-  {
-    "id": 89,
-    "chunk": "That's too bad",
-    "translation": "太遗憾了",
-    "example": "You can't come? That's too bad.",
-    "exampleCN": "你不能来?太遗憾了。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "同情",
-      "日常"
-    ]
-  },
-  {
-    "id": 90,
-    "chunk": "Just kidding",
-    "translation": "开玩笑的",
-    "example": "You fell for it? Just kidding!",
-    "exampleCN": "你上当了?开玩笑的!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "幽默",
-      "日常"
-    ]
-  },
-  {
-    "id": 91,
-    "chunk": "I mean it",
-    "translation": "我是认真的",
-    "example": "Thank you so much. I mean it.",
-    "exampleCN": "非常感谢你,我是认真的。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "强调",
-      "日常"
-    ]
-  },
-  {
-    "id": 92,
-    "chunk": "Fair enough",
-    "translation": "有道理/合理",
-    "example": "I don't like it. Fair enough, everyone has their preferences.",
-    "exampleCN": "我不喜欢,有道理,每个人都有自己的偏好。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "理解",
-      "日常"
-    ]
-  },
-  {
-    "id": 93,
-    "chunk": "Give me a second",
-    "translation": "等我一下",
-    "example": "Give me a second, I'll be right back.",
-    "exampleCN": "等我一下,我马上回来。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "请求",
-      "日常"
-    ]
-  },
-  {
-    "id": 94,
-    "chunk": "I have no idea",
-    "translation": "我不知道",
-    "example": "Where is she? I have no idea.",
-    "exampleCN": "她在哪?我不知道。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "回应",
-      "日常"
-    ]
-  },
-  {
-    "id": 95,
-    "chunk": "It's up to you",
-    "translation": "由你决定",
-    "example": "Where should we eat? It's up to you.",
-    "exampleCN": "我们去哪吃?由你决定。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "决定",
-      "日常"
-    ]
-  },
-  {
-    "id": 96,
-    "chunk": "I'm looking forward to",
-    "translation": "我期待",
-    "example": "I'm looking forward to seeing you!",
-    "exampleCN": "我期待见到你!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "期待",
-      "日常"
-    ]
-  },
-  {
-    "id": 97,
-    "chunk": "That's exactly what I thought",
-    "translation": "这正是我想的",
-    "example": "That's exactly what I thought! Great minds think alike.",
-    "exampleCN": "这正是我想的!英雄所见略同。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "同意",
-      "日常"
-    ]
-  },
-  {
-    "id": 98,
-    "chunk": "I can't wait",
-    "translation": "我等不及了",
-    "example": "I can't wait to try that new restaurant!",
-    "exampleCN": "我等不及要试试那家新餐厅了!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "兴奋",
-      "日常"
-    ]
-  },
-  {
-    "id": 99,
-    "chunk": "Let's call it a day",
-    "translation": "今天就到这吧",
-    "example": "I'm tired. Let's call it a day.",
-    "exampleCN": "我累了,今天就到这吧。",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "结束",
-      "日常"
-    ]
-  },
-  {
-    "id": 100,
-    "chunk": "That's a relief",
-    "translation": "松了口气",
-    "example": "The test is over? That's a relief!",
-    "exampleCN": "考试结束了?松了口气!",
-    "scenario": "日常交流",
-    "difficulty": "入门",
-    "tags": [
-      "放松",
-      "日常"
-    ]
-  },
-  {
-    "id": 101,
-    "chunk": "I couldn't agree more",
-    "translation": "我完全同意",
-    "example": "I couldn't agree more with what you just said.",
-    "exampleCN": "我完全同意你刚才说的。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "同意"
-    ]
-  },
-  {
-    "id": 102,
-    "chunk": "As far as I'm concerned",
-    "translation": "就我而言",
-    "example": "As far as I'm concerned, this is the best solution.",
-    "exampleCN": "就我而言,这是最好的解决方案。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "陈述"
-    ]
-  },
-  {
-    "id": 103,
-    "chunk": "To be honest",
-    "translation": "说实话",
-    "example": "To be honest, I'm not sure about this plan.",
-    "exampleCN": "说实话,我对这个计划不太确定。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "坦诚"
-    ]
-  },
-  {
-    "id": 104,
-    "chunk": "From my perspective",
-    "translation": "从我的角度看",
-    "example": "From my perspective, we should focus on quality.",
-    "exampleCN": "从我的角度看,我们应该注重质量。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "角度"
-    ]
-  },
-  {
-    "id": 105,
-    "chunk": "On second thought",
-    "translation": "再想想/经重新考虑",
-    "example": "On second thought, maybe we should wait.",
-    "exampleCN": "再想想,也许我们应该等等。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "改变想法",
-      "决定"
-    ]
-  },
-  {
-    "id": 106,
-    "chunk": "It's worth noting that",
-    "translation": "值得注意的是",
-    "example": "It's worth noting that prices will increase next month.",
-    "exampleCN": "值得注意的是下个月价格会上涨。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "强调",
-      "提醒"
-    ]
-  },
-  {
-    "id": 107,
-    "chunk": "To cut a long story short",
-    "translation": "长话短说",
-    "example": "To cut a long story short, we succeeded.",
-    "exampleCN": "长话短说,我们成功了。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "总结",
-      "简化"
-    ]
-  },
-  {
-    "id": 108,
-    "chunk": "Speaking of which",
-    "translation": "说到这个",
-    "example": "Speaking of which, have you finished the report?",
-    "exampleCN": "说到这个,你完成报告了吗?",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "转折",
-      "联系"
-    ]
-  },
-  {
-    "id": 109,
-    "chunk": "That being said",
-    "translation": "话虽如此",
-    "example": "That being said, we still need to be careful.",
-    "exampleCN": "话虽如此,我们还是要小心。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "转折",
-      "补充"
-    ]
-  },
-  {
-    "id": 110,
-    "chunk": "In other words",
-    "translation": "换句话说",
-    "example": "In other words, we're running out of time.",
-    "exampleCN": "换句话说,我们时间不多了。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "解释",
-      "换表达"
-    ]
-  },
-  {
-    "id": 111,
-    "chunk": "I'm inclined to think",
-    "translation": "我倾向于认为",
-    "example": "I'm inclined to think that option A is better.",
-    "exampleCN": "我倾向于认为选项A更好。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "偏向"
-    ]
-  },
-  {
-    "id": 112,
-    "chunk": "If I'm not mistaken",
-    "translation": "如果我没记错的话",
-    "example": "If I'm not mistaken, the meeting is at 3 PM.",
-    "exampleCN": "如果我没记错的话,会议在下午3点。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "不确定",
-      "回忆"
-    ]
-  },
-  {
-    "id": 113,
-    "chunk": "Come to think of it",
-    "translation": "想起来了",
-    "example": "Come to think of it, he did mention that.",
-    "exampleCN": "想起来了,他确实提到过。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "回忆",
-      "联想"
-    ]
-  },
-  {
-    "id": 114,
-    "chunk": "For what it's worth",
-    "translation": "不管有没有用",
-    "example": "For what it's worth, I think you did great.",
-    "exampleCN": "不管有没有用,我觉得你做得很好。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "谦虚"
-    ]
-  },
-  {
-    "id": 115,
-    "chunk": "All things considered",
-    "translation": "综合考虑",
-    "example": "All things considered, it was a successful project.",
-    "exampleCN": "综合考虑,这是个成功的项目。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "总结",
-      "评价"
-    ]
-  },
-  {
-    "id": 116,
-    "chunk": "As a matter of fact",
-    "translation": "事实上",
-    "example": "As a matter of fact, I was just about to call you.",
-    "exampleCN": "事实上,我正要给你打电话。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "强调",
-      "事实"
-    ]
-  },
-  {
-    "id": 117,
-    "chunk": "On the bright side",
-    "translation": "往好的方面看",
-    "example": "On the bright side, at least we learned something.",
-    "exampleCN": "往好的方面看,至少我们学到了东西。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "乐观",
-      "积极"
-    ]
-  },
-  {
-    "id": 118,
-    "chunk": "When it comes to",
-    "translation": "说到/涉及到",
-    "example": "When it comes to technology, he's an expert.",
-    "exampleCN": "说到技术,他是专家。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "转折",
-      "领域"
-    ]
-  },
-  {
-    "id": 119,
-    "chunk": "Between you and me",
-    "translation": "你我之间说/私下说",
-    "example": "Between you and me, I think the plan will fail.",
-    "exampleCN": "私下说,我觉得这个计划会失败。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "秘密",
-      "私下"
-    ]
-  },
-  {
-    "id": 120,
-    "chunk": "To make matters worse",
-    "translation": "更糟糕的是",
-    "example": "To make matters worse, it started raining.",
-    "exampleCN": "更糟糕的是,开始下雨了。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "递进",
-      "恶化"
-    ]
-  },
-  {
-    "id": 121,
-    "chunk": "The thing is",
-    "translation": "问题是/关键是",
-    "example": "The thing is, we don't have enough budget.",
-    "exampleCN": "问题是,我们预算不够。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "解释",
-      "关键"
-    ]
-  },
-  {
-    "id": 122,
-    "chunk": "What I'm trying to say is",
-    "translation": "我想说的是",
-    "example": "What I'm trying to say is that we need more time.",
-    "exampleCN": "我想说的是我们需要更多时间。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "解释",
-      "澄清"
-    ]
-  },
-  {
-    "id": 123,
-    "chunk": "No offense, but",
-    "translation": "无意冒犯,但是",
-    "example": "No offense, but I think your idea needs work.",
-    "exampleCN": "无意冒犯,但我觉得你的想法还需要改进。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "礼貌",
-      "批评"
-    ]
-  },
-  {
-    "id": 124,
-    "chunk": "If you ask me",
-    "translation": "如果你问我的话",
-    "example": "If you ask me, we should start over.",
-    "exampleCN": "如果你问我的话,我们应该重新开始。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "表达观点",
-      "建议"
-    ]
-  },
-  {
-    "id": 125,
-    "chunk": "At the end of the day",
-    "translation": "归根结底",
-    "example": "At the end of the day, results are what matter.",
-    "exampleCN": "归根结底,结果才是重要的。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "总结",
-      "本质"
-    ]
-  },
-  {
-    "id": 126,
-    "chunk": "It's a no-brainer",
-    "translation": "显而易见/不用多想",
-    "example": "This deal is so good, it's a no-brainer!",
-    "exampleCN": "这笔交易太好了,显而易见!",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "简单",
-      "明显"
-    ]
-  },
-  {
-    "id": 127,
-    "chunk": "I'll give it a shot",
-    "translation": "我试试看",
-    "example": "I've never done this before, but I'll give it a shot.",
-    "exampleCN": "我以前没做过,但我试试看。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "尝试",
-      "勇气"
-    ]
-  },
-  {
-    "id": 128,
-    "chunk": "Let's get down to business",
-    "translation": "言归正传",
-    "example": "Enough small talk. Let's get down to business.",
-    "exampleCN": "闲聊够了,言归正传。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "开始",
-      "正式"
-    ]
-  },
-  {
-    "id": 129,
-    "chunk": "I'm all ears",
-    "translation": "我洗耳恭听",
-    "example": "You have a proposal? I'm all ears!",
-    "exampleCN": "你有提议?我洗耳恭听!",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "倾听",
-      "专注"
-    ]
-  },
-  {
-    "id": 130,
-    "chunk": "It slipped my mind",
-    "translation": "我忘了",
-    "example": "Sorry, it completely slipped my mind.",
-    "exampleCN": "抱歉,我完全忘了。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "遗忘",
-      "道歉"
-    ]
-  },
-  {
-    "id": 131,
-    "chunk": "That's beside the point",
-    "translation": "这不是重点",
-    "example": "That's interesting, but that's beside the point.",
-    "exampleCN": "这很有趣,但这不是重点。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "转折",
-      "聚焦"
-    ]
-  },
-  {
-    "id": 132,
-    "chunk": "Off the top of my head",
-    "translation": "我第一反应/凭记忆",
-    "example": "Off the top of my head, I'd say around 50.",
-    "exampleCN": "凭记忆,我会说大概50个。",
-    "scenario": "口语表达",
-    "difficulty": "进阶",
-    "tags": [
-      "即兴",
-      "粗略"
-    ]
-  },
-  {
-    "id": 133,
-    "chunk": "I'm in two minds about",
-    "translation": "我对...犹豫不决",
-    "example": "I'm in two minds about accepting the offer.",
-    "exampleCN": "我对接受这个提议犹豫不决。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "犹豫",
-      "矛盾"
-    ]
-  },
-  {
-    "id": 134,
-    "chunk": "It's not my cup of tea",
-    "translation": "这不是我的菜",
-    "example": "Classical music? It's not really my cup of tea.",
-    "exampleCN": "古典音乐?这不太是我的菜。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "偏好",
+    "id": 43,
+    "scenario": "日常生活",
+    "chunk": "I'm just browsing",
+    "translation": "我只是随便看看",
+    "example": "Thanks, I'm just browsing for now.",
+    "exampleCN": "谢谢,我只是随便看看。",
+    "difficulty": "中级",
+    "tags": [
+      "购物",
       "拒绝"
     ]
   },
   {
-    "id": 135,
-    "chunk": "Let's play it by ear",
-    "translation": "随机应变/见机行事",
-    "example": "I'm not sure about tomorrow. Let's play it by ear.",
-    "exampleCN": "我不确定明天,我们见机行事吧。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
+    "id": 44,
+    "scenario": "日常生活",
+    "chunk": "Can I try this on?",
+    "translation": "我可以试穿吗?",
+    "example": "Excuse me, can I try this on?",
+    "exampleCN": "打扰了,这个我可以试穿吗?",
+    "difficulty": "中级",
     "tags": [
-      "灵活",
-      "应变"
-    ]
-  },
-  {
-    "id": 136,
-    "chunk": "It's a piece of cake",
-    "translation": "小菜一碟",
-    "example": "This task? It's a piece of cake for me.",
-    "exampleCN": "这个任务?对我来说小菜一碟。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "简单",
-      "自信"
-    ]
-  },
-  {
-    "id": 137,
-    "chunk": "Actions speak louder than words",
-    "translation": "行动胜于言语",
-    "example": "Don't just promise. Actions speak louder than words.",
-    "exampleCN": "不要只是承诺,行动胜于言语。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "哲理",
-      "行动"
-    ]
-  },
-  {
-    "id": 138,
-    "chunk": "Better late than never",
-    "translation": "迟做总比不做好",
-    "example": "You finally finished it? Better late than never!",
-    "exampleCN": "你终于完成了?迟做总比不做好!",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "鼓励",
-      "哲理"
-    ]
-  },
-  {
-    "id": 139,
-    "chunk": "The ball is in your court",
-    "translation": "该你行动了",
-    "example": "I've made my offer. The ball is in your court now.",
-    "exampleCN": "我已经出价了,该你行动了。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "轮到",
-      "决定"
-    ]
-  },
-  {
-    "id": 140,
-    "chunk": "Break the ice",
-    "translation": "打破僵局/破冰",
-    "example": "Let's play a game to break the ice.",
-    "exampleCN": "我们玩个游戏来破冰吧。",
-    "scenario": "口语表达",
-    "difficulty": "高级",
-    "tags": [
-      "社交",
-      "开场"
-    ]
-  },
-  {
-    "id": 141,
-    "chunk": "Let's move forward with the agenda",
-    "translation": "我们按议程推进",
-    "example": "Let's move forward with the agenda for today's meeting.",
-    "exampleCN": "我们按今天会议的议程推进。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "议程"
-    ]
-  },
-  {
-    "id": 142,
-    "chunk": "Can we circle back to this later?",
-    "translation": "我们稍后再回到这个话题?",
-    "example": "Can we circle back to this later? We're running short on time.",
-    "exampleCN": "我们稍后再回到这个话题?时间不多了。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "推迟"
-    ]
-  },
-  {
-    "id": 143,
-    "chunk": "Let's table this for now",
-    "translation": "我们暂时搁置这个",
-    "example": "Let's table this for now and discuss it next week.",
-    "exampleCN": "我们暂时搁置这个,下周再讨论。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "推迟"
-    ]
-  },
-  {
-    "id": 144,
-    "chunk": "I'd like to add to that",
-    "translation": "我想补充一下",
-    "example": "I'd like to add to that point you just made.",
-    "exampleCN": "我想补充一下你刚才说的观点。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "补充"
-    ]
-  },
-  {
-    "id": 145,
-    "chunk": "Can I jump in here?",
-    "translation": "我能插句话吗?",
-    "example": "Sorry, can I jump in here? I have a quick point.",
-    "exampleCN": "抱歉,我能插句话吗?我有个简短的观点。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "插话"
-    ]
-  },
-  {
-    "id": 146,
-    "chunk": "Let's take this offline",
-    "translation": "我们会后单独讨论",
-    "example": "This is getting too detailed. Let's take this offline.",
-    "exampleCN": "这太详细了,我们会后单独讨论。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "单独"
-    ]
-  },
-  {
-    "id": 147,
-    "chunk": "Could you elaborate on that?",
-    "translation": "你能详细说明一下吗?",
-    "example": "That's interesting. Could you elaborate on that?",
-    "exampleCN": "这很有趣,你能详细说明一下吗?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
+      "购物",
       "询问"
     ]
   },
   {
-    "id": 148,
-    "chunk": "Just to clarify",
-    "translation": "只是想澄清一下",
-    "example": "Just to clarify, are we talking about Q1 or Q2?",
-    "exampleCN": "只是想澄清一下,我们说的是第一季度还是第二季度?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
+    "id": 45,
+    "scenario": "日常生活",
+    "chunk": "Do you have this in a different size?",
+    "translation": "这款有别的尺寸吗?",
+    "example": "I like this shirt, do you have this in a different size?",
+    "exampleCN": "我喜欢这件衬衫,有别的尺寸吗?",
+    "difficulty": "中级",
     "tags": [
-      "会议",
-      "确认"
+      "购物",
+      "询问"
     ]
   },
   {
-    "id": 149,
-    "chunk": "Let's get everyone on the same page",
-    "translation": "让大家达成共识",
-    "example": "Let's get everyone on the same page before we proceed.",
-    "exampleCN": "在我们继续之前,让大家达成共识。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "对齐"
-    ]
-  },
-  {
-    "id": 150,
-    "chunk": "What are the next steps?",
-    "translation": "下一步是什么?",
-    "example": "Good discussion. What are the next steps?",
-    "exampleCN": "讨论得很好,下一步是什么?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "行动"
-    ]
-  },
-  {
-    "id": 151,
-    "chunk": "Let's park that idea",
-    "translation": "我们先把这个想法放一边",
-    "example": "Let's park that idea and revisit it later.",
-    "exampleCN": "我们先把这个想法放一边,稍后再看。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "搁置"
-    ]
-  },
-  {
-    "id": 152,
-    "chunk": "I see where you're coming from",
-    "translation": "我理解你的出发点",
-    "example": "I see where you're coming from, but I have concerns.",
-    "exampleCN": "我理解你的出发点,但我有些顾虑。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "理解"
-    ]
-  },
-  {
-    "id": 153,
-    "chunk": "Let's leverage our resources",
-    "translation": "我们利用现有资源",
-    "example": "Let's leverage our resources to maximize efficiency.",
-    "exampleCN": "我们利用现有资源来最大化效率。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "资源"
-    ]
-  },
-  {
-    "id": 154,
-    "chunk": "We need to align on this",
-    "translation": "我们需要在这点上达成一致",
-    "example": "We need to align on this before moving forward.",
-    "exampleCN": "在推进之前我们需要在这点上达成一致。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "对齐"
-    ]
-  },
-  {
-    "id": 155,
-    "chunk": "What's the timeline?",
-    "translation": "时间线是什么?",
-    "example": "This sounds good. What's the timeline for completion?",
-    "exampleCN": "听起来不错,完成的时间线是什么?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "时间"
-    ]
-  },
-  {
-    "id": 156,
-    "chunk": "Let's touch base later",
-    "translation": "我们稍后联系",
-    "example": "Let's touch base later to finalize the details.",
-    "exampleCN": "我们稍后联系来敲定细节。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "跟进"
-    ]
-  },
-  {
-    "id": 157,
-    "chunk": "I'll loop you in",
-    "translation": "我会让你参与进来",
-    "example": "Once I get the update, I'll loop you in.",
-    "exampleCN": "一旦我得到更新,我会让你参与进来。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "沟通"
-    ]
-  },
-  {
-    "id": 158,
-    "chunk": "Let's deep dive into this",
-    "translation": "我们深入探讨一下",
-    "example": "This issue is important. Let's deep dive into this.",
-    "exampleCN": "这个问题很重要,我们深入探讨一下。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "分析"
-    ]
-  },
-  {
-    "id": 159,
-    "chunk": "What's the ROI?",
-    "translation": "投资回报率是多少?",
-    "example": "Before we commit, what's the expected ROI?",
-    "exampleCN": "在我们承诺之前,预期的投资回报率是多少?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "商业"
-    ]
-  },
-  {
-    "id": 160,
-    "chunk": "Let's keep the momentum going",
-    "translation": "我们保持这个势头",
-    "example": "Great progress today! Let's keep the momentum going.",
-    "exampleCN": "今天进展很好!我们保持这个势头。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "鼓励"
-    ]
-  },
-  {
-    "id": 161,
-    "chunk": "Who's taking point on this?",
-    "translation": "谁负责这个?",
-    "example": "Who's taking point on this initiative?",
-    "exampleCN": "谁负责这个项目?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "责任"
-    ]
-  },
-  {
-    "id": 162,
-    "chunk": "Let's prioritize this",
-    "translation": "我们优先处理这个",
-    "example": "This is urgent. Let's prioritize this over other tasks.",
-    "exampleCN": "这很紧急,我们优先处理这个,超过其他任务。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "优先级"
-    ]
-  },
-  {
-    "id": 163,
-    "chunk": "What are the blockers?",
-    "translation": "有什么阻碍?",
-    "example": "What are the blockers preventing us from launching?",
-    "exampleCN": "有什么阻碍让我们无法发布?",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "问题"
-    ]
-  },
-  {
-    "id": 164,
-    "chunk": "Let's sync up tomorrow",
-    "translation": "我们明天同步一下",
-    "example": "Let's sync up tomorrow morning to review progress.",
-    "exampleCN": "我们明天早上同步一下来回顾进展。",
-    "scenario": "会议讨论",
-    "difficulty": "进阶",
-    "tags": [
-      "会议",
-      "跟进"
-    ]
-  },
-  {
-    "id": 165,
-    "chunk": "We need to pivot our strategy",
-    "translation": "我们需要调整策略",
-    "example": "The market changed. We need to pivot our strategy.",
-    "exampleCN": "市场变了,我们需要调整策略。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "改变"
-    ]
-  },
-  {
-    "id": 166,
-    "chunk": "Let's not reinvent the wheel",
-    "translation": "我们不要重复造轮子",
-    "example": "Let's not reinvent the wheel. Use existing solutions.",
-    "exampleCN": "我们不要重复造轮子,使用现有解决方案。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "效率"
-    ]
-  },
-  {
-    "id": 167,
-    "chunk": "Let's drill down into the details",
-    "translation": "我们深入细节",
-    "example": "Let's drill down into the details before deciding.",
-    "exampleCN": "在决定之前我们深入细节。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "分析"
-    ]
-  },
-  {
-    "id": 168,
-    "chunk": "We're at a crossroads",
-    "translation": "我们处于关键时刻",
-    "example": "We're at a crossroads and need to make a decision.",
-    "exampleCN": "我们处于关键时刻,需要做出决定。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "决策"
-    ]
-  },
-  {
-    "id": 169,
-    "chunk": "Let's benchmark against competitors",
-    "translation": "我们对标竞争对手",
-    "example": "Let's benchmark against competitors before launching.",
-    "exampleCN": "在发布之前我们对标竞争对手。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "竞争"
-    ]
-  },
-  {
-    "id": 170,
-    "chunk": "What's the value proposition?",
-    "translation": "价值主张是什么?",
-    "example": "What's the value proposition for our customers?",
-    "exampleCN": "对我们客户的价值主张是什么?",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "商业"
-    ]
-  },
-  {
-    "id": 171,
-    "chunk": "We need to scale this",
-    "translation": "我们需要扩大规模",
-    "example": "This is working well. We need to scale this quickly.",
-    "exampleCN": "这很有效,我们需要快速扩大规模。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "增长"
-    ]
-  },
-  {
-    "id": 172,
-    "chunk": "Let's mitigate the risks",
-    "translation": "我们降低风险",
-    "example": "Let's mitigate the risks before we proceed.",
-    "exampleCN": "在我们继续之前降低风险。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "风险"
-    ]
-  },
-  {
-    "id": 173,
-    "chunk": "What's the bandwidth?",
-    "translation": "有多少资源/时间?",
-    "example": "Do you have the bandwidth to take on this project?",
-    "exampleCN": "你有资源来承担这个项目吗?",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "资源"
-    ]
-  },
-  {
-    "id": 174,
-    "chunk": "Let's streamline the process",
-    "translation": "我们精简流程",
-    "example": "Let's streamline the process to improve efficiency.",
-    "exampleCN": "我们精简流程来提高效率。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "优化"
-    ]
-  },
-  {
-    "id": 175,
-    "chunk": "We need to future-proof this",
-    "translation": "我们需要让这个经得起未来考验",
-    "example": "We need to future-proof this solution for scalability.",
-    "exampleCN": "我们需要让这个解决方案在可扩展性上经得起未来考验。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "长远"
-    ]
-  },
-  {
-    "id": 176,
-    "chunk": "What are the key takeaways?",
-    "translation": "关键要点是什么?",
-    "example": "Great meeting! What are the key takeaways?",
-    "exampleCN": "会议很好!关键要点是什么?",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "总结"
-    ]
-  },
-  {
-    "id": 177,
-    "chunk": "Let's socialize this idea first",
-    "translation": "我们先把这个想法分享给大家",
-    "example": "Let's socialize this idea first before formal proposal.",
-    "exampleCN": "在正式提议之前,我们先把这个想法分享给大家。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "预沟通"
-    ]
-  },
-  {
-    "id": 178,
-    "chunk": "We need buy-in from leadership",
-    "translation": "我们需要领导层的支持",
-    "example": "We need buy-in from leadership before launching this.",
-    "exampleCN": "在发布之前我们需要领导层的支持。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "审批"
-    ]
-  },
-  {
-    "id": 179,
-    "chunk": "What's the low-hanging fruit?",
-    "translation": "什么是容易实现的目标?",
-    "example": "What's the low-hanging fruit we can tackle first?",
-    "exampleCN": "什么是我们可以首先解决的容易实现的目标?",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "优先级"
-    ]
-  },
-  {
-    "id": 180,
-    "chunk": "Let's run this by legal",
-    "translation": "我们让法务看一下",
-    "example": "Before we sign, let's run this by legal first.",
-    "exampleCN": "在签字之前,我们先让法务看一下。",
-    "scenario": "会议讨论",
-    "difficulty": "高级",
-    "tags": [
-      "会议",
-      "合规"
-    ]
-  },
-  {
-    "id": 181,
-    "chunk": "Love this! 😍",
-    "translation": "太爱了!😍",
-    "example": "Love this! Thanks for sharing! 😍",
-    "exampleCN": "太爱了!谢谢分享!😍",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "点赞",
-      "评论"
-    ]
-  },
-  {
-    "id": 182,
-    "chunk": "So relatable!",
-    "translation": "太有共鸣了!",
-    "example": "Haha so relatable! This is me every Monday.",
-    "exampleCN": "哈哈太有共鸣了!这就是我每周一的样子。",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "共鸣",
-      "评论"
-    ]
-  },
-  {
-    "id": 183,
-    "chunk": "Thanks for the shoutout!",
-    "translation": "谢谢提及!",
-    "example": "Thanks for the shoutout! Really appreciate it! 🙏",
-    "exampleCN": "谢谢提及!真的很感激!🙏",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "感谢",
-      "回复"
-    ]
-  },
-  {
-    "id": 184,
-    "chunk": "Drop your thoughts below 👇",
-    "translation": "在下方留下你的想法👇",
-    "example": "What do you think? Drop your thoughts below 👇",
-    "exampleCN": "你怎么看?在下方留下你的想法👇",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "互动",
-      "发帖"
-    ]
-  },
-  {
-    "id": 185,
-    "chunk": "Can't wait to try this!",
-    "translation": "等不及要试了!",
-    "example": "This looks amazing! Can't wait to try this!",
-    "exampleCN": "这看起来太棒了!等不及要试了!",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "兴奋",
-      "评论"
-    ]
-  },
-  {
-    "id": 186,
-    "chunk": "Saving this for later!",
-    "translation": "收藏了稍后看!",
-    "example": "Great tips! Saving this for later!",
-    "exampleCN": "好建议!收藏了稍后看!",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "收藏",
-      "评论"
-    ]
-  },
-  {
-    "id": 187,
-    "chunk": "Tag someone who needs this",
-    "translation": "标记需要这个的人",
-    "example": "Tag someone who needs this right now! 😂",
-    "exampleCN": "标记现在需要这个的人!😂",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "互动",
-      "发帖"
-    ]
-  },
-  {
-    "id": 188,
-    "chunk": "No way! 😱",
-    "translation": "不会吧!😱",
-    "example": "No way! I didn't know that! 😱",
-    "exampleCN": "不会吧!我不知道!😱",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "惊讶",
-      "评论"
-    ]
-  },
-  {
-    "id": 189,
-    "chunk": "Check out my latest post!",
-    "translation": "看看我的最新帖子!",
-    "example": "Hey everyone! Check out my latest post! Link in bio.",
-    "exampleCN": "大家好!看看我的最新帖子!链接在简介里。",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "推广",
-      "发帖"
-    ]
-  },
-  {
-    "id": 190,
-    "chunk": "BRB (be right back)",
-    "translation": "马上回来",
-    "example": "BRB, grabbing coffee ☕",
-    "exampleCN": "马上回来,去拿咖啡☕",
-    "scenario": "社交媒体",
-    "difficulty": "入门",
-    "tags": [
-      "缩写",
-      "状态"
-    ]
-  },
-  {
-    "id": 191,
-    "chunk": "FOMO is real 😅",
-    "translation": "害怕错过的感觉太真实了😅",
-    "example": "Everyone's talking about this. FOMO is real 😅",
-    "exampleCN": "大家都在谈论这个,害怕错过的感觉太真实了😅",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "评论"
-    ]
-  },
-  {
-    "id": 192,
-    "chunk": "This is goals! ✨",
-    "translation": "这就是目标!✨",
-    "example": "Your workspace setup is goals! ✨",
-    "exampleCN": "你的工作空间布置就是目标!✨",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "赞美",
-      "评论"
-    ]
-  },
-  {
-    "id": 193,
-    "chunk": "Hot take:",
-    "translation": "大胆观点:",
-    "example": "Hot take: pineapple belongs on pizza 🍕",
-    "exampleCN": "大胆观点:披萨应该加菠萝🍕",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "观点",
-      "发帖"
-    ]
-  },
-  {
-    "id": 194,
-    "chunk": "Slide into my DMs",
-    "translation": "私信我",
-    "example": "Want to collaborate? Slide into my DMs!",
-    "exampleCN": "想合作吗?私信我!",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "邀请",
-      "发帖"
-    ]
-  },
-  {
-    "id": 195,
-    "chunk": "This hits different",
-    "translation": "这感觉不一样",
-    "example": "Listening to this song at 3 AM hits different.",
-    "exampleCN": "凌晨3点听这首歌感觉不一样。",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "评论"
-    ]
-  },
-  {
-    "id": 196,
-    "chunk": "Living for this content",
-    "translation": "太爱这个内容了",
-    "example": "Living for this content! Keep it coming! 🔥",
-    "exampleCN": "太爱这个内容了!继续发!🔥",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "支持",
-      "评论"
-    ]
-  },
-  {
-    "id": 197,
-    "chunk": "The way I",
-    "translation": "我...(强调程度)",
-    "example": "The way I screamed when I saw this! 😂",
-    "exampleCN": "我看到这个时尖叫的程度!😂",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "强调"
-    ]
-  },
-  {
-    "id": 198,
-    "chunk": "It's giving",
-    "translation": "这给人一种...的感觉",
-    "example": "This outfit? It's giving main character energy! ✨",
-    "exampleCN": "这套穿搭?这给人一种主角光环的感觉!✨",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "评价"
-    ]
-  },
-  {
-    "id": 199,
-    "chunk": "Not me",
-    "translation": "不会是我吧(自嘲)",
-    "example": "Not me crying over this puppy video 😭",
-    "exampleCN": "不会是我因为这个小狗视频哭了吧😭",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "自嘲"
-    ]
-  },
-  {
-    "id": 200,
-    "chunk": "Say less",
-    "translation": "不用多说/我懂",
-    "example": "Pizza night? Say less! I'm in! 🍕",
-    "exampleCN": "披萨之夜?不用多说!我参加!🍕",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "同意"
-    ]
-  },
-  {
-    "id": 201,
-    "chunk": "Manifesting this",
-    "translation": "期待这个实现",
-    "example": "Manifesting this for my 2026! 🙏✨",
-    "exampleCN": "期待这个在我的2026年实现!🙏✨",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "愿望"
-    ]
-  },
-  {
-    "id": 202,
-    "chunk": "I'm deceased 💀",
-    "translation": "我笑死了💀",
-    "example": "This meme! I'm deceased 💀",
-    "exampleCN": "这个表情包!我笑死了💀",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "幽默"
-    ]
-  },
-  {
-    "id": 203,
-    "chunk": "Main character energy",
-    "translation": "主角光环",
-    "example": "Walking into Monday with main character energy! ✨",
-    "exampleCN": "带着主角光环走进星期一!✨",
-    "scenario": "社交媒体",
-    "difficulty": "进阶",
-    "tags": [
-      "流行语",
-      "自信"
-    ]
-  },
-  {
-    "id": 204,
-    "chunk": "Touch grass",
-    "translation": "出去走走/接地气",
-    "example": "Been online all day. Time to touch grass 🌱",
-    "exampleCN": "在线一整天了,该出去走走了🌱",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "建议"
-    ]
-  },
-  {
-    "id": 205,
-    "chunk": "It's giving main character",
-    "translation": "这就是主角的感觉",
-    "example": "Your confidence? It's giving main character! 👑",
-    "exampleCN": "你的自信?这就是主角的感觉!👑",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "赞美"
-    ]
-  },
-  {
-    "id": 206,
-    "chunk": "Rent-free in my head",
-    "translation": "一直在我脑海里",
-    "example": "This song lives rent-free in my head all week.",
-    "exampleCN": "这首歌整周都一直在我脑海里。",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "印象深刻"
-    ]
-  },
-  {
-    "id": 207,
-    "chunk": "Gatekeeping",
-    "translation": "藏私/不分享",
-    "example": "Stop gatekeeping! Share the recipe! 👀",
-    "exampleCN": "别藏私了!分享食谱!👀",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "请求"
-    ]
-  },
-  {
-    "id": 208,
-    "chunk": "Chronically online",
-    "translation": "长期在线/网瘾",
-    "example": "I'm chronically online and I'm not even sorry 📱",
-    "exampleCN": "我长期在线而且我不抱歉📱",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "自嘲"
-    ]
-  },
-  {
-    "id": 209,
-    "chunk": "Unhinged behavior",
-    "translation": "疯狂行为/离谱",
-    "example": "Eating ice cream in winter? Unhinged behavior! 😂",
-    "exampleCN": "冬天吃冰淇淋?疯狂行为!😂",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "评价"
-    ]
-  },
-  {
-    "id": 210,
-    "chunk": "POV (point of view)",
-    "translation": "视角/场景(表达共情)",
-    "example": "POV: You just woke up and it's Monday morning 😩",
-    "exampleCN": "视角:你刚醒来发现是周一早上😩",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "场景"
-    ]
-  },
-  {
-    "id": 211,
-    "chunk": "It's the [blank] for me",
-    "translation": "对我来说就是[某方面]",
-    "example": "It's the confidence for me! 💅",
-    "exampleCN": "对我来说就是这份自信!💅",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "评价"
-    ]
-  },
-  {
-    "id": 212,
-    "chunk": "Tell me you're [blank] without telling me",
-    "translation": "不直接说但能看出你是...",
-    "example": "Tell me you're a coffee addict without telling me ☕",
-    "exampleCN": "不直接说但能看出你是咖啡上瘾者☕",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "话题"
-    ]
-  },
-  {
-    "id": 213,
-    "chunk": "No thoughts, just vibes",
-    "translation": "不想了,就享受氛围",
-    "example": "Friday mood: no thoughts, just vibes ✨",
-    "exampleCN": "周五心情:不想了,就享受氛围✨",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "状态"
-    ]
-  },
-  {
-    "id": 214,
-    "chunk": "Chef's kiss 👨‍🍳💋",
-    "translation": "完美/厨师之吻👨‍🍳💋",
-    "example": "This dessert? Chef's kiss! 👨‍🍳💋",
-    "exampleCN": "这个甜点?完美!👨‍🍳💋",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "流行语",
-      "赞美"
-    ]
-  },
-  {
-    "id": 215,
-    "chunk": "Sending good vibes ✨",
-    "translation": "送上好能量✨",
-    "example": "Sending good vibes your way! You got this! ✨",
-    "exampleCN": "送上好能量!你可以的!✨",
-    "scenario": "社交媒体",
-    "difficulty": "高级",
-    "tags": [
-      "支持",
-      "鼓励"
-    ]
-  },
-  {
-    "id": 216,
-    "chunk": "Where can I get tickets?",
-    "translation": "哪里可以买票?",
-    "example": "Excuse me, where can I get tickets for the subway?",
-    "exampleCN": "打扰一下,哪里可以买地铁票?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "交通",
-      "问询"
-    ]
-  },
-  {
-    "id": 217,
-    "chunk": "How much is a ticket to",
-    "translation": "到...的票多少钱",
-    "example": "How much is a ticket to the airport?",
-    "exampleCN": "到机场的票多少钱?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "交通",
-      "价格"
-    ]
-  },
-  {
-    "id": 218,
-    "chunk": "Is this the right platform?",
-    "translation": "这是对的站台吗?",
-    "example": "Excuse me, is this the right platform for London?",
-    "exampleCN": "打扰一下,这是去伦敦的对的站台吗?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "交通",
-      "确认"
-    ]
-  },
-  {
-    "id": 219,
-    "chunk": "Could you recommend a good restaurant?",
-    "translation": "你能推荐一家好餐厅吗?",
-    "example": "Could you recommend a good restaurant nearby?",
-    "exampleCN": "你能推荐附近一家好餐厅吗?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "餐饮",
-      "推荐"
-    ]
-  },
-  {
-    "id": 220,
+    "id": 46,
+    "scenario": "日常生活",
     "chunk": "I'd like to make a reservation",
     "translation": "我想预订",
-    "example": "I'd like to make a reservation for two at 7 PM.",
-    "exampleCN": "我想预订晚上7点两个人的位置。",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
+    "example": "Hi, I'd like to make a reservation for two at 7 pm.",
+    "exampleCN": "你好,我想预订晚上7点两位。",
+    "difficulty": "中级",
     "tags": [
-      "餐饮",
+      "餐厅",
       "预订"
     ]
   },
   {
-    "id": 221,
-    "chunk": "Can I have the menu, please?",
-    "translation": "可以给我菜单吗?",
-    "example": "Can I have the menu, please? Thank you!",
-    "exampleCN": "可以给我菜单吗?谢谢!",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "餐饮",
-      "点餐"
-    ]
-  },
-  {
-    "id": 222,
+    "id": 47,
+    "scenario": "日常生活",
     "chunk": "Could I have the bill, please?",
-    "translation": "可以给我账单吗?",
-    "example": "We're ready to leave. Could I have the bill, please?",
-    "exampleCN": "我们准备走了,可以给我账单吗?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
+    "translation": "可以结账吗?",
+    "example": "Excuse me, could I have the bill, please?",
+    "exampleCN": "打扰了,可以结账吗?",
+    "difficulty": "中级",
     "tags": [
-      "餐饮",
-      "结账"
+      "餐厅",
+      "买单"
     ]
   },
   {
-    "id": 223,
-    "chunk": "Where is the nearest ATM?",
-    "translation": "最近的ATM在哪里?",
-    "example": "Excuse me, where is the nearest ATM?",
-    "exampleCN": "打扰一下,最近的ATM在哪里?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
+    "id": 48,
+    "scenario": "日常生活",
+    "chunk": "Keep the change",
+    "translation": "不用找了",
+    "example": "Here's 20 dollars, keep the change.",
+    "exampleCN": "这是20美元,不用找了。",
+    "difficulty": "中级",
     "tags": [
-      "金融",
-      "问路"
+      "付钱",
+      "小费"
     ]
   },
   {
-    "id": 224,
-    "chunk": "I'd like to check in",
-    "translation": "我想办理入住",
-    "example": "Hi, I'd like to check in. My name is Li.",
-    "exampleCN": "你好,我想办理入住,我叫李。",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
+    "id": 49,
+    "scenario": "日常生活",
+    "chunk": "I'll take it",
+    "translation": "我要了",
+    "example": "It fits perfectly, I'll take it.",
+    "exampleCN": "很合身,我要了。",
+    "difficulty": "中级",
     "tags": [
-      "住宿",
-      "前台"
+      "购物",
+      "决定"
     ]
   },
   {
-    "id": 225,
-    "chunk": "What time is checkout?",
-    "translation": "退房时间是几点?",
-    "example": "What time is checkout tomorrow?",
-    "exampleCN": "明天退房时间是几点?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
+    "id": 50,
+    "scenario": "日常生活",
+    "chunk": "Is this on sale?",
+    "translation": "这个在打折吗?",
+    "example": "Excuse me, is this on sale?",
+    "exampleCN": "打扰一下,这个在打折吗?",
+    "difficulty": "中级",
     "tags": [
-      "住宿",
-      "退房"
+      "购物",
+      "询问"
     ]
   },
   {
-    "id": 226,
+    "id": 51,
+    "scenario": "日常生活",
+    "chunk": "Do you accept credit cards?",
+    "translation": "你们收信用卡吗?",
+    "example": "Do you accept credit cards or only cash?",
+    "exampleCN": "你们收信用卡还是只收现金?",
+    "difficulty": "中级",
+    "tags": [
+      "付款",
+      "询问"
+    ]
+  },
+  {
+    "id": 52,
+    "scenario": "日常生活",
+    "chunk": "I'm running late",
+    "translation": "我要迟到了",
+    "example": "Sorry, I'm running late, I'll be there in 10.",
+    "exampleCN": "抱歉,我要迟到了,10分钟后到。",
+    "difficulty": "中级",
+    "tags": [
+      "时间",
+      "歉意"
+    ]
+  },
+  {
+    "id": 53,
+    "scenario": "日常生活",
+    "chunk": "I'm on my way",
+    "translation": "我在路上了",
+    "example": "Don't worry, I'm on my way.",
+    "exampleCN": "别担心,我在路上了。",
+    "difficulty": "中级",
+    "tags": [
+      "出行",
+      "告知"
+    ]
+  },
+  {
+    "id": 54,
+    "scenario": "日常生活",
+    "chunk": "Let me check my schedule",
+    "translation": "我看看我的日程",
+    "example": "Dinner on Friday? Let me check my schedule.",
+    "exampleCN": "周五晚餐? 我看看我的日程。",
+    "difficulty": "中级",
+    "tags": [
+      "安排",
+      "工作"
+    ]
+  },
+  {
+    "id": 55,
+    "scenario": "日常生活",
+    "chunk": "Can we reschedule?",
+    "translation": "我们能改期吗?",
+    "example": "Something came up, can we reschedule?",
+    "exampleCN": "临时有事,我们能改期吗?",
+    "difficulty": "中级",
+    "tags": [
+      "安排",
+      "改期"
+    ]
+  },
+  {
+    "id": 56,
+    "scenario": "日常生活",
+    "chunk": "It slipped my mind",
+    "translation": "我忘了",
+    "example": "Sorry, it completely slipped my mind.",
+    "exampleCN": "抱歉,我完全忘了。",
+    "difficulty": "中级",
+    "tags": [
+      "道歉",
+      "遗忘"
+    ]
+  },
+  {
+    "id": 57,
+    "scenario": "日常生活",
+    "chunk": "I'll get back to you",
+    "translation": "我稍后回复你",
+    "example": "Let me think about it, I'll get back to you tomorrow.",
+    "exampleCN": "让我想想,明天回复你。",
+    "difficulty": "中级",
+    "tags": [
+      "沟通",
+      "回复"
+    ]
+  },
+  {
+    "id": 58,
+    "scenario": "日常生活",
+    "chunk": "Give me a heads-up",
+    "translation": "提前告诉我一声",
+    "example": "If plans change, give me a heads-up.",
+    "exampleCN": "如果计划有变,提前告诉我一声。",
+    "difficulty": "中级",
+    "tags": [
+      "沟通",
+      "提醒"
+    ]
+  },
+  {
+    "id": 59,
+    "scenario": "日常生活",
+    "chunk": "Count me in",
+    "translation": "算我一个",
+    "example": "Movie tonight? Count me in!",
+    "exampleCN": "今晚看电影? 算我一个!",
+    "difficulty": "中级",
+    "tags": [
+      "参与",
+      "口语"
+    ]
+  },
+  {
+    "id": 60,
+    "scenario": "日常生活",
+    "chunk": "Count me out",
+    "translation": "别算我",
+    "example": "Hiking at 6 am? Count me out.",
+    "exampleCN": "早上6点徒步? 别算我。",
+    "difficulty": "中级",
+    "tags": [
+      "拒绝",
+      "口语"
+    ]
+  },
+  {
+    "id": 61,
+    "scenario": "日常生活",
+    "chunk": "Up to you",
+    "translation": "你决定吧",
+    "example": "Pizza or sushi? Up to you.",
+    "exampleCN": "披萨还是寿司? 你决定。",
+    "difficulty": "中级",
+    "tags": [
+      "决定",
+      "口语"
+    ]
+  },
+  {
+    "id": 62,
+    "scenario": "日常生活",
+    "chunk": "It's on me",
+    "translation": "我请客",
+    "example": "Put your wallet away, it's on me tonight.",
+    "exampleCN": "把钱包收起来,今晚我请客。",
+    "difficulty": "中级",
+    "tags": [
+      "请客",
+      "付款"
+    ]
+  },
+  {
+    "id": 63,
+    "scenario": "日常生活",
+    "chunk": "Let's split the bill",
+    "translation": "我们AA吧",
+    "example": "It's too much for one, let's split the bill.",
+    "exampleCN": "一个人出太多,我们AA吧。",
+    "difficulty": "中级",
+    "tags": [
+      "付款",
+      "分摊"
+    ]
+  },
+  {
+    "id": 64,
+    "scenario": "日常生活",
+    "chunk": "I'm starving",
+    "translation": "我饿死了",
+    "example": "Let's grab lunch, I'm starving.",
+    "exampleCN": "我们去吃午饭吧,我饿死了。",
+    "difficulty": "中级",
+    "tags": [
+      "饮食",
+      "情绪"
+    ]
+  },
+  {
+    "id": 65,
+    "scenario": "日常生活",
+    "chunk": "I could go for a coffee",
+    "translation": "我想喝杯咖啡",
+    "example": "Long day, I could really go for a coffee.",
+    "exampleCN": "累了一天,真想喝杯咖啡。",
+    "difficulty": "中级",
+    "tags": [
+      "饮食",
+      "需求"
+    ]
+  },
+  {
+    "id": 66,
+    "scenario": "日常生活",
+    "chunk": "Under the weather",
+    "translation": "身体不舒服",
+    "example": "I'm feeling a bit under the weather today.",
+    "exampleCN": "我今天有点不舒服。",
+    "difficulty": "中级",
+    "tags": [
+      "健康",
+      "身体"
+    ]
+  },
+  {
+    "id": 67,
+    "scenario": "日常生活",
+    "chunk": "Catch a cold",
+    "translation": "感冒了",
+    "example": "Wear a jacket or you'll catch a cold.",
+    "exampleCN": "穿件外套,不然要感冒了。",
+    "difficulty": "中级",
+    "tags": [
+      "健康",
+      "提醒"
+    ]
+  },
+  {
+    "id": 68,
+    "scenario": "日常生活",
+    "chunk": "Off the top of my head",
+    "translation": "我一下想到的",
+    "example": "Off the top of my head, I'd say around 50.",
+    "exampleCN": "我一下想到的,大概50个吧。",
+    "difficulty": "高级",
+    "tags": [
+      "估计",
+      "口语"
+    ]
+  },
+  {
+    "id": 69,
+    "scenario": "日常生活",
+    "chunk": "Speaking of which",
+    "translation": "说到这个",
+    "example": "Speaking of which, did you see her new car?",
+    "exampleCN": "说到这个,你看到她的新车了吗?",
+    "difficulty": "高级",
+    "tags": [
+      "转话题",
+      "口语"
+    ]
+  },
+  {
+    "id": 70,
+    "scenario": "日常生活",
+    "chunk": "To be honest with you",
+    "translation": "说实话",
+    "example": "To be honest with you, I didn't enjoy the movie.",
+    "exampleCN": "说实话,那部电影我不喜欢。",
+    "difficulty": "高级",
+    "tags": [
+      "坦诚",
+      "表态"
+    ]
+  },
+  {
+    "id": 71,
+    "scenario": "日常生活",
+    "chunk": "Come to think of it",
+    "translation": "仔细想想",
+    "example": "Come to think of it, I've been there before.",
+    "exampleCN": "仔细想想,我去过那里。",
+    "difficulty": "高级",
+    "tags": [
+      "回忆",
+      "口语"
+    ]
+  },
+  {
+    "id": 72,
+    "scenario": "日常生活",
+    "chunk": "On the fly",
+    "translation": "临时决定",
+    "example": "We planned the whole trip on the fly.",
+    "exampleCN": "整趟旅行都是临时决定的。",
+    "difficulty": "高级",
+    "tags": [
+      "计划",
+      "地道"
+    ]
+  },
+  {
+    "id": 73,
+    "scenario": "日常生活",
+    "chunk": "Call it a day",
+    "translation": "今天就到这",
+    "example": "I'm exhausted, let's call it a day.",
+    "exampleCN": "我累了,今天就到这吧。",
+    "difficulty": "高级",
+    "tags": [
+      "工作",
+      "结束"
+    ]
+  },
+  {
+    "id": 74,
+    "scenario": "日常生活",
+    "chunk": "Get the hang of it",
+    "translation": "掌握窍门",
+    "example": "Don't worry, you'll get the hang of it soon.",
+    "exampleCN": "别担心,你很快就会掌握窍门。",
+    "difficulty": "高级",
+    "tags": [
+      "学习",
+      "鼓励"
+    ]
+  },
+  {
+    "id": 75,
+    "scenario": "日常生活",
+    "chunk": "Play it by ear",
+    "translation": "看情况再说",
+    "example": "We haven't decided yet, we'll play it by ear.",
+    "exampleCN": "还没决定,到时再说。",
+    "difficulty": "高级",
+    "tags": [
+      "计划",
+      "灵活"
+    ]
+  },
+  {
+    "id": 76,
+    "scenario": "日常生活",
+    "chunk": "On the same page",
+    "translation": "想法一致",
+    "example": "Let's make sure we're on the same page.",
+    "exampleCN": "我们来确认一下意见一致。",
+    "difficulty": "高级",
+    "tags": [
+      "沟通",
+      "共识"
+    ]
+  },
+  {
+    "id": 77,
+    "scenario": "日常生活",
+    "chunk": "A piece of cake",
+    "translation": "小事一桩",
+    "example": "Fix the printer? A piece of cake.",
+    "exampleCN": "修打印机? 小事一桩。",
+    "difficulty": "高级",
+    "tags": [
+      "简单",
+      "口语"
+    ]
+  },
+  {
+    "id": 78,
+    "scenario": "日常生活",
+    "chunk": "Break the ice",
+    "translation": "打破僵局",
+    "example": "He told a joke to break the ice.",
+    "exampleCN": "他讲了个笑话打破僵局。",
+    "difficulty": "高级",
+    "tags": [
+      "社交",
+      "交流"
+    ]
+  },
+  {
+    "id": 79,
+    "scenario": "日常生活",
+    "chunk": "Hit the road",
+    "translation": "出发/上路",
+    "example": "It's getting late, let's hit the road.",
+    "exampleCN": "天色晚了,我们出发吧。",
+    "difficulty": "高级",
+    "tags": [
+      "出行",
+      "口语"
+    ]
+  },
+  {
+    "id": 80,
+    "scenario": "日常生活",
+    "chunk": "Beat around the bush",
+    "translation": "拐弯抹角",
+    "example": "Stop beating around the bush, just tell me.",
+    "exampleCN": "别拐弯抹角,直接告诉我。",
+    "difficulty": "高级",
+    "tags": [
+      "沟通",
+      "直接"
+    ]
+  },
+  {
+    "id": 81,
+    "scenario": "日常生活",
+    "chunk": "Get something off my chest",
+    "translation": "把话说出来",
+    "example": "I need to get this off my chest, it's been bothering me.",
+    "exampleCN": "我得把话说出来,一直憋着难受。",
+    "difficulty": "高级",
+    "tags": [
+      "情绪",
+      "表达"
+    ]
+  },
+  {
+    "id": 82,
+    "scenario": "日常生活",
+    "chunk": "Cut to the chase",
+    "translation": "直奔主题",
+    "example": "We don't have much time, let's cut to the chase.",
+    "exampleCN": "我们时间不多,直奔主题吧。",
+    "difficulty": "高级",
+    "tags": [
+      "沟通",
+      "效率"
+    ]
+  },
+  {
+    "id": 83,
+    "scenario": "出国旅游",
+    "chunk": "Where can I get tickets?",
+    "translation": "在哪里买票?",
+    "example": "Excuse me, where can I get tickets for the subway?",
+    "exampleCN": "打扰了,地铁票在哪里买?",
+    "difficulty": "入门",
+    "tags": [
+      "交通",
+      "购票"
+    ]
+  },
+  {
+    "id": 84,
+    "scenario": "出国旅游",
+    "chunk": "Is this the right platform?",
+    "translation": "这是对的站台吗?",
+    "example": "Is this the right platform for the train to Paris?",
+    "exampleCN": "这是去巴黎的火车站台吗?",
+    "difficulty": "入门",
+    "tags": [
+      "交通",
+      "确认"
+    ]
+  },
+  {
+    "id": 85,
+    "scenario": "出国旅游",
+    "chunk": "How much is it?",
+    "translation": "多少钱?",
+    "example": "That looks nice, how much is it?",
+    "exampleCN": "那个不错,多少钱?",
+    "difficulty": "入门",
+    "tags": [
+      "价格",
+      "购物"
+    ]
+  },
+  {
+    "id": 86,
+    "scenario": "出国旅游",
     "chunk": "Do you have a city map?",
-    "translation": "你们有城市地图吗?",
-    "example": "Do you have a city map I could borrow?",
-    "exampleCN": "你们有城市地图我可以借用吗?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "问询",
-      "导览"
-    ]
-  },
-  {
-    "id": 227,
-    "chunk": "How do I get to",
-    "translation": "我怎么去...",
-    "example": "How do I get to the museum from here?",
-    "exampleCN": "从这里我怎么去博物馆?",
-    "scenario": "旅游出行",
+    "translation": "有城市地图吗?",
+    "example": "Hi, do you have a free city map?",
+    "exampleCN": "你好,有免费的城市地图吗?",
     "difficulty": "入门",
     "tags": [
       "问路",
-      "导航"
+      "旅游"
     ]
   },
   {
-    "id": 228,
+    "id": 87,
+    "scenario": "出国旅游",
+    "chunk": "Could you repeat that?",
+    "translation": "能再说一遍吗?",
+    "example": "Sorry, could you repeat that more slowly?",
+    "exampleCN": "抱歉,能说慢一点再说一遍吗?",
+    "difficulty": "入门",
+    "tags": [
+      "沟通",
+      "请求"
+    ]
+  },
+  {
+    "id": 88,
+    "scenario": "出国旅游",
+    "chunk": "Where is the restroom?",
+    "translation": "洗手间在哪?",
+    "example": "Excuse me, where is the restroom?",
+    "exampleCN": "打扰了,洗手间在哪?",
+    "difficulty": "入门",
+    "tags": [
+      "问路",
+      "基本"
+    ]
+  },
+  {
+    "id": 89,
+    "scenario": "出国旅游",
+    "chunk": "I'd like to check in",
+    "translation": "我想办理入住",
+    "example": "Hi, I'd like to check in, I have a reservation under Li.",
+    "exampleCN": "你好,我想办理入住,以Li的名字预订的。",
+    "difficulty": "中级",
+    "tags": [
+      "酒店",
+      "入住"
+    ]
+  },
+  {
+    "id": 90,
+    "scenario": "出国旅游",
+    "chunk": "What time is checkout?",
+    "translation": "退房时间是几点?",
+    "example": "By the way, what time is checkout?",
+    "exampleCN": "顺便问下,退房时间是几点?",
+    "difficulty": "中级",
+    "tags": [
+      "酒店",
+      "时间"
+    ]
+  },
+  {
+    "id": 91,
+    "scenario": "出国旅游",
+    "chunk": "Is breakfast included?",
+    "translation": "包含早餐吗?",
+    "example": "Is breakfast included in the room rate?",
+    "exampleCN": "房费里包含早餐吗?",
+    "difficulty": "中级",
+    "tags": [
+      "酒店",
+      "询问"
+    ]
+  },
+  {
+    "id": 92,
+    "scenario": "出国旅游",
+    "chunk": "What's the WiFi password?",
+    "translation": "WiFi密码是什么?",
+    "example": "Hi, what's the WiFi password?",
+    "exampleCN": "你好,WiFi密码是什么?",
+    "difficulty": "中级",
+    "tags": [
+      "酒店",
+      "网络"
+    ]
+  },
+  {
+    "id": 93,
+    "scenario": "出国旅游",
+    "chunk": "Could you recommend a good restaurant?",
+    "translation": "能推荐家好餐厅吗?",
+    "example": "We're new here, could you recommend a good restaurant nearby?",
+    "exampleCN": "我们刚到,能推荐附近一家好餐厅吗?",
+    "difficulty": "中级",
+    "tags": [
+      "餐厅",
+      "推荐"
+    ]
+  },
+  {
+    "id": 94,
+    "scenario": "出国旅游",
+    "chunk": "Table for two, please",
+    "translation": "两位,谢谢",
+    "example": "Hi, table for two, please.",
+    "exampleCN": "你好,两位,谢谢。",
+    "difficulty": "中级",
+    "tags": [
+      "餐厅",
+      "入座"
+    ]
+  },
+  {
+    "id": 95,
+    "scenario": "出国旅游",
+    "chunk": "What would you recommend?",
+    "translation": "您推荐什么?",
+    "example": "We're new to this cuisine, what would you recommend?",
+    "exampleCN": "我们第一次吃这种菜,您推荐什么?",
+    "difficulty": "中级",
+    "tags": [
+      "餐厅",
+      "点菜"
+    ]
+  },
+  {
+    "id": 96,
+    "scenario": "出国旅游",
+    "chunk": "I have a food allergy to",
+    "translation": "我对...食物过敏",
+    "example": "Please note, I have a food allergy to peanuts.",
+    "exampleCN": "请注意,我对花生过敏。",
+    "difficulty": "中级",
+    "tags": [
+      "餐厅",
+      "过敏"
+    ]
+  },
+  {
+    "id": 97,
+    "scenario": "出国旅游",
+    "chunk": "Is service charge included?",
+    "translation": "包含服务费吗?",
+    "example": "Could you check if service charge is included?",
+    "exampleCN": "能帮我看看包含服务费吗?",
+    "difficulty": "中级",
+    "tags": [
+      "餐厅",
+      "账单"
+    ]
+  },
+  {
+    "id": 98,
+    "scenario": "出国旅游",
     "chunk": "Is it within walking distance?",
     "translation": "步行能到吗?",
-    "example": "Is the train station within walking distance?",
-    "exampleCN": "火车站步行能到吗?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
+    "example": "Is the museum within walking distance from here?",
+    "exampleCN": "博物馆从这里步行能到吗?",
+    "difficulty": "中级",
     "tags": [
       "问路",
       "距离"
     ]
   },
   {
-    "id": 229,
-    "chunk": "I'm just browsing",
-    "translation": "我只是随便看看",
-    "example": "Can I help you? I'm just browsing, thanks!",
-    "exampleCN": "需要帮忙吗?我只是随便看看,谢谢!",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "购物",
-      "拒绝"
-    ]
-  },
-  {
-    "id": 230,
-    "chunk": "Can I try this on?",
-    "translation": "我可以试穿吗?",
-    "example": "I like this shirt. Can I try this on?",
-    "exampleCN": "我喜欢这件衬衫,我可以试穿吗?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "购物",
-      "试穿"
-    ]
-  },
-  {
-    "id": 231,
-    "chunk": "Do you accept credit cards?",
-    "translation": "你们接受信用卡吗?",
-    "example": "Do you accept credit cards or cash only?",
-    "exampleCN": "你们接受信用卡还是只收现金?",
-    "scenario": "旅游出行",
-    "difficulty": "入门",
-    "tags": [
-      "购物",
-      "付款"
-    ]
-  },
-  {
-    "id": 232,
-    "chunk": "I lost my passport",
-    "translation": "我丢了护照",
-    "example": "Help! I lost my passport. What should I do?",
-    "exampleCN": "救命!我丢了护照,我该怎么办?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "紧急",
-      "求助"
-    ]
-  },
-  {
-    "id": 233,
-    "chunk": "Where is the embassy?",
-    "translation": "大使馆在哪里?",
-    "example": "I need help. Where is the Chinese embassy?",
-    "exampleCN": "我需要帮助,中国大使馆在哪里?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "紧急",
-      "领事"
-    ]
-  },
-  {
-    "id": 234,
-    "chunk": "I need a doctor",
-    "translation": "我需要看医生",
-    "example": "I'm not feeling well. I need a doctor.",
-    "exampleCN": "我感觉不舒服,我需要看医生。",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "紧急",
-      "医疗"
-    ]
-  },
-  {
-    "id": 235,
-    "chunk": "My flight was cancelled",
-    "translation": "我的航班被取消了",
-    "example": "My flight was cancelled. What are my options?",
-    "exampleCN": "我的航班被取消了,我有什么选择?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "交通",
-      "问题"
-    ]
-  },
-  {
-    "id": 236,
-    "chunk": "Can you call a taxi for me?",
-    "translation": "你能帮我叫辆出租车吗?",
-    "example": "Can you call a taxi for me to the airport?",
-    "exampleCN": "你能帮我叫辆去机场的出租车吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "交通",
-      "请求"
-    ]
-  },
-  {
-    "id": 237,
-    "chunk": "What's the WiFi password?",
-    "translation": "WiFi密码是什么?",
-    "example": "Excuse me, what's the WiFi password here?",
-    "exampleCN": "打扰一下,这里的WiFi密码是什么?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "设施",
-      "询问"
-    ]
-  },
-  {
-    "id": 238,
-    "chunk": "Is breakfast included?",
-    "translation": "包括早餐吗?",
-    "example": "Is breakfast included in the room rate?",
-    "exampleCN": "房价包括早餐吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "住宿",
-      "服务"
-    ]
-  },
-  {
-    "id": 239,
+    "id": 99,
+    "scenario": "出国旅游",
     "chunk": "Could you take a photo of us?",
-    "translation": "你能帮我们拍张照吗?",
-    "example": "Excuse me, could you take a photo of us?",
-    "exampleCN": "打扰一下,你能帮我们拍张照吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
+    "translation": "能帮我们拍张照吗?",
+    "example": "Excuse me, could you take a photo of us, please?",
+    "exampleCN": "打扰了,能帮我们拍张照吗?",
+    "difficulty": "中级",
     "tags": [
-      "拍照",
-      "请求"
+      "旅游",
+      "拍照"
     ]
   },
   {
-    "id": 240,
-    "chunk": "What time does it close?",
-    "translation": "几点关门?",
-    "example": "What time does the museum close today?",
-    "exampleCN": "博物馆今天几点关门?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "时间",
-      "询问"
-    ]
-  },
-  {
-    "id": 241,
-    "chunk": "Do you have any vacancies?",
-    "translation": "你们有空房间吗?",
-    "example": "Do you have any vacancies for tonight?",
-    "exampleCN": "你们今晚有空房间吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "住宿",
-      "预订"
-    ]
-  },
-  {
-    "id": 242,
-    "chunk": "I have a food allergy to",
-    "translation": "我对...食物过敏",
-    "example": "I have a food allergy to nuts. Can you recommend something?",
-    "exampleCN": "我对坚果过敏,你能推荐点东西吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "餐饮",
-      "健康"
-    ]
-  },
-  {
-    "id": 243,
-    "chunk": "Is service charge included?",
-    "translation": "包括服务费吗?",
-    "example": "Is service charge included in this price?",
-    "exampleCN": "这个价格包括服务费吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "餐饮",
-      "费用"
-    ]
-  },
-  {
-    "id": 244,
+    "id": 100,
+    "scenario": "出国旅游",
     "chunk": "Can I get a refund?",
-    "translation": "我能退款吗?",
-    "example": "This item is defective. Can I get a refund?",
-    "exampleCN": "这个东西有瑕疵,我能退款吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
+    "translation": "能退款吗?",
+    "example": "This doesn't work, can I get a refund?",
+    "exampleCN": "这个不能用,能退款吗?",
+    "difficulty": "中级",
     "tags": [
       "购物",
-      "退货"
+      "退款"
     ]
   },
   {
-    "id": 245,
-    "chunk": "Do you have this in a different size?",
-    "translation": "这个有其他尺寸吗?",
-    "example": "I like this, but do you have this in a larger size?",
-    "exampleCN": "我喜欢这个,但有大一号的吗?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "购物",
-      "尺寸"
-    ]
-  },
-  {
-    "id": 246,
+    "id": 101,
+    "scenario": "出国旅游",
     "chunk": "Where can I exchange currency?",
-    "translation": "哪里可以兑换货币?",
-    "example": "Where can I exchange currency around here?",
-    "exampleCN": "这附近哪里可以兑换货币?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
+    "translation": "哪里能换钱?",
+    "example": "Excuse me, where can I exchange currency around here?",
+    "exampleCN": "打扰了,附近哪里能换钱?",
+    "difficulty": "中级",
     "tags": [
-      "金融",
-      "兑换"
+      "货币",
+      "问路"
     ]
   },
   {
-    "id": 247,
+    "id": 102,
+    "scenario": "出国旅游",
     "chunk": "What's the exchange rate?",
     "translation": "汇率是多少?",
-    "example": "What's the exchange rate for US dollars today?",
-    "exampleCN": "今天美元的汇率是多少?",
-    "scenario": "旅游出行",
-    "difficulty": "进阶",
-    "tags": [
-      "金融",
-      "汇率"
-    ]
-  },
-  {
-    "id": 248,
-    "chunk": "I'd like to extend my stay",
-    "translation": "我想延长住宿",
-    "example": "I'd like to extend my stay for two more nights.",
-    "exampleCN": "我想延长住宿两晚。",
-    "scenario": "旅游出行",
-    "difficulty": "高级",
-    "tags": [
-      "住宿",
-      "延期"
-    ]
-  },
-  {
-    "id": 249,
-    "chunk": "Are there any hidden fees?",
-    "translation": "有隐藏费用吗?",
-    "example": "Before I book, are there any hidden fees I should know about?",
-    "exampleCN": "在我预订之前,有什么隐藏费用我应该知道吗?",
-    "scenario": "旅游出行",
-    "difficulty": "高级",
-    "tags": [
-      "费用",
-      "确认"
-    ]
-  },
-  {
-    "id": 250,
-    "chunk": "I need to file a police report",
-    "translation": "我需要报警做笔录",
-    "example": "My bag was stolen. I need to file a police report.",
-    "exampleCN": "我的包被偷了,我需要报警做笔录。",
-    "scenario": "旅游出行",
-    "difficulty": "高级",
-    "tags": [
-      "紧急",
-      "警察"
-    ]
-  },
-  {
-    "id": 251,
-    "chunk": "Can you keep an eye on your sister?",
-    "translation": "你能帮忙看着妹妹吗?",
-    "example": "I need to cook dinner. Can you keep an eye on your sister for a moment?",
-    "exampleCN": "我要做晚饭,你能帮忙看一下妹妹吗?",
-    "scenario": "家庭亲子",
+    "example": "Hi, what's the exchange rate for US dollars today?",
+    "exampleCN": "你好,今天美元的汇率是多少?",
     "difficulty": "中级",
     "tags": [
-      "照顾",
-      "兄弟姐妹"
+      "货币",
+      "询问"
     ]
   },
   {
-    "id": 252,
-    "chunk": "Don't be too hard on yourself",
-    "translation": "别对自己太苛刻了",
-    "example": "You tried your best. Don't be too hard on yourself.",
-    "exampleCN": "你已经尽力了,别对自己太苛刻了。",
-    "scenario": "家庭亲子",
+    "id": 103,
+    "scenario": "出国旅游",
+    "chunk": "Could you call a taxi for me?",
+    "translation": "能帮我叫辆出租车吗?",
+    "example": "Excuse me, could you call a taxi for me to the airport?",
+    "exampleCN": "打扰了,能帮我叫辆去机场的出租车吗?",
     "difficulty": "中级",
     "tags": [
-      "鼓励",
-      "情绪"
+      "交通",
+      "请求"
     ]
   },
   {
-    "id": 253,
-    "chunk": "Let's figure it out together",
-    "translation": "我们一起想办法",
-    "example": "This puzzle is tricky. Let's figure it out together!",
-    "exampleCN": "这个拼图有点难,我们一起想办法吧!",
-    "scenario": "家庭亲子",
+    "id": 104,
+    "scenario": "出国旅游",
+    "chunk": "Take me to",
+    "translation": "请送我去...",
+    "example": "Take me to the Central Station, please.",
+    "exampleCN": "请送我去中央车站,谢谢。",
     "difficulty": "中级",
     "tags": [
-      "合作",
-      "解决问题"
+      "出租车",
+      "目的地"
     ]
   },
   {
-    "id": 254,
-    "chunk": "How was your day at school?",
-    "translation": "今天在学校怎么样?",
-    "example": "Welcome home, sweetie! How was your day at school?",
-    "exampleCN": "欢迎回家,宝贝!今天在学校怎么样?",
-    "scenario": "家庭亲子",
+    "id": 105,
+    "scenario": "出国旅游",
+    "chunk": "Keep the meter running",
+    "translation": "继续计价",
+    "example": "I'll be back in 5 minutes, keep the meter running.",
+    "exampleCN": "我5分钟回来,继续计价就行。",
     "difficulty": "中级",
     "tags": [
-      "学校",
-      "交流"
-    ]
-  },
-  {
-    "id": 255,
-    "chunk": "I'm so proud of you",
-    "translation": "我真为你骄傲",
-    "example": "You finished the whole book! I'm so proud of you!",
-    "exampleCN": "你把整本书都读完了!我真为你骄傲!",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "鼓励",
-      "表扬"
-    ]
-  },
-  {
-    "id": 256,
-    "chunk": "You need to take turns",
-    "translation": "你们要轮流来",
-    "example": "There's only one swing. You need to take turns, okay?",
-    "exampleCN": "只有一个秋千,你们要轮流来,好吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "规则",
-      "分享"
-    ]
-  },
-  {
-    "id": 257,
-    "chunk": "What do you feel like eating?",
-    "translation": "你想吃什么?",
-    "example": "We're going out for dinner. What do you feel like eating?",
-    "exampleCN": "我们出去吃饭,你想吃什么?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "吃饭",
-      "选择"
-    ]
-  },
-  {
-    "id": 258,
-    "chunk": "That's not a nice thing to say",
-    "translation": "这样说不太好",
-    "example": "Calling people names is wrong. That's not a nice thing to say.",
-    "exampleCN": "给别人起外号是不对的,这样说不太好。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "礼貌",
-      "教育"
-    ]
-  },
-  {
-    "id": 259,
-    "chunk": "Can you help me set the table?",
-    "translation": "你能帮我摆桌子吗?",
-    "example": "Dinner is almost ready. Can you help me set the table?",
-    "exampleCN": "晚饭快好了,你能帮我摆桌子吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "家务",
-      "吃饭"
-    ]
-  },
-  {
-    "id": 260,
-    "chunk": "Use your inside voice",
-    "translation": "小声说话(室内不要大声)",
-    "example": "We're in a library. Please use your inside voice.",
-    "exampleCN": "我们在图书馆里,请小声说话。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "礼貌",
-      "规则"
-    ]
-  },
-  {
-    "id": 261,
-    "chunk": "I'll be right back, I promise",
-    "translation": "我很快就回来,我保证",
-    "example": "I need to go to the store. I'll be right back, I promise.",
-    "exampleCN": "我要去趟商店,我很快就回来,我保证。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "安慰",
-      "承诺"
-    ]
-  },
-  {
-    "id": 262,
-    "chunk": "Tell me what happened",
-    "translation": "告诉我发生了什么",
-    "example": "Why are you crying? Tell me what happened.",
-    "exampleCN": "你怎么哭了?告诉我发生了什么。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "交流",
-      "情绪"
-    ]
-  },
-  {
-    "id": 263,
-    "chunk": "You're getting so big!",
-    "translation": "你长大了好多啊!",
-    "example": "Look at you! You're getting so big! I can't believe it.",
-    "exampleCN": "看看你!你长大了好多啊!真不敢相信。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "成长",
-      "感叹"
-    ]
-  },
-  {
-    "id": 264,
-    "chunk": "Do you want me to read you a story?",
-    "translation": "要我给你讲个故事吗?",
-    "example": "It's bedtime. Do you want me to read you a story?",
-    "exampleCN": "该睡觉了,要我给你讲个故事吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "睡觉",
-      "阅读"
-    ]
-  },
-  {
-    "id": 265,
-    "chunk": "We don't hit people",
-    "translation": "我们不可以打人",
-    "example": "Hitting is wrong. We don't hit people, we use our words.",
-    "exampleCN": "打人是不对的,我们不可以打人,要用语言表达。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "规则",
-      "教育"
-    ]
-  },
-  {
-    "id": 266,
-    "chunk": "Let's clean up before we go",
-    "translation": "出门前我们先收拾一下",
-    "example": "The toys are everywhere. Let's clean up before we go to the park.",
-    "exampleCN": "玩具到处都是,去公园之前我们先收拾一下吧。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "家务",
-      "习惯"
-    ]
-  },
-  {
-    "id": 267,
-    "chunk": "You did a great job!",
-    "translation": "你做得真棒!",
-    "example": "You tied your shoelaces all by yourself! You did a great job!",
-    "exampleCN": "你自己系好了鞋带!你做得真棒!",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "表扬",
-      "独立"
-    ]
-  },
-  {
-    "id": 268,
-    "chunk": "Would you like to invite your friend over?",
-    "translation": "你想邀请朋友来家里玩吗?",
-    "example": "You seem bored. Would you like to invite your friend over this weekend?",
-    "exampleCN": "你看起来很无聊,这个周末想邀请朋友来家里玩吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "社交",
-      "朋友"
-    ]
-  },
-  {
-    "id": 269,
-    "chunk": "I know it's hard, but you can do it",
-    "translation": "我知道很难,但你可以的",
-    "example": "Learning to ride a bike takes practice. I know it's hard, but you can do it!",
-    "exampleCN": "学骑自行车需要练习,我知道很难,但你可以的!",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "鼓励",
-      "学习"
-    ]
-  },
-  {
-    "id": 270,
-    "chunk": "It's not the end of the world",
-    "translation": "这不是什么大不了的事",
-    "example": "You spilled some milk. It's okay, it's not the end of the world.",
-    "exampleCN": "你洒了点牛奶,没关系,这不是什么大不了的事。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "安慰",
-      "情绪"
-    ]
-  },
-  {
-    "id": 271,
-    "chunk": "We need to talk about what happened",
-    "translation": "我们需要谈谈发生的事",
-    "example": "Your teacher called me today. We need to talk about what happened at school.",
-    "exampleCN": "你老师今天给我打电话了,我们需要谈谈在学校发生的事。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "交流",
-      "学校"
-    ]
-  },
-  {
-    "id": 272,
-    "chunk": "How about we make a deal?",
-    "translation": "我们做个约定怎么样?",
-    "example": "How about we make a deal? Finish your homework first, then you can play games.",
-    "exampleCN": "我们做个约定怎么样?先写完作业,然后你就可以玩游戏了。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "谈判",
-      "规则"
-    ]
-  },
-  {
-    "id": 273,
-    "chunk": "Don't forget to say please and thank you",
-    "translation": "别忘了说请和谢谢",
-    "example": "When someone helps you, don't forget to say please and thank you.",
-    "exampleCN": "当别人帮助你的时候,别忘了说请和谢谢。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "礼貌",
-      "教育"
-    ]
-  },
-  {
-    "id": 274,
-    "chunk": "Everyone makes mistakes",
-    "translation": "每个人都会犯错",
-    "example": "Don't worry about it. Everyone makes mistakes. What matters is we learn from them.",
-    "exampleCN": "别担心,每个人都会犯错。重要的是我们从中学习。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "安慰",
-      "教育"
-    ]
-  },
-  {
-    "id": 275,
-    "chunk": "Let me show you how to do it",
-    "translation": "我来教你怎么做",
-    "example": "Folding clothes is easy. Let me show you how to do it.",
-    "exampleCN": "叠衣服很简单,我来教你怎么做。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "教学",
-      "家务"
-    ]
-  },
-  {
-    "id": 276,
-    "chunk": "That's very thoughtful of you",
-    "translation": "你真是太贴心了",
-    "example": "You made a card for grandma's birthday? That's very thoughtful of you!",
-    "exampleCN": "你给奶奶做了生日卡片?你真是太贴心了!",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "表扬",
-      "情感"
-    ]
-  },
-  {
-    "id": 277,
-    "chunk": "You have to be patient",
-    "translation": "你要有耐心",
-    "example": "The cookies need 20 more minutes. You have to be patient.",
-    "exampleCN": "饼干还需要20分钟,你要有耐心。",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "品德",
+      "出租车",
       "等待"
     ]
   },
   {
-    "id": 278,
-    "chunk": "What would you do if you were in her shoes?",
-    "translation": "如果你是她你会怎么做?",
-    "example": "Your friend is upset. What would you do if you were in her shoes?",
-    "exampleCN": "你的朋友很难过,如果你是她你会怎么做?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "共情",
-      "教育"
-    ]
-  },
-  {
-    "id": 279,
-    "chunk": "Can you put your shoes on by yourself?",
-    "translation": "你能自己穿鞋吗?",
-    "example": "We're running late. Can you put your shoes on by yourself today?",
-    "exampleCN": "我们要迟到了,今天你能自己穿鞋吗?",
-    "scenario": "家庭亲子",
-    "difficulty": "中级",
-    "tags": [
-      "独立",
-      "出门"
-    ]
-  },
-  {
-    "id": 280,
-    "chunk": "We'll cross that bridge when we come to it",
-    "translation": "到时候再说吧/船到桥头自然直",
-    "example": "Don't worry about next year's school yet. We'll cross that bridge when we come to it.",
-    "exampleCN": "别担心明年上学的事,到时候再说吧。",
-    "scenario": "家庭亲子",
+    "id": 106,
+    "scenario": "出国旅游",
+    "chunk": "I lost my passport",
+    "translation": "我丢了护照",
+    "example": "I need urgent help, I lost my passport.",
+    "exampleCN": "我急需帮助,我丢了护照。",
     "difficulty": "高级",
     "tags": [
-      "安慰",
-      "俚语"
+      "应急",
+      "证件"
     ]
   },
   {
-    "id": 281,
-    "chunk": "I need you to think before you act",
-    "translation": "我需要你三思而后行",
-    "example": "You broke the vase because you were running inside. I need you to think before you act.",
-    "exampleCN": "你在屋里跑把花瓶打碎了,我需要你三思而后行。",
-    "scenario": "家庭亲子",
+    "id": 107,
+    "scenario": "出国旅游",
+    "chunk": "I need to file a police report",
+    "translation": "我需要报警做笔录",
+    "example": "My bag was stolen, I need to file a police report.",
+    "exampleCN": "我的包被偷了,我需要报警做笔录。",
     "difficulty": "高级",
     "tags": [
-      "教育",
-      "品德"
+      "应急",
+      "警察"
     ]
   },
   {
-    "id": 282,
-    "chunk": "Actions speak louder than words",
-    "translation": "行动胜于言语",
-    "example": "You said you'd clean your room. Remember, actions speak louder than words.",
-    "exampleCN": "你说了要打扫房间,记住,行动胜于言语。",
-    "scenario": "家庭亲子",
+    "id": 108,
+    "scenario": "出国旅游",
+    "chunk": "My flight was cancelled",
+    "translation": "我的航班取消了",
+    "example": "My flight was cancelled, what are my options?",
+    "exampleCN": "我的航班取消了,我有什么选择?",
     "difficulty": "高级",
     "tags": [
-      "品德",
-      "谚语"
+      "航班",
+      "应急"
     ]
   },
   {
-    "id": 283,
-    "chunk": "Let's not make a big deal out of it",
-    "translation": "我们别把这事搞大了",
-    "example": "It's just a small scratch. Let's not make a big deal out of it.",
-    "exampleCN": "只是一个小划痕,我们别把这事搞大了。",
-    "scenario": "家庭亲子",
+    "id": 109,
+    "scenario": "出国旅游",
+    "chunk": "I'd like to extend my stay",
+    "translation": "我想延长住宿",
+    "example": "I'm enjoying it here, I'd like to extend my stay by two nights.",
+    "exampleCN": "我很喜欢这里,想延长两晚住宿。",
     "difficulty": "高级",
     "tags": [
-      "安慰",
-      "态度"
+      "酒店",
+      "延期"
     ]
   },
   {
-    "id": 284,
-    "chunk": "You should stand up for yourself",
-    "translation": "你应该为自己挺身而出",
-    "example": "If someone is bullying you, you should stand up for yourself and tell a teacher.",
-    "exampleCN": "如果有人欺负你,你应该为自己挺身而出,然后告诉老师。",
-    "scenario": "家庭亲子",
+    "id": 110,
+    "scenario": "出国旅游",
+    "chunk": "Are there any hidden fees?",
+    "translation": "有隐藏费用吗?",
+    "example": "Before I sign, are there any hidden fees I should know about?",
+    "exampleCN": "签字前,有什么隐藏费用要告诉我吗?",
     "difficulty": "高级",
     "tags": [
-      "勇气",
-      "教育"
+      "付款",
+      "确认"
     ]
   },
   {
-    "id": 285,
-    "chunk": "It's the thought that counts",
-    "translation": "心意最重要",
-    "example": "The drawing isn't perfect, but it's the thought that counts. I love it!",
-    "exampleCN": "这幅画虽然不完美,但心意最重要,我很喜欢!",
-    "scenario": "家庭亲子",
+    "id": 111,
+    "scenario": "出国旅游",
+    "chunk": "Is it safe to walk around at night?",
+    "translation": "晚上走路安全吗?",
+    "example": "Excuse me, is it safe to walk around at night in this area?",
+    "exampleCN": "打扰了,这个区域晚上走路安全吗?",
     "difficulty": "高级",
     "tags": [
-      "鼓励",
-      "谚语"
+      "安全",
+      "询问"
     ]
   },
   {
-    "id": 286,
-    "chunk": "You can't have your cake and eat it too",
-    "translation": "你不能什么好处都占/鱼与熊掌不可兼得",
-    "example": "You want to stay up late AND not be tired tomorrow? You can't have your cake and eat it too.",
-    "exampleCN": "你想熬夜又想明天不累?鱼与熊掌不可兼得。",
-    "scenario": "家庭亲子",
+    "id": 112,
+    "scenario": "出国旅游",
+    "chunk": "I'm here on vacation",
+    "translation": "我来度假的",
+    "example": "I'm here on vacation for two weeks.",
+    "exampleCN": "我来度两周假。",
     "difficulty": "高级",
     "tags": [
-      "教育",
-      "谚语"
+      "入境",
+      "身份"
     ]
   },
   {
-    "id": 287,
-    "chunk": "I appreciate you being honest with me",
-    "translation": "我很感谢你对我说实话",
-    "example": "Even though you broke the cup, I appreciate you being honest with me about it.",
-    "exampleCN": "虽然你打碎了杯子,但我很感谢你对我说实话。",
-    "scenario": "家庭亲子",
+    "id": 113,
+    "scenario": "出国旅游",
+    "chunk": "I have nothing to declare",
+    "translation": "我没有需要申报的",
+    "example": "Just personal items, I have nothing to declare.",
+    "exampleCN": "只有个人物品,没有需要申报的。",
     "difficulty": "高级",
     "tags": [
-      "品德",
-      "诚实"
+      "海关",
+      "入境"
     ]
   },
   {
-    "id": 288,
-    "chunk": "Let's agree to disagree",
-    "translation": "我们求同存异吧",
-    "example": "You like chocolate ice cream, I like vanilla. Let's agree to disagree!",
-    "exampleCN": "你喜欢巧克力冰淇淋,我喜欢香草的。我们求同存异吧!",
-    "scenario": "家庭亲子",
+    "id": 114,
+    "scenario": "出国旅游",
+    "chunk": "Could you point me in the right direction?",
+    "translation": "能指个方向吗?",
+    "example": "I'm a bit lost, could you point me in the right direction to the museum?",
+    "exampleCN": "我有点迷路,能指下去博物馆的方向吗?",
     "difficulty": "高级",
     "tags": [
-      "尊重",
-      "观点"
+      "问路",
+      "礼貌"
     ]
   },
   {
-    "id": 289,
-    "chunk": "There's no such thing as a silly question",
-    "translation": "没有愚蠢的问题",
-    "example": "Go ahead and ask. There's no such thing as a silly question.",
-    "exampleCN": "尽管问吧,没有愚蠢的问题。",
-    "scenario": "家庭亲子",
+    "id": 115,
+    "scenario": "出国旅游",
+    "chunk": "Do you speak English?",
+    "translation": "你会说英语吗?",
+    "example": "Excuse me, do you speak English, by any chance?",
+    "exampleCN": "打扰了,您会说英语吗?",
     "difficulty": "高级",
     "tags": [
-      "鼓励",
-      "学习"
-    ]
-  },
-  {
-    "id": 290,
-    "chunk": "Practice makes perfect",
-    "translation": "熟能生巧",
-    "example": "Your piano playing is getting better every day. Practice makes perfect!",
-    "exampleCN": "你的钢琴弹得一天比一天好,熟能生巧!",
-    "scenario": "家庭亲子",
-    "difficulty": "高级",
-    "tags": [
-      "鼓励",
-      "谚语"
-    ]
-  },
-  {
-    "id": 291,
-    "chunk": "From my perspective",
-    "translation": "从我的角度来看",
-    "example": "From my perspective, renewable energy is the most viable solution to climate change.",
-    "exampleCN": "从我的角度来看，可再生能源是应对气候变化最可行的解决方案。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "观点表达",
-      "学术"
-    ]
-  },
-  {
-    "id": 292,
-    "chunk": "It goes without saying that",
-    "translation": "不言而喻",
-    "example": "It goes without saying that education plays a crucial role in economic development.",
-    "exampleCN": "不言而喻，教育在经济发展中起着至关重要的作用。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "论述",
-      "学术"
-    ]
-  },
-  {
-    "id": 293,
-    "chunk": "On the other hand",
-    "translation": "另一方面",
-    "example": "Technology has improved our lives. On the other hand, it has also created new challenges.",
-    "exampleCN": "科技改善了我们的生活。另一方面，它也带来了新的挑战。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "对比",
-      "论述"
-    ]
-  },
-  {
-    "id": 294,
-    "chunk": "To a certain extent",
-    "translation": "在某种程度上",
-    "example": "To a certain extent, social media has changed the way we communicate.",
-    "exampleCN": "在某种程度上，社交媒体改变了我们的交流方式。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "限定",
-      "论述"
-    ]
-  },
-  {
-    "id": 295,
-    "chunk": "There is a growing trend towards",
-    "translation": "有一个日益增长的趋势",
-    "example": "There is a growing trend towards remote working in many industries.",
-    "exampleCN": "许多行业出现了远程办公的日益增长趋势。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "趋势",
-      "社会"
-    ]
-  },
-  {
-    "id": 296,
-    "chunk": "It is widely acknowledged that",
-    "translation": "人们普遍认为",
-    "example": "It is widely acknowledged that physical exercise is beneficial to mental health.",
-    "exampleCN": "人们普遍认为体育锻炼有益于心理健康。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "共识",
-      "论述"
-    ]
-  },
-  {
-    "id": 297,
-    "chunk": "Take into account",
-    "translation": "考虑到/把...纳入考量",
-    "example": "We need to take into account the environmental impact before approving the project.",
-    "exampleCN": "在批准该项目之前，我们需要考虑其对环境的影响。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "分析",
-      "决策"
-    ]
-  },
-  {
-    "id": 298,
-    "chunk": "In terms of",
-    "translation": "在...方面",
-    "example": "In terms of cost-effectiveness, online learning has clear advantages.",
-    "exampleCN": "在性价比方面，在线学习具有明显的优势。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "比较",
-      "学术"
-    ]
-  },
-  {
-    "id": 299,
-    "chunk": "Play a pivotal role in",
-    "translation": "在...中起关键作用",
-    "example": "Technology plays a pivotal role in modern healthcare.",
-    "exampleCN": "科技在现代医疗中起着关键作用。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "重要性",
-      "学术"
-    ]
-  },
-  {
-    "id": 300,
-    "chunk": "Weigh the pros and cons",
-    "translation": "权衡利弊",
-    "example": "Before making a decision, you should weigh the pros and cons carefully.",
-    "exampleCN": "在做决定之前，你应该仔细权衡利弊。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "决策",
-      "分析"
-    ]
-  },
-  {
-    "id": 301,
-    "chunk": "The evidence suggests otherwise",
-    "translation": "证据表明并非如此",
-    "example": "Many people believe sugar is harmless, but the evidence suggests otherwise.",
-    "exampleCN": "很多人认为糖是无害的，但证据表明并非如此。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "反驳",
-      "论证"
-    ]
-  },
-  {
-    "id": 302,
-    "chunk": "It would be naive to assume that",
-    "translation": "假设...未免太天真了",
-    "example": "It would be naive to assume that economic growth alone can solve poverty.",
-    "exampleCN": "假设仅靠经济增长就能解决贫困问题未免太天真了。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "批判",
-      "论述"
-    ]
-  },
-  {
-    "id": 303,
-    "chunk": "This raises the question of whether",
-    "translation": "这引出了...的问题",
-    "example": "This raises the question of whether governments should regulate social media.",
-    "exampleCN": "这引出了政府是否应该监管社交媒体的问题。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "质疑",
-      "分析"
-    ]
-  },
-  {
-    "id": 304,
-    "chunk": "Draw a parallel between",
-    "translation": "将...与...进行类比",
-    "example": "We can draw a parallel between the current crisis and the 2008 recession.",
-    "exampleCN": "我们可以将当前的危机与2008年的经济衰退进行类比。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "类比",
-      "分析"
-    ]
-  },
-  {
-    "id": 305,
-    "chunk": "The underlying cause of",
-    "translation": "...的根本原因",
-    "example": "The underlying cause of the housing crisis is the imbalance between supply and demand.",
-    "exampleCN": "住房危机的根本原因是供需之间的不平衡。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "原因",
-      "分析"
-    ]
-  },
-  {
-    "id": 306,
-    "chunk": "Have a significant impact on",
-    "translation": "对...有重大影响",
-    "example": "Air pollution can have a significant impact on children's health.",
-    "exampleCN": "空气污染会对儿童的健康产生重大影响。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "影响",
-      "环境"
-    ]
-  },
-  {
-    "id": 307,
-    "chunk": "Lead to serious consequences",
-    "translation": "导致严重后果",
-    "example": "Ignoring climate change will lead to serious consequences for future generations.",
-    "exampleCN": "忽视气候变化将给后代带来严重后果。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "后果",
-      "环境"
-    ]
-  },
-  {
-    "id": 308,
-    "chunk": "Raise awareness about",
-    "translation": "提高对...的认识",
-    "example": "Schools should raise awareness about mental health issues.",
-    "exampleCN": "学校应该提高人们对心理健康问题的认识。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "意识",
-      "社会"
-    ]
-  },
-  {
-    "id": 309,
-    "chunk": "Bridge the gap between",
-    "translation": "弥合...之间的差距",
-    "example": "Education can help bridge the gap between rich and poor.",
-    "exampleCN": "教育可以帮助弥合贫富之间的差距。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "差距",
-      "社会"
-    ]
-  },
-  {
-    "id": 310,
-    "chunk": "Cope with the challenges of",
-    "translation": "应对...的挑战",
-    "example": "Young people need skills to cope with the challenges of the modern workplace.",
-    "exampleCN": "年轻人需要技能来应对现代职场的挑战。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "挑战",
-      "社会"
-    ]
-  },
-  {
-    "id": 311,
-    "chunk": "At the expense of",
-    "translation": "以...为代价",
-    "example": "Economic growth should not come at the expense of environmental protection.",
-    "exampleCN": "经济增长不应以牺牲环境保护为代价。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "代价",
-      "环境"
-    ]
-  },
-  {
-    "id": 312,
-    "chunk": "A double-edged sword",
-    "translation": "一把双刃剑",
-    "example": "Artificial intelligence is a double-edged sword that brings both benefits and risks.",
-    "exampleCN": "人工智能是一把双刃剑，既带来好处也带来风险。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "辩证",
-      "科技"
-    ]
-  },
-  {
-    "id": 313,
-    "chunk": "The root of the problem lies in",
-    "translation": "问题的根源在于",
-    "example": "The root of the problem lies in the lack of investment in public education.",
-    "exampleCN": "问题的根源在于对公共教育投入不足。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "根源",
-      "分析"
-    ]
-  },
-  {
-    "id": 314,
-    "chunk": "Strike a balance between",
-    "translation": "在...之间取得平衡",
-    "example": "Governments need to strike a balance between economic development and environmental sustainability.",
-    "exampleCN": "政府需要在经济发展和环境可持续性之间取得平衡。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "平衡",
-      "政策"
-    ]
-  },
-  {
-    "id": 315,
-    "chunk": "Reap the benefits of",
-    "translation": "收获...的好处",
-    "example": "Those who invest in education will eventually reap the benefits of a skilled workforce.",
-    "exampleCN": "投资教育的人最终将收获高技能劳动力带来的好处。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "回报",
-      "教育"
-    ]
-  },
-  {
-    "id": 316,
-    "chunk": "Bring something to the table",
-    "translation": "贡献/提供有价值的东西",
-    "example": "Every team member brings something unique to the table.",
-    "exampleCN": "每个团队成员都能贡献独特的价值。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "贡献",
-      "职场"
-    ]
-  },
-  {
-    "id": 317,
-    "chunk": "Think outside the box",
-    "translation": "跳出固有思维/创新思考",
-    "example": "To solve this problem, we need to think outside the box.",
-    "exampleCN": "要解决这个问题，我们需要跳出固有思维。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "创新",
-      "思维"
-    ]
-  },
-  {
-    "id": 318,
-    "chunk": "Get to the bottom of",
-    "translation": "弄清楚/找到...的真相",
-    "example": "We need to get to the bottom of why sales dropped last quarter.",
-    "exampleCN": "我们需要弄清楚上个季度销量下降的原因。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "调查",
-      "分析"
-    ]
-  },
-  {
-    "id": 319,
-    "chunk": "Keep up with the pace of",
-    "translation": "跟上...的步伐",
-    "example": "It's challenging to keep up with the pace of technological change.",
-    "exampleCN": "跟上技术变革的步伐是一项挑战。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "速度",
-      "变化"
-    ]
-  },
-  {
-    "id": 320,
-    "chunk": "Shed light on",
-    "translation": "阐明/揭示",
-    "example": "This research sheds light on the relationship between sleep and productivity.",
-    "exampleCN": "这项研究揭示了睡眠与生产力之间的关系。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "揭示",
-      "研究"
-    ]
-  },
-  {
-    "id": 321,
-    "chunk": "The lion's share of",
-    "translation": "最大的份额/大部分",
-    "example": "The lion's share of the budget was allocated to infrastructure projects.",
-    "exampleCN": "预算的大部分被分配给了基础设施项目。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "比例",
-      "表达"
-    ]
-  },
-  {
-    "id": 322,
-    "chunk": "Leave no stone unturned",
-    "translation": "不遗余力/想尽一切办法",
-    "example": "The detective left no stone unturned in searching for clues.",
-    "exampleCN": "侦探不遗余力地搜寻线索。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "努力",
-      "俚语"
-    ]
-  },
-  {
-    "id": 323,
-    "chunk": "With hindsight",
-    "translation": "事后看来",
-    "example": "With hindsight, we should have invested in renewable energy much earlier.",
-    "exampleCN": "事后看来，我们应该更早投资可再生能源。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "反思",
-      "时间"
-    ]
-  },
-  {
-    "id": 324,
-    "chunk": "Turn a blind eye to",
-    "translation": "对...视而不见",
-    "example": "We cannot turn a blind eye to the growing inequality in our society.",
-    "exampleCN": "我们不能对社会中日益加剧的不平等视而不见。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "忽视",
-      "社会"
-    ]
-  },
-  {
-    "id": 325,
-    "chunk": "A far cry from",
-    "translation": "与...相差甚远",
-    "example": "The reality of city life is a far cry from what was promised in the advertisements.",
-    "exampleCN": "城市生活的现实与广告中承诺的相差甚远。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "对比",
-      "表达"
-    ]
-  },
-  {
-    "id": 326,
-    "chunk": "Pave the way for",
-    "translation": "为...铺平道路",
-    "example": "Recent breakthroughs in AI have paved the way for autonomous vehicles.",
-    "exampleCN": "最近人工智能的突破为自动驾驶汽车铺平了道路。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "进步",
-      "科技"
-    ]
-  },
-  {
-    "id": 327,
-    "chunk": "Blur the line between",
-    "translation": "模糊了...之间的界限",
-    "example": "Social media has blurred the line between public and private life.",
-    "exampleCN": "社交媒体模糊了公共生活和私人生活之间的界限。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "界限",
-      "科技"
-    ]
-  },
-  {
-    "id": 328,
-    "chunk": "Gain a deeper understanding of",
-    "translation": "更深入地理解",
-    "example": "Through this course, students will gain a deeper understanding of global economics.",
-    "exampleCN": "通过这门课程，学生将更深入地理解全球经济。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "理解",
-      "学习"
-    ]
-  },
-  {
-    "id": 329,
-    "chunk": "Make a compelling argument for",
-    "translation": "为...提出有力的论据",
-    "example": "The report makes a compelling argument for investing in early childhood education.",
-    "exampleCN": "该报告为投资幼儿教育提出了有力的论据。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "论证",
-      "学术"
-    ]
-  },
-  {
-    "id": 330,
-    "chunk": "Stand the test of time",
-    "translation": "经得起时间的考验",
-    "example": "Only truly innovative ideas stand the test of time.",
-    "exampleCN": "只有真正创新的想法才能经得起时间的考验。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "持久",
-      "表达"
-    ]
-  },
-  {
-    "id": 331,
-    "chunk": "The ramifications of",
-    "translation": "...的深远影响/后果",
-    "example": "The ramifications of artificial intelligence on the job market are still unclear.",
-    "exampleCN": "人工智能对就业市场的深远影响尚不明确。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "影响",
-      "科技"
-    ]
-  },
-  {
-    "id": 332,
-    "chunk": "Tantamount to",
-    "translation": "等同于/无异于",
-    "example": "Releasing untreated waste into rivers is tantamount to environmental destruction.",
-    "exampleCN": "将未经处理的废物排入河流无异于环境破坏。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "等同",
-      "环境"
-    ]
-  },
-  {
-    "id": 333,
-    "chunk": "An indispensable part of",
-    "translation": "不可或缺的一部分",
-    "example": "Critical thinking has become an indispensable part of modern education.",
-    "exampleCN": "批判性思维已成为现代教育不可或缺的一部分。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "必要",
-      "教育"
-    ]
-  },
-  {
-    "id": 334,
-    "chunk": "Exacerbate the problem",
-    "translation": "加剧问题",
-    "example": "Cutting funding for healthcare will only exacerbate the problem.",
-    "exampleCN": "削减医疗资金只会加剧问题。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "恶化",
-      "分析"
-    ]
-  },
-  {
-    "id": 335,
-    "chunk": "In the grand scheme of things",
-    "translation": "从大局来看",
-    "example": "One failed exam is nothing in the grand scheme of things.",
-    "exampleCN": "从大局来看，一次考试失败算不了什么。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "格局",
-      "表达"
-    ]
-  },
-  {
-    "id": 336,
-    "chunk": "Bear in mind that",
-    "translation": "请记住/要考虑到",
-    "example": "Bear in mind that correlation does not imply causation.",
-    "exampleCN": "请记住，相关性并不意味着因果关系。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "提醒",
-      "学术"
-    ]
-  },
-  {
-    "id": 337,
-    "chunk": "Give rise to",
-    "translation": "引起/导致",
-    "example": "Rapid urbanization has given rise to a host of environmental problems.",
-    "exampleCN": "快速城市化引起了一系列环境问题。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "因果",
-      "社会"
-    ]
-  },
-  {
-    "id": 338,
-    "chunk": "By and large",
-    "translation": "总的来说",
-    "example": "By and large, the experiment was a success.",
-    "exampleCN": "总的来说，这个实验是成功的。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "总结",
-      "学术"
-    ]
-  },
-  {
-    "id": 339,
-    "chunk": "Come to terms with",
-    "translation": "接受/妥协于",
-    "example": "Society needs to come to terms with the fact that AI will transform many jobs.",
-    "exampleCN": "社会需要接受人工智能将改变许多工作岗位这一事实。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "接受",
-      "变化"
-    ]
-  },
-  {
-    "id": 340,
-    "chunk": "Fall short of expectations",
-    "translation": "未达到预期",
-    "example": "The new policy has fallen short of expectations in reducing pollution.",
-    "exampleCN": "新政策在减少污染方面未达到预期。",
-    "scenario": "学术雅思",
-    "difficulty": "中级",
-    "tags": [
-      "评价",
-      "结果"
-    ]
-  },
-  {
-    "id": 341,
-    "chunk": "A watershed moment",
-    "translation": "分水岭/转折点",
-    "example": "The invention of the internet was a watershed moment in human history.",
-    "exampleCN": "互联网的发明是人类历史上的一个分水岭。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "转折",
-      "历史"
-    ]
-  },
-  {
-    "id": 342,
-    "chunk": "Run the risk of",
-    "translation": "冒着...的风险",
-    "example": "Companies that ignore innovation run the risk of becoming obsolete.",
-    "exampleCN": "忽视创新的公司冒着被淘汰的风险。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "风险",
-      "商业"
-    ]
-  },
-  {
-    "id": 343,
-    "chunk": "Tip the scales in favor of",
-    "translation": "使天平倾向于",
-    "example": "New evidence could tip the scales in favor of the defendant.",
-    "exampleCN": "新证据可能使天平倾向于被告。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "转变",
-      "表达"
-    ]
-  },
-  {
-    "id": 344,
-    "chunk": "Speak volumes about",
-    "translation": "充分说明了",
-    "example": "The rising dropout rate speaks volumes about the state of our education system.",
-    "exampleCN": "不断上升的辍学率充分说明了我们教育系统的状况。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "说明",
-      "分析"
-    ]
-  },
-  {
-    "id": 345,
-    "chunk": "The onus is on",
-    "translation": "责任在于",
-    "example": "The onus is on governments to ensure equal access to healthcare.",
-    "exampleCN": "确保人人平等获得医疗服务的责任在于政府。",
-    "scenario": "学术雅思",
-    "difficulty": "高级",
-    "tags": [
-      "责任",
-      "政策"
+      "沟通",
+      "语言"
     ]
   }
 ]
