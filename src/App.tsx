@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Home, BookOpen, BarChart3, Eye, TrendingUp, LogOut, Trash2, AlertTriangle } from 'lucide-react';
+import { Home, BookOpen, BarChart3, Eye, TrendingUp, LogOut, Trash2, AlertTriangle, Flame, Sparkles, Zap } from 'lucide-react';
 import { useLearning } from '@/hooks/useLearning';
 import { ChunkCard } from '@/components/ChunkCard';
 import { ReviewButtons } from '@/components/ReviewButtons';
@@ -18,7 +18,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // 检查是否已登录
   useEffect(() => {
     const user = getCurrentUser();
     setCurrentUser(user);
@@ -34,25 +33,21 @@ function App() {
     setCurrentUser(null);
   };
 
-  // 加载中
   if (isLoading) {
     return (
-      <div className="h-screen bg-background flex items-center justify-center">
-        <div className="text-4xl animate-pulse">📚</div>
+      <div className="h-screen flex items-center justify-center">
+        <div className="text-5xl animate-bounce-soft">📚</div>
       </div>
     );
   }
 
-  // 未登录 → 显示用户选择页
   if (!currentUser) {
     return <UserSelect onUserSelected={handleUserSelected} />;
   }
 
-  // 已登录 → 显示主应用
   return <MainApp currentUser={currentUser} onLogout={handleLogout} />;
 }
 
-// 主应用组件
 function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout: () => void }) {
   const [currentView, setCurrentView] = useState<View>('home');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -83,66 +78,73 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
     onLogout();
   };
 
+  const progressPercent = Math.min((todayLearnedCount / dailyGoal) * 100, 100);
+
   const renderContent = () => {
     switch (currentView) {
       case 'home':
         return (
-          <div className="w-full max-w-4xl mx-auto space-y-4 py-4">
-            {/* 用户信息栏 */}
+          <div className="w-full max-w-md mx-auto space-y-5 py-4 animate-fade-in-up">
+            {/* 顶部用户信息栏 */}
             <div className="flex items-center justify-between px-4">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">{currentUser.avatar}</span>
-                <span className="font-heading font-bold text-textPrimary">
-                  {currentUser.name}
-                </span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-warm flex items-center justify-center text-2xl shadow-glow-primary">
+                  {currentUser.avatar}
+                </div>
+                <div>
+                  <p className="text-xs text-textSecondary font-medium">Hi 👋</p>
+                  <p className="font-bold text-textPrimary text-base leading-tight">
+                    {currentUser.name}
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5">
                 <DailyGoalSetting currentGoal={dailyGoal} onSave={saveDailyGoal} />
                 <button
                   onClick={() => setShowDeleteConfirm(true)}
-                  className="p-2 bg-white rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="p-2.5 glass rounded-2xl btn-press"
                   title="删除账号"
                 >
                   <Trash2 className="w-4 h-4 text-red-400" />
                 </button>
                 <button
                   onClick={onLogout}
-                  className="p-2 bg-white rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="p-2.5 glass rounded-2xl btn-press"
                   title="切换用户"
                 >
-                  <LogOut className="w-4 h-4 text-textPrimary/60" />
+                  <LogOut className="w-4 h-4 text-textSecondary" />
                 </button>
               </div>
             </div>
 
-            {/* 删除账号确认弹窗 */}
+            {/* 删除确认弹窗 */}
             {showDeleteConfirm && (
-              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-clay-lg shadow-clay-lg max-w-sm w-full p-6">
+              <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in-up">
+                <div className="bg-white rounded-clay-xl shadow-clay-lg max-w-sm w-full p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <AlertTriangle className="w-5 h-5 text-red-500" />
+                    <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <AlertTriangle className="w-6 h-6 text-red-500" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-textPrimary">删除账号</h3>
-                      <p className="text-sm font-body text-textPrimary/60">
+                      <h3 className="font-bold text-textPrimary text-lg">删除账号</h3>
+                      <p className="text-sm text-textSecondary">
                         确定删除 <strong>{currentUser.name}</strong> 的所有数据？
                       </p>
                     </div>
                   </div>
-                  <p className="text-xs font-body text-red-500 mb-4">
-                    此操作不可恢复，本地和云端数据都将被删除！
+                  <p className="text-xs text-red-500 mb-4 bg-red-50 p-3 rounded-xl">
+                    ⚠️ 此操作不可恢复，本地和云端数据都将被删除！
                   </p>
                   <div className="flex gap-3">
                     <button
                       onClick={() => setShowDeleteConfirm(false)}
-                      className="flex-1 py-2.5 bg-background text-textPrimary font-body font-bold rounded-clay hover:bg-background/80 transition-all cursor-pointer"
+                      className="flex-1 py-3 bg-gray-100 text-textPrimary font-bold rounded-2xl hover:bg-gray-200 btn-press"
                     >
                       取消
                     </button>
                     <button
                       onClick={handleDeleteAccount}
-                      className="flex-1 py-2.5 bg-red-500 text-white font-body font-bold rounded-clay shadow-clay hover:bg-red-600 transition-all cursor-pointer"
+                      className="flex-1 py-3 bg-red-500 text-white font-bold rounded-2xl shadow-lg hover:bg-red-600 btn-press"
                     >
                       确认删除
                     </button>
@@ -151,98 +153,164 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
               </div>
             )}
 
-            <div className="text-center px-4">
-              <h1 className="text-3xl sm:text-4xl font-heading font-bold text-primary mb-2">
-                meihoo语块学习
+            {/* 主标题 - 渐变文字 + 动效 */}
+            <div className="text-center px-4 pt-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/70 backdrop-blur-sm rounded-full mb-3 shadow-soft">
+                <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse-soft" />
+                <span className="text-xs font-bold text-textPrimary">让英语脱口而出</span>
+              </div>
+              <h1 className="font-display-en text-4xl sm:text-5xl font-bold text-gradient-warm mb-2 leading-tight">
+                MeihooStudy
               </h1>
-              <p className="text-base sm:text-lg font-body text-textPrimary/70 mb-1">
-                语块学习法 · 高效记忆英语
-              </p>
-              <p className="text-xs sm:text-sm font-body text-textPrimary/60">
-                不再孤立背单词，掌握固定搭配，事半功倍
+              <p className="text-sm text-textSecondary font-medium">
+                语块记忆法 · 用固定搭配像母语者一样说英语
               </p>
             </div>
 
-            {/* 3个特性卡片 - 横向滚动 */}
-            <div className="flex gap-3 overflow-x-auto px-4 pb-2 hide-scrollbar">
-              <div className="bg-white rounded-clay p-4 shadow-clay text-center min-w-[140px] flex-shrink-0">
-                <div className="w-12 h-12 bg-primary/10 rounded-clay mx-auto mb-2 flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-sm font-heading font-bold text-textPrimary mb-1">
-                  语块记忆
-                </h3>
-                <p className="text-xs font-body text-textPrimary/60">
-                  固定搭配学习
-                </p>
-              </div>
+            {/* 今日进度卡 - 大胆的渐变 */}
+            <div className="px-4">
+              <div className="relative overflow-hidden rounded-clay-xl p-5 shadow-clay-lg" style={{
+                background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 50%, #FFD93D 100%)',
+              }}>
+                <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/15 rounded-full blur-2xl" />
 
-              <div className="bg-white rounded-clay p-4 shadow-clay text-center min-w-[140px] flex-shrink-0">
-                <div className="w-12 h-12 bg-secondary/10 rounded-clay mx-auto mb-2 flex items-center justify-center">
-                  <BarChart3 className="w-6 h-6 text-secondary" />
-                </div>
-                <h3 className="text-sm font-heading font-bold text-textPrimary mb-1">
-                  智能复习
-                </h3>
-                <p className="text-xs font-body text-textPrimary/60">
-                  SM-2科学算法
-                </p>
-              </div>
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-9 h-9 rounded-xl bg-white/25 backdrop-blur-sm flex items-center justify-center">
+                        <Flame className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-white/90 font-bold uppercase tracking-wider">Today</p>
+                        <p className="text-white font-bold">今日学习</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-display-en text-3xl font-bold text-white leading-none">
+                        {todayLearnedCount}
+                        <span className="text-lg opacity-80">/{dailyGoal}</span>
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="bg-white rounded-clay p-4 shadow-clay text-center min-w-[140px] flex-shrink-0">
-                <div className="w-12 h-12 bg-cta/10 rounded-clay mx-auto mb-2 flex items-center justify-center">
-                  <Home className="w-6 h-6 text-cta" />
+                  <div className="h-2.5 bg-white/25 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-white rounded-full transition-all duration-500 relative overflow-hidden"
+                      style={{ width: `${progressPercent}%` }}
+                    >
+                      <div className="absolute inset-0 bg-shimmer animate-shimmer" />
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-white/90 mt-2 font-medium">
+                    {progressPercent >= 100
+                      ? '🎉 已完成今日目标，再接再厉！'
+                      : `还差 ${dailyGoal - todayLearnedCount} 个就达标啦`}
+                  </p>
                 </div>
-                <h3 className="text-sm font-heading font-bold text-textPrimary mb-1">
-                  真实场景
-                </h3>
-                <p className="text-xs font-body text-textPrimary/60">
-                  日常工作社交
-                </p>
               </div>
             </div>
 
-            <div className="text-center px-4 space-y-3">
-              {/* 两个按钮：新学 + 复习 */}
-              <div className="flex gap-3 justify-center">
-                <button
-                  onClick={() => {
-                    startNewSession();
-                    setCurrentView('review');
-                  }}
-                  disabled={!hasNewLearns}
-                  className="flex-1 max-w-[180px] px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white font-heading font-bold text-base rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  <span className="block">新学</span>
-                  <span className="block text-xs font-body opacity-80 mt-0.5">
-                    {hasNewLearns ? `${newLearnCount} 个可学` : '暂无新语块'}
-                  </span>
-                </button>
+            {/* 两个超大行动按钮 */}
+            <div className="px-4 grid grid-cols-2 gap-3">
+              <button
+                onClick={() => {
+                  startNewSession();
+                  setCurrentView('review');
+                }}
+                disabled={!hasNewLearns}
+                className="relative group overflow-hidden rounded-clay-xl p-4 text-white text-left disabled:opacity-50 disabled:cursor-not-allowed btn-press shadow-glow-secondary"
+                style={{
+                  background: 'linear-gradient(135deg, #4ECDC4 0%, #6BCBE7 100%)',
+                }}
+              >
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-white/20 rounded-full blur-xl group-hover:bg-white/30 transition-all" />
+                <div className="relative">
+                  <div className="w-9 h-9 rounded-xl bg-white/25 backdrop-blur-sm flex items-center justify-center mb-2">
+                    <Sparkles className="w-5 h-5" />
+                  </div>
+                  <p className="font-bold text-lg leading-none mb-0.5">新学</p>
+                  <p className="text-xs opacity-95 font-medium">
+                    {hasNewLearns ? `${newLearnCount} 个待学` : '都学过啦 🎓'}
+                  </p>
+                </div>
+              </button>
 
-                <button
-                  onClick={() => {
-                    startReviewSession();
-                    setCurrentView('review');
-                  }}
-                  disabled={!hasReviews}
-                  className="flex-1 max-w-[180px] px-4 py-3 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-heading font-bold text-base rounded-clay-lg shadow-clay-lg hover:shadow-clay-pressed transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-                >
-                  <span className="block">复习</span>
-                  <span className="block text-xs font-body opacity-80 mt-0.5">
-                    {hasReviews ? `${dueReviewCount} 个到期` : '暂无待复习'}
-                  </span>
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  startReviewSession();
+                  setCurrentView('review');
+                }}
+                disabled={!hasReviews}
+                className="relative group overflow-hidden rounded-clay-xl p-4 text-white text-left disabled:opacity-50 disabled:cursor-not-allowed btn-press shadow-glow-primary"
+                style={{
+                  background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%)',
+                }}
+              >
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-white/20 rounded-full blur-xl group-hover:bg-white/30 transition-all" />
+                <div className="relative">
+                  <div className="w-9 h-9 rounded-xl bg-white/25 backdrop-blur-sm flex items-center justify-center mb-2">
+                    <Zap className="w-5 h-5" />
+                  </div>
+                  <p className="font-bold text-lg leading-none mb-0.5">复习</p>
+                  <p className="text-xs opacity-95 font-medium">
+                    {hasReviews ? `${dueReviewCount} 个到期` : '暂无 ✓'}
+                  </p>
+                </div>
+              </button>
+            </div>
 
-              {/* 进度信息 */}
-              <p className="text-sm font-body text-textPrimary/60">
-                已学 {stats.learnedChunks}/{stats.totalChunks} · 目标 {dailyGoal}/天
-              </p>
-              {todayLearnedCount > 0 && (
-                <p className="text-sm font-body text-primary/80 font-bold">
-                  今日已学习 {todayLearnedCount} 个 🎉
+            {/* 学习总览 - 三栏小卡片 */}
+            <div className="px-4 grid grid-cols-3 gap-2.5">
+              <div className="glass rounded-2xl p-3 text-center">
+                <p className="font-display-en text-2xl font-bold text-primary leading-none">
+                  {stats.totalChunks}
                 </p>
-              )}
+                <p className="text-[11px] text-textSecondary font-bold mt-1">总语块</p>
+              </div>
+              <div className="glass rounded-2xl p-3 text-center">
+                <p className="font-display-en text-2xl font-bold text-secondaryDark leading-none">
+                  {stats.learnedChunks}
+                </p>
+                <p className="text-[11px] text-textSecondary font-bold mt-1">已学过</p>
+              </div>
+              <div className="glass rounded-2xl p-3 text-center">
+                <p className="font-display-en text-2xl font-bold text-ctaDark leading-none">
+                  {stats.masteredChunks}
+                </p>
+                <p className="text-[11px] text-textSecondary font-bold mt-1">已掌握</p>
+              </div>
+            </div>
+
+            {/* 三个特性介绍 - 横向滚动 */}
+            <div className="px-4">
+              <p className="text-xs font-bold text-textSecondary mb-2 uppercase tracking-wider">
+                为什么选语块法
+              </p>
+              <div className="flex gap-2.5 overflow-x-auto pb-1 hide-scrollbar -mx-4 px-4">
+                <div className="glass rounded-2xl p-3.5 min-w-[140px] flex-shrink-0">
+                  <div className="text-2xl mb-1">🧠</div>
+                  <p className="text-sm font-bold text-textPrimary leading-tight">语块记忆</p>
+                  <p className="text-xs text-textSecondary mt-0.5 leading-snug">
+                    告别孤立背单词
+                  </p>
+                </div>
+                <div className="glass rounded-2xl p-3.5 min-w-[140px] flex-shrink-0">
+                  <div className="text-2xl mb-1">⏰</div>
+                  <p className="text-sm font-bold text-textPrimary leading-tight">智能复习</p>
+                  <p className="text-xs text-textSecondary mt-0.5 leading-snug">
+                    SM-2 科学算法
+                  </p>
+                </div>
+                <div className="glass rounded-2xl p-3.5 min-w-[140px] flex-shrink-0">
+                  <div className="text-2xl mb-1">🌍</div>
+                  <p className="text-sm font-bold text-textPrimary leading-tight">真实场景</p>
+                  <p className="text-xs text-textSecondary mt-0.5 leading-snug">
+                    日常生活直接用
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         );
@@ -250,27 +318,33 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
       case 'review':
         if (!currentReview) {
           return (
-            <div className="text-center space-y-4 px-4">
-              <div className="text-5xl">{mode === 'review' ? '💪' : '🎉'}</div>
-              <h2 className="text-2xl font-heading font-bold text-primary">
-                {mode === 'review' ? '复习完成！' : '新学完成！'}
-              </h2>
-              <p className="text-base font-body text-textPrimary/70">
-                {mode === 'review' ? '本轮复习已完成' : '本轮新学已完成'}
-              </p>
-              <p className="text-sm font-body text-textPrimary/60">
-                今日累计学习 {todayLearnedCount} 个语块
-              </p>
-              <div className="flex gap-3 justify-center flex-wrap">
+            <div className="text-center space-y-5 px-4 animate-pop">
+              <div className="text-7xl animate-bounce-soft">{mode === 'review' ? '💪' : '🎉'}</div>
+              <div>
+                <h2 className="font-display-en text-3xl font-bold text-gradient-warm mb-1">
+                  {mode === 'review' ? 'Great Job!' : 'Awesome!'}
+                </h2>
+                <p className="text-base font-bold text-textPrimary">
+                  {mode === 'review' ? '复习完成！' : '新学完成！'}
+                </p>
+              </div>
+              <div className="glass rounded-clay-xl p-5 max-w-xs mx-auto">
+                <p className="text-sm text-textSecondary mb-1">今日累计学习</p>
+                <p className="font-display-en text-4xl font-bold text-gradient-warm">
+                  {todayLearnedCount} <span className="text-lg text-textSecondary">个</span>
+                </p>
+              </div>
+              <div className="flex gap-3 justify-center max-w-xs mx-auto">
                 <button
                   onClick={() => setCurrentView('today')}
-                  className="flex-1 min-w-[130px] max-w-[160px] px-5 py-2.5 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="flex-1 px-5 py-3 bg-white text-textPrimary font-bold rounded-2xl shadow-soft border border-gray-100 btn-press"
                 >
-                  查看今日回看
+                  查看今日
                 </button>
                 <button
                   onClick={() => setCurrentView('home')}
-                  className="flex-1 min-w-[130px] max-w-[160px] px-5 py-2.5 bg-cta text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+                  className="flex-1 px-5 py-3 text-white font-bold rounded-2xl shadow-glow-primary btn-press"
+                  style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%)' }}
                 >
                   返回首页
                 </button>
@@ -280,31 +354,35 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
         }
 
         return (
-          <div className="w-full max-w-2xl mx-auto space-y-4">
+          <div className="w-full max-w-2xl mx-auto space-y-4 animate-fade-in-up">
             <div className="text-center px-4">
-              <p className="text-xs font-body text-textPrimary/60 mb-1">
-                {mode === 'review' ? '📖 复习模式' : '✨ 新学模式'} · 今日已学 {todayLearnedCount}
-              </p>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 glass rounded-full mb-2">
+                <span className="text-xs font-bold text-textPrimary">
+                  {mode === 'review' ? '📖 复习模式' : '✨ 新学模式'}
+                </span>
+                <span className="text-xs text-textSecondary">·</span>
+                <span className="text-xs font-bold text-primary">
+                  今日已学 {todayLearnedCount}/{dailyGoal}
+                </span>
+              </div>
               {mode === 'review' && currentReview.record.reviewCount > 0 && (
-                <p className="text-[10px] font-body text-orange-500 mb-1">
+                <p className="text-[11px] font-medium text-orange-600 mb-2">
                   上次学习 {Math.floor((Date.now() - new Date(currentReview.record.lastReviewDate).getTime()) / (1000 * 60 * 60 * 24))} 天前 · 已复习 {currentReview.record.reviewCount} 次
                 </p>
               )}
-              <div className="h-1.5 bg-background rounded-full max-w-md mx-auto overflow-hidden">
+              <div className="h-1.5 bg-white/60 rounded-full max-w-md mx-auto overflow-hidden shadow-inner">
                 <div
-                  className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
-                  style={{
-                    width: `${Math.min((todayLearnedCount / dailyGoal) * 100, 100)}%`,
-                  }}
+                  className="h-full bg-gradient-warm rounded-full transition-all duration-500"
+                  style={{ width: `${progressPercent}%` }}
                 />
               </div>
             </div>
 
             <ChunkCard chunk={currentReview.chunk} />
 
-            <div className="max-w-2xl mx-auto">
-              <p className="text-center text-sm font-body text-textPrimary/70 mb-4">
-                选择记忆程度：
+            <div className="max-w-2xl mx-auto px-4">
+              <p className="text-center text-sm font-bold text-textPrimary mb-3">
+                这个语块你记得怎么样？
               </p>
               <ReviewButtons onFeedback={submitReview} />
             </div>
@@ -323,68 +401,65 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
   };
 
   const navItems = [
-    { id: 'home' as View, label: '首页', icon: Home },
-    { id: 'review' as View, label: '学习', icon: BookOpen },
-    { id: 'today' as View, label: '今日', icon: Eye },
-    { id: 'dashboard' as View, label: '看板', icon: TrendingUp },
-    { id: 'stats' as View, label: '统计', icon: BarChart3 },
+    { id: 'home' as View, label: '首页', icon: Home, color: '#FF6B6B' },
+    { id: 'review' as View, label: '学习', icon: BookOpen, color: '#4ECDC4' },
+    { id: 'today' as View, label: '今日', icon: Eye, color: '#FFD93D' },
+    { id: 'dashboard' as View, label: '看板', icon: TrendingUp, color: '#A78BFA' },
+    { id: 'stats' as View, label: '统计', icon: BarChart3, color: '#FF8E72' },
   ];
 
   return (
-    <div className="h-screen bg-background overflow-hidden flex flex-col">
-      {/* Header - 只保留 logo，仅在首页显示 */}
-      {currentView === 'home' && (
-        <header className="bg-white shadow-clay flex-shrink-0">
-          <div className="max-w-7xl mx-auto px-4 py-3">
-            <div className="flex items-center justify-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-clay flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-lg font-heading font-bold text-primary">
-                MeihooStudy
-              </span>
-            </div>
-          </div>
-        </header>
-      )}
-
-      {/* Main Content - 固定高度，内部可滚动 */}
-      <main className="flex-1 overflow-y-auto pb-20">
-        <div className={`min-h-full px-4 ${
+    <div className="h-screen overflow-hidden flex flex-col">
+      {/* Main Content */}
+      <main className="flex-1 overflow-y-auto pb-24">
+        <div className={`min-h-full px-2 sm:px-4 ${
           currentView === 'today' || currentView === 'stats' || currentView === 'dashboard'
             ? 'py-4'
-            : 'flex items-center justify-center'
+            : currentView === 'home'
+            ? ''
+            : 'flex items-center justify-center py-4'
         }`}>
           {renderContent()}
         </div>
       </main>
 
-      {/* 底部导航栏 - 固定在底部 */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-clay-lg z-50 safe-area-inset-bottom">
-        <div className="flex items-center justify-around max-w-7xl mx-auto px-2 py-3">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = currentView === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => setCurrentView(item.id)}
-                className={`
-                  flex flex-col items-center gap-1 px-3 py-2 rounded-lg font-body transition-all duration-200 cursor-pointer min-w-[64px]
-                  ${
-                    isActive
-                      ? 'text-primary'
-                      : 'text-textPrimary/60 hover:text-textPrimary'
-                  }
-                `}
-              >
-                <Icon className={`w-6 h-6 ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`} />
-                <span className={`text-xs ${isActive ? 'font-bold' : 'font-medium'}`}>
-                  {item.label}
-                </span>
-              </button>
-            );
-          })}
+      {/* 底部导航栏 - 玻璃拟态 */}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 px-3 pb-3 pt-2 pointer-events-none">
+        <div className="max-w-md mx-auto pointer-events-auto">
+          <div className="glass rounded-clay-xl shadow-clay-lg">
+            <div className="flex items-center justify-around px-2 py-2">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = currentView === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setCurrentView(item.id)}
+                    className="flex flex-col items-center gap-0.5 px-2.5 py-1.5 rounded-2xl btn-press transition-all duration-200 min-w-[56px] relative"
+                  >
+                    {isActive && (
+                      <div
+                        className="absolute inset-0 rounded-2xl opacity-15"
+                        style={{ background: item.color }}
+                      />
+                    )}
+                    <div className="relative flex flex-col items-center gap-0.5">
+                      <Icon
+                        className={`w-5 h-5 transition-all ${isActive ? 'stroke-[2.5]' : 'stroke-2'}`}
+                        style={{ color: isActive ? item.color : '#5C6B7E' }}
+                      />
+                      <span
+                        className={`text-[10px] transition-all ${isActive ? 'font-bold' : 'font-medium'}`}
+                        style={{ color: isActive ? item.color : '#5C6B7E' }}
+                      >
+                        {item.label}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </nav>
     </div>

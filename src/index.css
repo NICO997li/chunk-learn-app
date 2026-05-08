@@ -4,11 +4,27 @@
 
 @layer base {
   body {
-    @apply font-body antialiased;
+    @apply font-body antialiased text-textPrimary;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv11";
+    background:
+      radial-gradient(at 15% 10%, rgba(255, 107, 107, 0.10) 0px, transparent 50%),
+      radial-gradient(at 85% 15%, rgba(78, 205, 196, 0.10) 0px, transparent 50%),
+      radial-gradient(at 5% 85%, rgba(167, 139, 250, 0.10) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, rgba(255, 230, 109, 0.12) 0px, transparent 50%),
+      linear-gradient(180deg, #FFFAF5 0%, #FFF4EC 100%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    letter-spacing: -0.02em;
+  }
+
+  /* 英文展示用 Fraunces 衬线，中文用 sans */
+  .font-display-en {
+    font-family: 'Fraunces', serif;
+    font-feature-settings: "ss01", "ss02";
+    letter-spacing: -0.02em;
   }
 }
 
@@ -32,12 +48,62 @@
 
   /* 隐藏滚动条但保留滚动功能 */
   .hide-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  
+
   .hide-scrollbar::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, Opera */
+    display: none;
+  }
+
+  /* 渐变文字 */
+  .text-gradient-warm {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 50%, #FFD93D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-gradient-cool {
+    background: linear-gradient(135deg, #4ECDC4 0%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* 玻璃拟态 */
+  .glass {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .glass-dark {
+    background: rgba(45, 49, 66, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* 动效按钮 */
+  .btn-press {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+  }
+  .btn-press:active {
+    transform: scale(0.96);
+  }
+
+  /* shimmer 渐变 */
+  .bg-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
   }
 }
 
@@ -54,20 +120,19 @@
 
 /* 滚动条样式 */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #EEF2FF;
-  border-radius: 10px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #818CF8;
-  border-radius: 10px;
+  background: rgba(255, 107, 107, 0.3);
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4F46E5;
+  background: rgba(255, 107, 107, 0.5);
 }

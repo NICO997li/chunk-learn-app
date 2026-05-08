@@ -1,4 +1,4 @@
-import { Trophy, Target, Flame, BookOpen, CheckCircle, Clock, TrendingUp } from 'lucide-react';
+import { Flame, BookOpen, CheckCircle, Clock, TrendingUp, Target } from 'lucide-react';
 import { LearningStats } from '@/types';
 
 interface StatsCardProps {
@@ -6,145 +6,167 @@ interface StatsCardProps {
 }
 
 export function StatsCard({ stats }: StatsCardProps) {
-  // 总体进度 = 已学过/总数
-  const learnedProgress = stats.totalChunks > 0 
-    ? (stats.learnedChunks / stats.totalChunks) * 100 
+  const learnedProgress = stats.totalChunks > 0
+    ? (stats.learnedChunks / stats.totalChunks) * 100
     : 0;
-
-  // 掌握进度 = 已掌握/总数
   const masteredProgress = stats.totalChunks > 0
     ? (stats.masteredChunks / stats.totalChunks) * 100
     : 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-2 overflow-y-auto">
-      <div className="bg-white rounded-clay-lg p-5 shadow-clay-lg">
-        <h2 className="text-xl font-heading font-bold text-textPrimary mb-4 text-center">
-          学习统计
-        </h2>
-
-        {/* 核心数据 - 大字展示 */}
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-clay p-4 mb-4">
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <div>
-              <p className="text-2xl font-heading font-bold text-primary">{stats.totalChunks}</p>
-              <p className="text-xs font-body text-textPrimary/60">总语块</p>
-            </div>
-            <div>
-              <p className="text-2xl font-heading font-bold text-secondary">{stats.learnedChunks}</p>
-              <p className="text-xs font-body text-textPrimary/60">已学过</p>
-            </div>
-            <div>
-              <p className="text-2xl font-heading font-bold text-cta">{stats.masteredChunks}</p>
-              <p className="text-xs font-body text-textPrimary/60">已掌握</p>
-            </div>
+    <div className="w-full max-w-md mx-auto px-2 space-y-4 animate-fade-in-up pb-4">
+      {/* 顶部标题 */}
+      <div className="px-2 pt-2">
+        <div className="flex items-center gap-2 mb-1">
+          <div className="w-9 h-9 rounded-xl bg-gradient-cool flex items-center justify-center shadow-glow-secondary">
+            <Target className="w-5 h-5 text-white" />
           </div>
+          <h2 className="font-display-en text-2xl font-bold text-textPrimary">Stats</h2>
         </div>
+        <p className="text-sm text-textSecondary font-medium pl-11">
+          看看你的学习进度
+        </p>
+      </div>
 
-        {/* 学习进度条 */}
-        <div className="mb-3">
-          <div className="flex justify-between items-center mb-1">
-            <span className="text-sm font-body font-bold text-textPrimary">学习进度</span>
-            <span className="text-sm font-heading font-bold text-secondary">
-              {stats.learnedChunks} / {stats.totalChunks}（{learnedProgress.toFixed(1)}%）
+      {/* 核心数据卡 - 大胆配色 */}
+      <div className="grid grid-cols-3 gap-2.5">
+        <div className="relative overflow-hidden rounded-clay p-4 text-center text-white shadow-glow-primary"
+          style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%)' }}>
+          <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full blur-xl" />
+          <p className="font-display-en text-3xl font-bold leading-none">{stats.totalChunks}</p>
+          <p className="text-[11px] font-bold mt-1 opacity-95">总语块</p>
+        </div>
+        <div className="relative overflow-hidden rounded-clay p-4 text-center text-white shadow-glow-secondary"
+          style={{ background: 'linear-gradient(135deg, #4ECDC4 0%, #6BCBE7 100%)' }}>
+          <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full blur-xl" />
+          <p className="font-display-en text-3xl font-bold leading-none">{stats.learnedChunks}</p>
+          <p className="text-[11px] font-bold mt-1 opacity-95">已学过</p>
+        </div>
+        <div className="relative overflow-hidden rounded-clay p-4 text-center text-white"
+          style={{ background: 'linear-gradient(135deg, #A78BFA 0%, #C8B6FF 100%)', boxShadow: '0 8px 24px rgba(167,139,250,0.35)' }}>
+          <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/20 rounded-full blur-xl" />
+          <p className="font-display-en text-3xl font-bold leading-none">{stats.masteredChunks}</p>
+          <p className="text-[11px] font-bold mt-1 opacity-95">已掌握</p>
+        </div>
+      </div>
+
+      {/* 进度条 */}
+      <div className="glass rounded-clay p-4 space-y-4">
+        <div>
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-sm font-bold text-textPrimary flex items-center gap-1.5">
+              <span>📖</span> 学习进度
+            </span>
+            <span className="font-display-en text-sm font-bold text-secondaryDark">
+              {learnedProgress.toFixed(1)}%
             </span>
           </div>
-          <div className="h-3 bg-background rounded-full overflow-hidden shadow-inner">
+          <div className="h-3 bg-white/60 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500"
-              style={{ width: `${Math.max(learnedProgress, 0.5)}%` }}
-            />
+              className="h-full rounded-full transition-all duration-700 relative overflow-hidden"
+              style={{
+                width: `${Math.max(learnedProgress, 0.5)}%`,
+                background: 'linear-gradient(90deg, #4ECDC4 0%, #6BCBE7 100%)',
+              }}
+            >
+              <div className="absolute inset-0 bg-shimmer animate-shimmer" />
+            </div>
           </div>
-          <p className="text-[10px] font-body text-textPrimary/40 mt-0.5">
-            已学过 = 至少做过1次的语块
+          <p className="text-[10px] text-textSecondary mt-1 font-medium">
+            已学过 = 至少学过 1 次的语块
           </p>
         </div>
 
-        {/* 掌握进度条 */}
-        <div className="mb-4">
-          <div className="flex justify-between items-center mb-1">
-            <span className="text-sm font-body font-bold text-textPrimary">掌握进度</span>
-            <span className="text-sm font-heading font-bold text-cta">
-              {stats.masteredChunks} / {stats.totalChunks}（{masteredProgress.toFixed(1)}%）
+        <div>
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-sm font-bold text-textPrimary flex items-center gap-1.5">
+              <span>🏆</span> 掌握进度
+            </span>
+            <span className="font-display-en text-sm font-bold text-ctaDark">
+              {masteredProgress.toFixed(1)}%
             </span>
           </div>
-          <div className="h-3 bg-background rounded-full overflow-hidden shadow-inner">
+          <div className="h-3 bg-white/60 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-cta to-green-400 rounded-full transition-all duration-500"
-              style={{ width: `${Math.max(masteredProgress, 0.5)}%` }}
-            />
+              className="h-full rounded-full transition-all duration-700 relative overflow-hidden"
+              style={{
+                width: `${Math.max(masteredProgress, 0.5)}%`,
+                background: 'linear-gradient(90deg, #A78BFA 0%, #C8B6FF 100%)',
+              }}
+            >
+              <div className="absolute inset-0 bg-shimmer animate-shimmer" />
+            </div>
           </div>
-          <p className="text-[10px] font-body text-textPrimary/40 mt-0.5">
-            已掌握 = 复习间隔达到21天以上
+          <p className="text-[10px] text-textSecondary mt-1 font-medium">
+            已掌握 = 复习间隔达到 21 天以上
           </p>
         </div>
+      </div>
 
-        {/* 详细统计 */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="flex items-center gap-3 p-3 bg-background rounded-clay">
-            <div className="bg-primary/10 p-2 rounded-clay">
-              <BookOpen className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <div className="text-lg font-heading font-bold text-textPrimary">
-                {stats.todayReviews}
-              </div>
-              <div className="text-xs font-body text-textPrimary/60">今日已学</div>
-            </div>
+      {/* 详细统计 - 4 格 */}
+      <div className="grid grid-cols-2 gap-2.5">
+        <div className="glass rounded-clay p-3.5 flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center flex-shrink-0">
+            <BookOpen className="w-5 h-5 text-primary" />
           </div>
-
-          <div className="flex items-center gap-3 p-3 bg-background rounded-clay">
-            <div className="bg-orange-500/10 p-2 rounded-clay">
-              <Flame className="w-5 h-5 text-orange-500" />
-            </div>
-            <div>
-              <div className="text-lg font-heading font-bold text-textPrimary">
-                {stats.streak}天
-              </div>
-              <div className="text-xs font-body text-textPrimary/60">连续学习</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 p-3 bg-background rounded-clay">
-            <div className="bg-cta/10 p-2 rounded-clay">
-              <CheckCircle className="w-5 h-5 text-cta" />
-            </div>
-            <div>
-              <div className="text-lg font-heading font-bold text-textPrimary">
-                {stats.totalReviews}
-              </div>
-              <div className="text-xs font-body text-textPrimary/60">总复习次数</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 p-3 bg-background rounded-clay">
-            <div className="bg-secondary/10 p-2 rounded-clay">
-              <TrendingUp className="w-5 h-5 text-secondary" />
-            </div>
-            <div>
-              <div className="text-lg font-heading font-bold text-textPrimary">
-                {stats.totalChunks - stats.learnedChunks}
-              </div>
-              <div className="text-xs font-body text-textPrimary/60">未学过</div>
-            </div>
+          <div>
+            <p className="font-display-en text-xl font-bold text-textPrimary leading-none">
+              {stats.todayReviews}
+            </p>
+            <p className="text-[11px] font-bold text-textSecondary mt-1">今日已学</p>
           </div>
         </div>
 
-        {/* SM-2 算法说明 */}
-        <div className="bg-blue-50 rounded-clay p-3">
-          <p className="text-xs font-body font-bold text-blue-700 mb-1.5 flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5" />
-            智能复习机制（SM-2算法）
-          </p>
-          <div className="grid grid-cols-2 gap-1 text-xs font-body text-blue-600">
-            <span>完全忘记 → 1天后复习</span>
-            <span>有点难 → 约3天后</span>
-            <span>记得 → 约7天后</span>
-            <span>轻松 → 约14天后</span>
+        <div className="glass rounded-clay p-3.5 flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+            <Flame className="w-5 h-5 text-orange-500" />
           </div>
-          <p className="text-[10px] font-body text-blue-500 mt-1">
-            到期语块会自动出现在学习队列中，无需手动操作
-          </p>
+          <div>
+            <p className="font-display-en text-xl font-bold text-textPrimary leading-none">
+              {stats.streak}<span className="text-sm">天</span>
+            </p>
+            <p className="text-[11px] font-bold text-textSecondary mt-1">连续学习</p>
+          </div>
+        </div>
+
+        <div className="glass rounded-clay p-3.5 flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-cta/15 flex items-center justify-center flex-shrink-0">
+            <CheckCircle className="w-5 h-5 text-ctaDark" />
+          </div>
+          <div>
+            <p className="font-display-en text-xl font-bold text-textPrimary leading-none">
+              {stats.totalReviews}
+            </p>
+            <p className="text-[11px] font-bold text-textSecondary mt-1">总复习</p>
+          </div>
+        </div>
+
+        <div className="glass rounded-clay p-3.5 flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center flex-shrink-0">
+            <TrendingUp className="w-5 h-5 text-secondaryDark" />
+          </div>
+          <div>
+            <p className="font-display-en text-xl font-bold text-textPrimary leading-none">
+              {stats.totalChunks - stats.learnedChunks}
+            </p>
+            <p className="text-[11px] font-bold text-textSecondary mt-1">待学</p>
+          </div>
+        </div>
+      </div>
+
+      {/* SM-2 说明 */}
+      <div className="rounded-clay p-4" style={{
+        background: 'linear-gradient(135deg, rgba(78, 205, 196, 0.12) 0%, rgba(167, 139, 250, 0.12) 100%)',
+      }}>
+        <p className="text-sm font-bold text-textPrimary mb-2 flex items-center gap-1.5">
+          <Clock className="w-4 h-4 text-secondary" />
+          智能复习节奏（SM-2 算法）
+        </p>
+        <div className="grid grid-cols-2 gap-1.5 text-xs">
+          <span className="text-textSecondary">😵 完全忘了 → <strong className="text-textPrimary">1 天后</strong></span>
+          <span className="text-textSecondary">🤔 有点难 → <strong className="text-textPrimary">3 天后</strong></span>
+          <span className="text-textSecondary">😊 记得 → <strong className="text-textPrimary">7 天后</strong></span>
+          <span className="text-textSecondary">🚀 轻松 → <strong className="text-textPrimary">14 天后</strong></span>
         </div>
       </div>
     </div>

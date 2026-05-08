@@ -21,47 +21,49 @@ export function DailyGoalSetting({ currentGoal, onSave }: DailyGoalSettingProps)
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 px-4 py-2 bg-white rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer"
+        className="flex items-center gap-1.5 px-3 py-2 glass rounded-2xl btn-press"
       >
-        <Settings className="w-5 h-5 text-primary" />
-        <span className="font-body text-sm text-textPrimary">
-          每日目标: {currentGoal} 个
+        <Settings className="w-4 h-4 text-primary" />
+        <span className="text-xs font-bold text-textPrimary">
+          {currentGoal}/天
         </span>
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-clay-lg shadow-clay-lg max-w-md w-full p-6">
-            <h2 className="text-2xl font-heading font-bold text-primary mb-4">
-              设置每日学习目标
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in-up">
+          <div className="bg-white rounded-clay-xl shadow-clay-lg max-w-md w-full p-6">
+            <h2 className="font-display-en text-2xl font-bold text-gradient-warm mb-1">
+              Daily Goal
             </h2>
-            
-            <p className="font-body text-textPrimary/70 mb-6">
-              选择你每天想要学习的语块数量
+            <p className="text-sm font-bold text-textPrimary mb-1">每日学习目标</p>
+            <p className="text-xs text-textSecondary mb-5">
+              坚持每天学一点，效果远超偶尔猛学
             </p>
 
-            <div className="grid grid-cols-3 gap-3 mb-6">
+            <div className="grid grid-cols-3 gap-2.5 mb-5">
               {presetGoals.map((preset) => (
                 <button
                   key={preset}
                   onClick={() => setGoal(preset)}
                   className={`
-                    py-3 rounded-clay font-body font-bold transition-all duration-200 cursor-pointer
-                    ${
-                      goal === preset
-                        ? 'bg-primary text-white shadow-clay'
-                        : 'bg-background text-textPrimary hover:bg-background/80'
+                    py-3 rounded-clay font-bold text-lg btn-press transition-all
+                    ${goal === preset
+                      ? 'text-white shadow-glow-primary'
+                      : 'bg-gray-50 text-textPrimary hover:bg-gray-100'
                     }
                   `}
+                  style={goal === preset ? {
+                    background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%)',
+                  } : {}}
                 >
                   {preset}
                 </button>
               ))}
             </div>
 
-            <div className="mb-6">
-              <label className="block font-body text-sm text-textPrimary/70 mb-2">
-                或自定义数量:
+            <div className="mb-5">
+              <label className="block text-xs font-bold text-textSecondary mb-2 uppercase tracking-wider">
+                自定义数量
               </label>
               <input
                 type="number"
@@ -69,20 +71,21 @@ export function DailyGoalSetting({ currentGoal, onSave }: DailyGoalSettingProps)
                 max="100"
                 value={goal}
                 onChange={(e) => setGoal(Number(e.target.value))}
-                className="w-full px-4 py-3 rounded-clay border-2 border-background focus:border-primary outline-none font-body"
+                className="w-full px-4 py-3 rounded-clay bg-gray-50 border-2 border-transparent focus:border-primary focus:bg-white outline-none font-bold text-lg"
               />
             </div>
 
             <div className="flex gap-3">
               <button
                 onClick={() => setIsOpen(false)}
-                className="flex-1 py-3 bg-background text-textPrimary font-body font-bold rounded-clay hover:bg-background/80 transition-all duration-200 cursor-pointer"
+                className="flex-1 py-3 bg-gray-100 text-textPrimary font-bold rounded-2xl btn-press"
               >
                 取消
               </button>
               <button
                 onClick={handleSave}
-                className="flex-1 py-3 bg-primary text-white font-body font-bold rounded-clay shadow-clay hover:shadow-clay-pressed transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+                className="flex-1 py-3 text-white font-bold rounded-2xl btn-press shadow-glow-primary flex items-center justify-center gap-2"
+                style={{ background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%)' }}
               >
                 <Check className="w-5 h-5" />
                 保存
