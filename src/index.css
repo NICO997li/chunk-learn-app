@@ -27,19 +27,18 @@
     letter-spacing: -0.02em;
   }
 
-  /* 手绘风 - logo / 标题 - 默认 Caveat（自然流畅手写） */
+  /* 手绘风 - logo / 标题 - 默认 Homemade Apple（真人钢笔手写） */
   .font-brush {
-    font-family: 'Caveat', 'Kalam', cursive;
-    font-weight: 700;
+    font-family: 'Homemade Apple', 'Sacramento', cursive;
     letter-spacing: 0.01em;
   }
 
-  /* 备选手绘风 - 可在 BrushLogo 切换 */
-  .font-kalam { font-family: 'Kalam', cursive; font-weight: 700; }
-  .font-patrick { font-family: 'Patrick Hand', cursive; }
-  .font-indie { font-family: 'Indie Flower', cursive; }
-  .font-shadows { font-family: 'Shadows Into Light', cursive; }
-  .font-architects { font-family: 'Architects Daughter', cursive; }
+  /* 备选手写字体 - 可在 BrushLogo 切换 */
+  .font-sacramento { font-family: 'Sacramento', cursive; }
+  .font-dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
+  .font-yellowtail { font-family: 'Yellowtail', cursive; }
+  .font-marck { font-family: 'Marck Script', cursive; }
+  .font-caveat { font-family: 'Caveat', cursive; font-weight: 700; }
 }
 
 @layer utilities {
