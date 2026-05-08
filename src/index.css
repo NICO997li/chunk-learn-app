@@ -27,22 +27,19 @@
     letter-spacing: -0.02em;
   }
 
-  /* 蜡笔/手写风格 - logo 和强调用 */
+  /* 手绘风 - logo / 标题 - 默认 Caveat（自然流畅手写） */
   .font-brush {
-    font-family: 'Caveat Brush', 'Permanent Marker', cursive;
+    font-family: 'Caveat', 'Kalam', cursive;
+    font-weight: 700;
     letter-spacing: 0.01em;
   }
 
-  /* 马克笔涂鸦风 */
-  .font-marker {
-    font-family: 'Permanent Marker', 'Caveat Brush', cursive;
-    letter-spacing: 0.02em;
-  }
-
-  /* 圆润手写体 */
-  .font-handwrite {
-    font-family: 'Pangolin', 'Caveat Brush', cursive;
-  }
+  /* 备选手绘风 - 可在 BrushLogo 切换 */
+  .font-kalam { font-family: 'Kalam', cursive; font-weight: 700; }
+  .font-patrick { font-family: 'Patrick Hand', cursive; }
+  .font-indie { font-family: 'Indie Flower', cursive; }
+  .font-shadows { font-family: 'Shadows Into Light', cursive; }
+  .font-architects { font-family: 'Architects Daughter', cursive; }
 }
 
 @layer utilities {
