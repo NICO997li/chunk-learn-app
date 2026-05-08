@@ -27,14 +27,15 @@
     letter-spacing: -0.02em;
   }
 
-  /* 卡通手绘 - logo 默认 Chewy（Q萌橡皮糖体，绘本卡通风） */
+  /* 卡通手绘 - logo 默认 Fredoka（圆润可爱卡通体） */
   .font-brush {
-    font-family: 'Chewy', 'Fredoka', cursive;
-    letter-spacing: 0.02em;
+    font-family: 'Fredoka', 'Chewy', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
   }
 
   /* 备选卡通字体 */
-  .font-fredoka { font-family: 'Fredoka', sans-serif; font-weight: 700; }
+  .font-chewy { font-family: 'Chewy', cursive; }
   .font-bagel { font-family: 'Bagel Fat One', sans-serif; }
   .font-lilita { font-family: 'Lilita One', sans-serif; }
   .font-titan { font-family: 'Titan One', sans-serif; }
