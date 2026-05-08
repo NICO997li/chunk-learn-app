@@ -27,18 +27,17 @@
     letter-spacing: -0.02em;
   }
 
-  /* 手绘风 - logo / 标题 - 默认 Homemade Apple（真人钢笔手写） */
+  /* 卡通手绘 - logo 默认 Chewy（Q萌橡皮糖体，绘本卡通风） */
   .font-brush {
-    font-family: 'Homemade Apple', 'Sacramento', cursive;
-    letter-spacing: 0.01em;
+    font-family: 'Chewy', 'Fredoka', cursive;
+    letter-spacing: 0.02em;
   }
 
-  /* 备选手写字体 - 可在 BrushLogo 切换 */
-  .font-sacramento { font-family: 'Sacramento', cursive; }
-  .font-dancing { font-family: 'Dancing Script', cursive; font-weight: 700; }
-  .font-yellowtail { font-family: 'Yellowtail', cursive; }
-  .font-marck { font-family: 'Marck Script', cursive; }
-  .font-caveat { font-family: 'Caveat', cursive; font-weight: 700; }
+  /* 备选卡通字体 */
+  .font-fredoka { font-family: 'Fredoka', sans-serif; font-weight: 700; }
+  .font-bagel { font-family: 'Bagel Fat One', sans-serif; }
+  .font-lilita { font-family: 'Lilita One', sans-serif; }
+  .font-titan { font-family: 'Titan One', sans-serif; }
 }
 
 @layer utilities {
