@@ -11,7 +11,7 @@ export function TodayReview({ todayChunks }: TodayReviewProps) {
     return (
       <div className="text-center py-12 max-w-md mx-auto px-4 animate-fade-in-up">
         <div className="text-7xl mb-4 animate-float">📚</div>
-        <h2 className="font-display-en text-3xl font-bold text-gradient-warm mb-2">
+        <h2 className="font-brush text-5xl text-gradient-warm mb-2 leading-none">
           Today's Review
         </h2>
         <p className="font-bold text-textPrimary mb-1">今日还没学习呀</p>
@@ -31,9 +31,9 @@ export function TodayReview({ todayChunks }: TodayReviewProps) {
             <div className="w-9 h-9 rounded-xl bg-gradient-warm flex items-center justify-center shadow-glow-primary">
               <Eye className="w-5 h-5 text-white" />
             </div>
-            <h2 className="font-display-en text-2xl font-bold text-textPrimary">
-              Today
-            </h2>
+          <h2 className="font-brush text-4xl text-textPrimary leading-none">
+            Today
+          </h2>
           </div>
           <div className="px-3 py-1 bg-gradient-warm rounded-full">
             <span className="text-xs font-bold text-white">

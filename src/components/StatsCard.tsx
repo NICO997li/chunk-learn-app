@@ -21,7 +21,7 @@ export function StatsCard({ stats }: StatsCardProps) {
           <div className="w-9 h-9 rounded-xl bg-gradient-cool flex items-center justify-center shadow-glow-secondary">
             <Target className="w-5 h-5 text-white" />
           </div>
-          <h2 className="font-display-en text-2xl font-bold text-textPrimary">Stats</h2>
+          <h2 className="font-brush text-4xl text-textPrimary leading-none">Stats</h2>
         </div>
         <p className="text-sm text-textSecondary font-medium pl-11">
           看看你的学习进度

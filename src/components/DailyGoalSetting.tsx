@@ -32,7 +32,7 @@ export function DailyGoalSetting({ currentGoal, onSave }: DailyGoalSettingProps)
       {isOpen && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in-up">
           <div className="bg-white rounded-clay-xl shadow-clay-lg max-w-md w-full p-6">
-            <h2 className="font-display-en text-2xl font-bold text-gradient-warm mb-1">
+            <h2 className="font-brush text-4xl text-gradient-warm mb-1 leading-none">
               Daily Goal
             </h2>
             <p className="text-sm font-bold text-textPrimary mb-1">每日学习目标</p>

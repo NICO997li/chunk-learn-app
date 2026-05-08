@@ -26,6 +26,23 @@
     font-feature-settings: "ss01", "ss02";
     letter-spacing: -0.02em;
   }
+
+  /* 蜡笔/手写风格 - logo 和强调用 */
+  .font-brush {
+    font-family: 'Caveat Brush', 'Permanent Marker', cursive;
+    letter-spacing: 0.01em;
+  }
+
+  /* 马克笔涂鸦风 */
+  .font-marker {
+    font-family: 'Permanent Marker', 'Caveat Brush', cursive;
+    letter-spacing: 0.02em;
+  }
+
+  /* 圆润手写体 */
+  .font-handwrite {
+    font-family: 'Pangolin', 'Caveat Brush', cursive;
+  }
 }
 
 @layer utilities {

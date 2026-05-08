@@ -8,6 +8,7 @@ import { DailyGoalSetting } from '@/components/DailyGoalSetting';
 import { TodayReview } from '@/components/TodayReview';
 import { UserSelect } from '@/components/UserSelect';
 import { Dashboard } from '@/components/Dashboard';
+import { BrushLogo } from '@/components/BrushLogo';
 import { UserProfile } from '@/types';
 import { getCurrentUser, logoutUser, deleteUser } from '@/utils/storage';
 import { deleteUserFromCloud } from '@/utils/firebase';
@@ -153,16 +154,22 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
               </div>
             )}
 
-            {/* 主标题 - 渐变文字 + 动效 */}
-            <div className="text-center px-4 pt-2">
+            {/* 主标题 - 手绘蜡笔 logo */}
+            <div className="text-center px-4 pt-2 relative">
+              {/* 装饰小元素 */}
+              <span className="absolute top-0 left-1/4 text-2xl animate-float-slow opacity-70">✨</span>
+              <span className="absolute -top-1 right-1/4 text-2xl animate-float opacity-70" style={{ animationDelay: '1s' }}>🎈</span>
+              <span className="absolute top-12 left-6 text-xl animate-pulse-soft opacity-60">⭐</span>
+              <span className="absolute top-12 right-6 text-xl animate-pulse-soft opacity-60" style={{ animationDelay: '0.5s' }}>💫</span>
+
               <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/70 backdrop-blur-sm rounded-full mb-3 shadow-soft">
                 <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse-soft" />
                 <span className="text-xs font-bold text-textPrimary">让英语脱口而出</span>
               </div>
-              <h1 className="font-display-en text-4xl sm:text-5xl font-bold text-gradient-warm mb-2 leading-tight">
-                MeihooStudy
-              </h1>
-              <p className="text-sm text-textSecondary font-medium">
+
+              <BrushLogo size="lg" className="mb-2 drop-shadow-sm" />
+
+              <p className="text-sm text-textSecondary font-medium mt-1">
                 语块记忆法 · 用固定搭配像母语者一样说英语
               </p>
             </div>
@@ -321,17 +328,17 @@ function MainApp({ currentUser, onLogout }: { currentUser: UserProfile; onLogout
             <div className="text-center space-y-5 px-4 animate-pop">
               <div className="text-7xl animate-bounce-soft">{mode === 'review' ? '💪' : '🎉'}</div>
               <div>
-                <h2 className="font-display-en text-3xl font-bold text-gradient-warm mb-1">
+                <h2 className="font-brush text-5xl text-gradient-warm mb-1 leading-none">
                   {mode === 'review' ? 'Great Job!' : 'Awesome!'}
                 </h2>
-                <p className="text-base font-bold text-textPrimary">
+                <p className="text-base font-bold text-textPrimary mt-2">
                   {mode === 'review' ? '复习完成！' : '新学完成！'}
                 </p>
               </div>
               <div className="glass rounded-clay-xl p-5 max-w-xs mx-auto">
                 <p className="text-sm text-textSecondary mb-1">今日累计学习</p>
-                <p className="font-display-en text-4xl font-bold text-gradient-warm">
-                  {todayLearnedCount} <span className="text-lg text-textSecondary">个</span>
+                <p className="font-brush text-5xl text-gradient-warm leading-none">
+                  {todayLearnedCount} <span className="text-2xl text-textSecondary">个</span>
                 </p>
               </div>
               <div className="flex gap-3 justify-center max-w-xs mx-auto">

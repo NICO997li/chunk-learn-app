@@ -3,6 +3,7 @@ import { UserPlus, LogIn, Sparkles, Trash2, Download, AlertTriangle } from 'luci
 import { UserProfile } from '@/types';
 import { getAllUsers, addUser, setCurrentUser, generateUserId, deleteUser, restoreFromCloud } from '@/utils/storage';
 import { findUserByName, deleteUserFromCloud } from '@/utils/firebase';
+import { BrushLogo } from './BrushLogo';
 
 interface UserSelectProps {
   onUserSelected: (user: UserProfile) => void;
@@ -87,16 +88,18 @@ export function UserSelect({ onUserSelected }: UserSelectProps) {
 
         <div className="relative glass rounded-clay-xl shadow-clay-lg p-6">
           {/* 顶部 Logo */}
-          <div className="text-center mb-6">
+          <div className="text-center mb-6 relative">
+            {/* 装饰小元素 */}
+            <span className="absolute top-0 left-2 text-xl animate-float opacity-70">✨</span>
+            <span className="absolute top-2 right-2 text-xl animate-float-slow opacity-70">🎈</span>
+
             <div className="w-16 h-16 mx-auto mb-3 rounded-clay-lg flex items-center justify-center shadow-glow-primary animate-bounce-soft" style={{
               background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E72 50%, #FFD93D 100%)',
             }}>
               <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h1 className="font-display-en text-3xl font-bold text-gradient-warm mb-1">
-              MeihooStudy
-            </h1>
-            <p className="text-sm font-medium text-textSecondary">
+            <BrushLogo size="md" className="mb-1" />
+            <p className="text-sm font-medium text-textSecondary mt-2">
               语块记忆法 · 像母语者一样说英语
             </p>
           </div>
